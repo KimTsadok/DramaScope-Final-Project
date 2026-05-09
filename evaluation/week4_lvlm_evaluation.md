@@ -113,9 +113,7 @@ GCP interaction_density is based on tracked object density per second.
 
 * LVLM interaction_level is a semantic estimate of how much the visible entities interact.
 
-- For example,
-
- in ACCEDE09230, GCP interaction density is moderate because many objects are tracked, but LVLM interaction level is 0 because the man and woman are doing separate activities without direct interaction.
+- For example, in ACCEDE09230, GCP interaction density is moderate because many objects are tracked, but LVLM interaction level is 0 because the man and woman are doing separate activities without direct interaction.
 
 * a note about video id: ACCEDE09231: it says in the summary: LVLM correctly identifies the car interior/residential driving scene. It supports the algorithmic Calm phase: low shot frequency, low interaction density, and no direct interaction between the two people.
 - but, it has a communication between the 2 visible characters, although one sided, interaction is still there being the woman talks, and the man glances at her momentarily. (might need to further tune this) - which means my expectation was interaction score - weak, indirect interaction
