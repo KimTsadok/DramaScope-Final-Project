@@ -13,7 +13,7 @@ from typing import Dict, List, Tuple
 from src.config import PHASE_THRESHOLDS
 
 
-def _format_bool(condition: bool) -> str:
+def format_bool(condition: bool) -> str:
     return "True" if condition else "False"
 
 
@@ -33,15 +33,15 @@ def classify_narrative_phase(norm_features: Dict[str, float]) -> Tuple[str, List
     if dense_ent_ok and dense_dens_ok:
         reasons.append(
             "Dense rule satisfied: "
-            f"object_entropy > {PHASE_THRESHOLDS.dense_entropy_min} is {_format_bool(dense_ent_ok)}, "
-            f"interaction_density > {PHASE_THRESHOLDS.dense_density_min} is {_format_bool(dense_dens_ok)}"
+            f"object_entropy > {PHASE_THRESHOLDS.dense_entropy_min} is {format_bool(dense_ent_ok)}, "
+            f"interaction_density > {PHASE_THRESHOLDS.dense_density_min} is {format_bool(dense_dens_ok)}"
         )
         return "Dense", reasons
 
     reasons.append(
         "Dense rule not satisfied: "
-        f"object_entropy > {PHASE_THRESHOLDS.dense_entropy_min} is {_format_bool(dense_ent_ok)}, "
-        f"interaction_density > {PHASE_THRESHOLDS.dense_density_min} is {_format_bool(dense_dens_ok)}"
+        f"object_entropy > {PHASE_THRESHOLDS.dense_entropy_min} is {format_bool(dense_ent_ok)}, "
+        f"interaction_density > {PHASE_THRESHOLDS.dense_density_min} is {format_bool(dense_dens_ok)}"
     )
 
     # Dynamic: sf > 0.65 and dens <= 0.65
@@ -51,15 +51,15 @@ def classify_narrative_phase(norm_features: Dict[str, float]) -> Tuple[str, List
     if dynamic_sf_ok and dynamic_dens_ok:
         reasons.append(
             "Dynamic rule satisfied: "
-            f"shot_frequency > {PHASE_THRESHOLDS.dynamic_shot_frequency_min} is {_format_bool(dynamic_sf_ok)}, "
-            f"interaction_density <= {PHASE_THRESHOLDS.dynamic_density_max} is {_format_bool(dynamic_dens_ok)}"
+            f"shot_frequency > {PHASE_THRESHOLDS.dynamic_shot_frequency_min} is {format_bool(dynamic_sf_ok)}, "
+            f"interaction_density <= {PHASE_THRESHOLDS.dynamic_density_max} is {format_bool(dynamic_dens_ok)}"
         )
         return "Dynamic", reasons
 
     reasons.append(
         "Dynamic rule not satisfied: "
-        f"shot_frequency > {PHASE_THRESHOLDS.dynamic_shot_frequency_min} is {_format_bool(dynamic_sf_ok)}, "
-        f"interaction_density <= {PHASE_THRESHOLDS.dynamic_density_max} is {_format_bool(dynamic_dens_ok)}"
+        f"shot_frequency > {PHASE_THRESHOLDS.dynamic_shot_frequency_min} is {format_bool(dynamic_sf_ok)}, "
+        f"interaction_density <= {PHASE_THRESHOLDS.dynamic_density_max} is {format_bool(dynamic_dens_ok)}"
     )
 
     # Static: sf < 0.35 and dens < 0.35 and ent < 0.35
@@ -70,17 +70,17 @@ def classify_narrative_phase(norm_features: Dict[str, float]) -> Tuple[str, List
     if static_sf_ok and static_dens_ok and static_ent_ok:
         reasons.append(
             "Static rule satisfied: "
-            f"shot_frequency < {PHASE_THRESHOLDS.static_shot_frequency_max} is {_format_bool(static_sf_ok)}, "
-            f"interaction_density < {PHASE_THRESHOLDS.static_density_max} is {_format_bool(static_dens_ok)}, "
-            f"object_entropy < {PHASE_THRESHOLDS.static_entropy_max} is {_format_bool(static_ent_ok)}"
+            f"shot_frequency < {PHASE_THRESHOLDS.static_shot_frequency_max} is {format_bool(static_sf_ok)}, "
+            f"interaction_density < {PHASE_THRESHOLDS.static_density_max} is {format_bool(static_dens_ok)}, "
+            f"object_entropy < {PHASE_THRESHOLDS.static_entropy_max} is {format_bool(static_ent_ok)}"
         )
         return "Static", reasons
 
     reasons.append(
         "Static rule not satisfied: "
-        f"shot_frequency < {PHASE_THRESHOLDS.static_shot_frequency_max} is {_format_bool(static_sf_ok)}, "
-        f"interaction_density < {PHASE_THRESHOLDS.static_density_max} is {_format_bool(static_dens_ok)}, "
-        f"object_entropy < {PHASE_THRESHOLDS.static_entropy_max} is {_format_bool(static_ent_ok)}"
+        f"shot_frequency < {PHASE_THRESHOLDS.static_shot_frequency_max} is {format_bool(static_sf_ok)}, "
+        f"interaction_density < {PHASE_THRESHOLDS.static_density_max} is {format_bool(static_dens_ok)}, "
+        f"object_entropy < {PHASE_THRESHOLDS.static_entropy_max} is {format_bool(static_ent_ok)}"
     )
 
     reasons.append("Defaulted to Calm")

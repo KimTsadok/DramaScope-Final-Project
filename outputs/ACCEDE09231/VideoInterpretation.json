@@ -27,5 +27,45 @@
     "Dynamic rule not satisfied: shot_frequency > 0.65 is False, interaction_density <= 0.65 is True",
     "Static rule not satisfied: shot_frequency < 0.35 is True, interaction_density < 0.35 is True, object_entropy < 0.35 is False",
     "Defaulted to Calm"
-  ]
+  ],
+  "lvlm_summary": {
+    "model": "glm-4.6v-flash",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "\nThe video depicts a sequence of frames from inside a car moving through a suburban neighborhood during late afternoon or early evening. The primary setting is residential, with houses, trees, and lawns visible outside the windows.  \n\nMain entities: A woman (driver, wearing a pink top) and a man (passenger, in a dark blazer and yellow shirt).  \n\nVisible actions: The woman is actively driving, holding the steering wheel with varying hand positions (e.g., both hands on the wheel, or one hand slightly raised in one frame). The man is seated in the passenger seat, looking outward or toward the driver.  \n\nEmotional tone: The woman appears focused and at times concerned or attentive, while the man has a neutral to mildly concerned expression.  \n\nInteraction: No direct interaction is shown; the frames emphasize the driver navigating and the passenger observing the environment.",
+    "usage": {
+      "prompt_tokens": 9645,
+      "completion_tokens": 595,
+      "total_tokens": 10240
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-4.6v-flash",
+    "prompt_version": "v1_structured",
+    "frame_count": 8,
+    "text": "\n{\n  \"setting\": \"A residential neighborhood, viewed from inside a car\",\n  \"main_entities\": [\"A woman driving\", \"A man in the passenger seat\"],\n  \"actions\": [\"Driving (holding the steering wheel)\", \"Sitting in the passenger seat\"],\n  \"emotion_words\": [\"Focused\", \"Neutral\", \"Calm\"],\n  \"interaction_level\": 0,\n  \"summary\": \"A woman drives through a residential area while a man sits in the passenger seat of the car, with the woman focused on driving and the man observing the surroundings.\"\n}",
+    "usage": {
+      "prompt_tokens": 9700,
+      "completion_tokens": 511,
+      "total_tokens": 10211
+    }
+  },
+  "lvlm_structured": {
+    "setting": "A residential neighborhood, viewed from inside a car",
+    "main_entities": [
+      "A woman driving",
+      "A man in the passenger seat"
+    ],
+    "actions": [
+      "Driving (holding the steering wheel)",
+      "Sitting in the passenger seat"
+    ],
+    "emotion_words": [
+      "Focused",
+      "Neutral",
+      "Calm"
+    ],
+    "interaction_level": 0,
+    "summary": "A woman drives through a residential area while a man sits in the passenger seat of the car, with the woman focused on driving and the man observing the surroundings."
+  }
 }

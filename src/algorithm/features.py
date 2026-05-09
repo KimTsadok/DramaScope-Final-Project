@@ -3,13 +3,17 @@
 Compute raw features from existing metadata (VideoFeatures.json).
 * compute shot_frequency
 * pass through the other 3 features
-return a clean flat dictionary
+* return a clean flat dictionary
+
+Algorithm Features → cleaned / derived features used for scoring
+VideoFeatures.json → clean ML-style feature vector
+Prepare features for scoring + classification
 """
 
 from typing import Any, Dict
 
 
-def _safe_divide(numerator: float, denominator: float) -> float: # no division with 0
+def safe_divide(numerator: float, denominator: float) -> float: # no division with 0
     if denominator == 0:
         return 0.0
     return numerator / denominator
@@ -26,7 +30,7 @@ def build_raw_features(video_features: Dict[str, Any]) -> Dict[str, float]:
     interaction_density = float(objects.get("interaction_density_tracks_per_sec", 0.0))
     human_presence_ratio = float(objects.get("human_presence_ratio", 0.0))
 
-    shot_frequency = _safe_divide(shot_count, duration_seconds)
+    shot_frequency = safe_divide(shot_count, duration_seconds)
 
     return {
         "shot_frequency": shot_frequency,

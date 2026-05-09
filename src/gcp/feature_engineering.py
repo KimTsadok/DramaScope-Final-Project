@@ -1,4 +1,4 @@
-# src/gcp/features.py
+# src/gcp/feature_engineering.py
 """
 This file handles:
 * time conversion
@@ -10,6 +10,8 @@ This file handles:
 
 This is your richest file, because this is where raw annotations
 become your VideoFeatures.json.
+GCP Features  → raw metadata extracted from the video
+RAW VIDEO → GCP → structured metadata → VideoFeatures.json
 """
 
 import json
