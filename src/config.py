@@ -1,15 +1,14 @@
 # src/config.py
 """
 One place for:
-ranges
-thresholds
-weights
-model name
-frame settings
+* ranges
+* thresholds
+* weights
+* model name
+* frame settings
 """
 
 from dataclasses import dataclass
-
 
 @dataclass(frozen=True)
 class NormalizationRanges: # Used later in normalize.py
@@ -52,7 +51,7 @@ class PhaseThresholds: # Used later in phase.py
 
 @dataclass(frozen=True) 
 # it belongs in central config
-#later both video extraction and LVLM client can use it
+# later both video extraction and LVLM client can use it
 class FrameSettings:
     frame_rate: int = 1
     max_frames: int = 10

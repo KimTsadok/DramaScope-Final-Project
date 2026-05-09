@@ -2,7 +2,7 @@
 
 from .upload import build_destination_name, upload_to_gcs
 from .analyze import analyze_video_uri
-from .features import compute_features, save_json
+from .feature_engineering import compute_features, save_json
 
 __all__ = [
     "build_destination_name",
@@ -10,5 +10,4 @@ __all__ = [
     "analyze_video_uri",
     "compute_features",
     "save_json",
-    "extract_video_id",
 ]

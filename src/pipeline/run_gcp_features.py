@@ -18,7 +18,7 @@ from src.gcp.upload import (
     upload_to_gcs,
 )
 from src.gcp.analyze import analyze_video_uri
-from src.gcp.features import compute_features, save_json
+from src.gcp.feature_engineering import compute_features, save_json
 
 
 def extract_video_id(video_uri: str) -> str:

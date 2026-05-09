@@ -1,0 +1,53 @@
+{
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09233.mp4",
+  "duration_seconds": 11.291666,
+  "shots": {
+    "count": 3,
+    "avg_shot_length": 3.736111,
+    "shot_variance": 0.803627,
+    "shot_lengths": [
+      3.416666,
+      2.833333,
+      4.958333
+    ]
+  },
+  "labels": {
+    "unique": [
+      "car",
+      "driving",
+      "family car",
+      "land vehicle",
+      "motor vehicle",
+      "road",
+      "vehicle",
+      "windshield"
+    ],
+    "count_unique": 8
+  },
+  "objects": {
+    "total_tracks": 18,
+    "object_frequency_distribution": {
+      "mirror": 6,
+      "person": 3,
+      "car": 2,
+      "clothing": 2,
+      "luggage & bags": 2,
+      "top": 1,
+      "jewellery": 1,
+      "packaged goods": 1
+    },
+    "top_objects": [
+      "mirror",
+      "person",
+      "car",
+      "clothing",
+      "luggage & bags",
+      "top",
+      "jewellery",
+      "packaged goods"
+    ],
+    "object_entropy": 2.710777,
+    "human_presence_ratio": 0.97417,
+    "interaction_density_tracks_per_sec": 1.594096
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "video_id": "ACCEDE09230",
+  "video_path": "C:\\Users\\Kim\\OneDrive - Afeka College Of Engineering\\Desktop\\Final Project New\\Final-Project\\videos\\videos\\ACCEDE09230.mp4",
+  "summary_result": {
+    "model": "glm-4.6v-flash",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "\nThe video takes place in a cozy, lived-in living room with a brown leather recliner, a floral-patterned couch, side tables (one with a green frog statue and lamp, another with a lamp and books), framed artwork on the walls, and a glass coffee table.  \n\nA man in a light blue police uniform sits in the recliner, initially reading a magazine (later still reading it) with a relaxed posture. A woman in a pink blouse and pearl necklace sits on the couch, holding and reading a letter or card, smiling and appearing engaged with its content.  \n\nThe emotional tone is calm and domestic: the man is focused and at ease, the woman is happy and absorbed in her letter. They are in the same space but engaged in separate, peaceful activities, suggesting a quiet, comfortable household moment.",
+    "usage": {
+      "prompt_tokens": 9645,
+      "completion_tokens": 422,
+      "total_tokens": 10067
+    }
+  },
+  "shared_frame_count": 8,
+  "structured_result_raw": {
+    "model": "glm-4.6v-flash",
+    "prompt_version": "v1_structured",
+    "frame_count": 8,
+    "text": "\n{\n  \"setting\": \"Living room\",\n  \"main_entities\": [\"Man in police uniform\", \"Woman in pink top\"],\n  \"actions\": [\"Reading magazine\", \"Reading card\"],\n  \"emotion_words\": [\"Focused\", \"Happy\"],\n  \"interaction_level\": 0,\n  \"summary\": \"A man in a police uniform reads a magazine in a leather chair while a woman in a pink top reads a card on a floral couch in the same living room; they are in the same space but engaged in separate activities.\"\n}",
+    "usage": {
+      "prompt_tokens": 9700,
+      "completion_tokens": 537,
+      "total_tokens": 10237
+    }
+  },
+  "structured_result_parsed": {
+    "setting": "Living room",
+    "main_entities": [
+      "Man in police uniform",
+      "Woman in pink top"
+    ],
+    "actions": [
+      "Reading magazine",
+      "Reading card"
+    ],
+    "emotion_words": [
+      "Focused",
+      "Happy"
+    ],
+    "interaction_level": 0,
+    "summary": "A man in a police uniform reads a magazine in a leather chair while a woman in a pink top reads a card on a floral couch in the same living room; they are in the same space but engaged in separate activities."
+  }
+}
