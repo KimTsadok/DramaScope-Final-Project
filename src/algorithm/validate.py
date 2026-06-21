@@ -151,5 +151,6 @@ def validate_lvlm_structured(data: Dict[str, Any]) -> Dict[str, Any]:
         "actions": ensure_string_list(data.get("actions")),
         "emotion_words": ensure_string_list(data.get("emotion_words")),
         "interaction_level": interaction_level,
+        "interaction_evidence": ensure_string(data.get("interaction_evidence")),
         "summary": ensure_string(data.get("summary")),
     }

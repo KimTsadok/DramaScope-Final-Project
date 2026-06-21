@@ -8,69 +8,28 @@
     "human_presence_ratio": 0.990148
   },
   "features_norm": {
-    "shot_frequency": 0.05911330282219913,
+    "shot_frequency": 0.11822660564439826,
     "object_entropy": 0.76414125,
-    "interaction_density": 0.1773399,
+    "interaction_density": 0.3546798,
     "human_presence_ratio": 0.990148
   },
-  "scene_complexity_score": 0.4226218734877697,
+  "scene_complexity_score": 0.4787795094755394,
   "scene_complexity_breakdown": {
-    "shot_frequency": 0.020689655987769694,
+    "shot_frequency": 0.04137931197553939,
     "object_entropy": 0.2674494375,
-    "interaction_density": 0.03546798,
+    "interaction_density": 0.07093596,
     "human_presence_ratio": 0.09901480000000001
   },
   "narrative_phase": "Calm",
   "phase_reasons": [
-    "Normalized values -> shot_frequency=0.0591, object_entropy=0.7641, interaction_density=0.1773",
-    "Dense rule not satisfied: object_entropy > 0.65 is True, interaction_density > 0.65 is False",
-    "Dynamic rule not satisfied: shot_frequency > 0.65 is False, interaction_density <= 0.65 is True",
-    "Static rule not satisfied: shot_frequency < 0.35 is True, interaction_density < 0.35 is True, object_entropy < 0.35 is False",
+    "Normalized values -> shot_frequency=0.1182, object_entropy=0.7641, interaction_density=0.3547",
+    "Dense rule not satisfied: object_entropy > 0.7 is True, interaction_density > 0.65 is False",
+    "Dynamic rule not satisfied: shot_frequency > 0.35 is False, interaction_density <= 0.75 is True",
+    "Static rule not satisfied: shot_frequency < 0.2 is True, interaction_density < 0.3 is False, object_entropy < 0.5 is False",
     "Defaulted to Calm"
   ],
-  "lvlm_summary": {
-    "model": "glm-4.6v-flash",
-    "prompt_version": "v1_summary",
-    "frame_count": 8,
-    "text": "\nThe video depicts a man walking along a sunlit sidewalk in an outdoor, likely campus or suburban setting. The environment features grassy areas, trees with autumn foliage, a bench, a fire hydrant, a green bollard, and a building in the background, with a black car parked on the right. The man, dressed in a dark jacket, dark pants, and a cap, walks steadily forward, then raises his right arm in a gesture (possibly waving) in the final frame. The scene has a calm, serene tone, with the autumn landscape and routine walking suggesting a peaceful, everyday moment. No direct interaction with other people is shown, though a distant figure is visible in the background.",
-    "usage": {
-      "prompt_tokens": 9645,
-      "completion_tokens": 340,
-      "total_tokens": 9985
-    }
-  },
-  "lvlm_structured_raw": {
-    "model": "glm-4.6v-flash",
-    "prompt_version": "v1_structured",
-    "frame_count": 8,
-    "text": "\n{\n  \"setting\": \"Urban park or campus pathway\",\n  \"main_entities\": [\"Man walking\", \"Sidewalk\", \"Trees\", \"Building\", \"Fire hydrant\", \"Bench\", \"Car\"],\n  \"actions\": [\"Walking\", \"Waving\"],\n  \"emotion_words\": [\"Calm\", \"Neutral\"],\n  \"interaction_level\": 0,\n  \"summary\": \"A man walks along a paved pathway in a park or campus setting, with trees, a bench, and a fire hydrant nearby. He continues walking and raises his arm in the final frame.\"\n}",
-    "usage": {
-      "prompt_tokens": 9700,
-      "completion_tokens": 562,
-      "total_tokens": 10262
-    }
-  },
-  "lvlm_structured": {
-    "setting": "Urban park or campus pathway",
-    "main_entities": [
-      "Man walking",
-      "Sidewalk",
-      "Trees",
-      "Building",
-      "Fire hydrant",
-      "Bench",
-      "Car"
-    ],
-    "actions": [
-      "Walking",
-      "Waving"
-    ],
-    "emotion_words": [
-      "Calm",
-      "Neutral"
-    ],
-    "interaction_level": 0,
-    "summary": "A man walks along a paved pathway in a park or campus setting, with trees, a bench, and a fire hydrant nearby. He continues walking and raises his arm in the final frame."
-  },
-  "lvlm_error": null
+  "lvlm_summary": null,
+  "lvlm_structured_raw": null,
+  "lvlm_structured": null,
+  "lvlm_error": "LVLM not run in gcp_tuning mode"
 }

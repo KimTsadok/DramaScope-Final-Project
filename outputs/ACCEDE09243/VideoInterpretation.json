@@ -1,0 +1,35 @@
+{
+  "video_id": "ACCEDE09243",
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09243.mp4",
+  "features_raw": {
+    "shot_frequency": 0.17142858122449037,
+    "object_entropy": 2.699951,
+    "interaction_density": 4.885715,
+    "human_presence_ratio": 0.985714
+  },
+  "features_norm": {
+    "shot_frequency": 0.17142858122449037,
+    "object_entropy": 0.67498775,
+    "interaction_density": 0.9771430000000001,
+    "human_presence_ratio": 0.985714
+  },
+  "scene_complexity_score": 0.5902457159285717,
+  "scene_complexity_breakdown": {
+    "shot_frequency": 0.060000003428571626,
+    "object_entropy": 0.23624571249999998,
+    "interaction_density": 0.19542860000000004,
+    "human_presence_ratio": 0.0985714
+  },
+  "narrative_phase": "Calm",
+  "phase_reasons": [
+    "Normalized values -> shot_frequency=0.1714, object_entropy=0.6750, interaction_density=0.9771",
+    "Dense rule not satisfied: object_entropy > 0.7 is False, interaction_density > 0.65 is True",
+    "Dynamic rule not satisfied: shot_frequency > 0.35 is False, interaction_density <= 0.75 is False",
+    "Static rule not satisfied: shot_frequency < 0.2 is True, interaction_density < 0.3 is False, object_entropy < 0.5 is False",
+    "Defaulted to Calm"
+  ],
+  "lvlm_summary": null,
+  "lvlm_structured_raw": null,
+  "lvlm_structured": null,
+  "lvlm_error": "LVLM not run in gcp_tuning mode"
+}

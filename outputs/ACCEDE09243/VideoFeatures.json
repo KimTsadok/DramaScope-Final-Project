@@ -1,0 +1,50 @@
+{
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09243.mp4",
+  "duration_seconds": 11.666666,
+  "shots": {
+    "count": 2,
+    "avg_shot_length": 5.812499,
+    "shot_variance": 0.010851,
+    "shot_lengths": [
+      5.916666,
+      5.708333
+    ]
+  },
+  "labels": {
+    "unique": [
+      "neighbourhood",
+      "public space",
+      "tree",
+      "vehicle"
+    ],
+    "count_unique": 4
+  },
+  "objects": {
+    "total_tracks": 57,
+    "object_frequency_distribution": {
+      "car": 16,
+      "person": 15,
+      "pants": 8,
+      "window": 5,
+      "top": 5,
+      "luggage & bags": 3,
+      "building": 2,
+      "outerwear": 2,
+      "hat": 1
+    },
+    "top_objects": [
+      "car",
+      "person",
+      "pants",
+      "window",
+      "top",
+      "luggage & bags",
+      "building",
+      "outerwear",
+      "hat"
+    ],
+    "object_entropy": 2.699951,
+    "human_presence_ratio": 0.985714,
+    "interaction_density_tracks_per_sec": 4.885715
+  }
+}

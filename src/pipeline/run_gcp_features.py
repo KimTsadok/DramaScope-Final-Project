@@ -20,7 +20,6 @@ from src.gcp.upload import (
 from src.gcp.analyze import analyze_video_uri
 from src.gcp.feature_engineering import compute_features, save_json
 
-
 def extract_video_id(video_uri: str) -> str:
     """
     Extract video ID from a bucket URI.

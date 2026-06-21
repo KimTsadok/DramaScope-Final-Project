@@ -1,0 +1,50 @@
+{
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09234.mp4",
+  "duration_seconds": 9.708333,
+  "shots": {
+    "count": 2,
+    "avg_shot_length": 4.833334,
+    "shot_variance": 3.361112,
+    "shot_lengths": [
+      3.0,
+      6.666667
+    ]
+  },
+  "labels": {
+    "unique": [
+      "deck",
+      "home",
+      "house",
+      "porch"
+    ],
+    "count_unique": 4
+  },
+  "objects": {
+    "total_tracks": 24,
+    "object_frequency_distribution": {
+      "person": 9,
+      "clothing": 4,
+      "window": 3,
+      "house": 2,
+      "door": 2,
+      "glasses": 1,
+      "outerwear": 1,
+      "bench": 1,
+      "dress": 1
+    },
+    "top_objects": [
+      "person",
+      "clothing",
+      "window",
+      "house",
+      "door",
+      "glasses",
+      "outerwear",
+      "bench",
+      "dress"
+    ],
+    "object_entropy": 2.69812,
+    "human_presence_ratio": 0.733906,
+    "interaction_density_tracks_per_sec": 2.472103
+  }
+}

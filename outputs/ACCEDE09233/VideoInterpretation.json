@@ -8,66 +8,28 @@
     "human_presence_ratio": 0.97417
   },
   "features_norm": {
-    "shot_frequency": 0.13284133625631506,
+    "shot_frequency": 0.2656826725126301,
     "object_entropy": 0.67769425,
-    "interaction_density": 0.15940959999999998,
+    "interaction_density": 0.31881919999999997,
     "human_presence_ratio": 0.97417
   },
-  "scene_complexity_score": 0.41298637518971026,
+  "scene_complexity_score": 0.49136276287942054,
   "scene_complexity_breakdown": {
-    "shot_frequency": 0.046494467689710266,
+    "shot_frequency": 0.09298893537942053,
     "object_entropy": 0.2371929875,
-    "interaction_density": 0.03188192,
+    "interaction_density": 0.06376384,
     "human_presence_ratio": 0.097417
   },
   "narrative_phase": "Calm",
   "phase_reasons": [
-    "Normalized values -> shot_frequency=0.1328, object_entropy=0.6777, interaction_density=0.1594",
-    "Dense rule not satisfied: object_entropy > 0.65 is True, interaction_density > 0.65 is False",
-    "Dynamic rule not satisfied: shot_frequency > 0.65 is False, interaction_density <= 0.65 is True",
-    "Static rule not satisfied: shot_frequency < 0.35 is True, interaction_density < 0.35 is True, object_entropy < 0.35 is False",
+    "Normalized values -> shot_frequency=0.2657, object_entropy=0.6777, interaction_density=0.3188",
+    "Dense rule not satisfied: object_entropy > 0.7 is False, interaction_density > 0.65 is False",
+    "Dynamic rule not satisfied: shot_frequency > 0.35 is False, interaction_density <= 0.75 is True",
+    "Static rule not satisfied: shot_frequency < 0.2 is False, interaction_density < 0.3 is False, object_entropy < 0.5 is False",
     "Defaulted to Calm"
   ],
-  "lvlm_summary": {
-    "model": "glm-4.6v-flash",
-    "prompt_version": "v1_summary",
-    "frame_count": 10,
-    "text": "\nThe video is set in a suburban neighborhood, with a car moving through residential streets (houses, driveways, lawns) during what appears to be dusk or early evening. The main entities are a man (wearing a dark jacket and light-colored shirt) and a woman (in a pink blouse, necklace, and bracelet, driving the car). The man is in the car, often smiling or speaking, while the woman drives, holding the steering wheel and appearing focused. The emotional tone is casual and relaxed, with the man showing contentment or amusement, and the woman engaged in driving. They are traveling together in the car, navigating the neighborhood.",
-    "usage": {
-      "prompt_tokens": 12041,
-      "completion_tokens": 427,
-      "total_tokens": 12468
-    }
-  },
-  "lvlm_structured_raw": {
-    "model": "glm-4.6v-flash",
-    "prompt_version": "v1_structured",
-    "frame_count": 10,
-    "text": "\n{\n  \"setting\": \"Suburban residential neighborhood, viewed from inside a car\",\n  \"main_entities\": [\"Man\", \"Woman\"],\n  \"actions\": [\"Driving\", \"Smiling\", \"Speaking\"],\n  \"emotion_words\": [\"Content\", \"Amused\", \"Focused\"],\n  \"interaction_level\": 0,\n  \"summary\": \"A man is shown driving through a suburban neighborhood, appearing cheerful and engaged, with occasional scenes of a woman driving, all set in residential areas at different times of day.\"\n}",
-    "usage": {
-      "prompt_tokens": 12096,
-      "completion_tokens": 440,
-      "total_tokens": 12536
-    }
-  },
-  "lvlm_structured": {
-    "setting": "Suburban residential neighborhood, viewed from inside a car",
-    "main_entities": [
-      "Man",
-      "Woman"
-    ],
-    "actions": [
-      "Driving",
-      "Smiling",
-      "Speaking"
-    ],
-    "emotion_words": [
-      "Content",
-      "Amused",
-      "Focused"
-    ],
-    "interaction_level": 0,
-    "summary": "A man is shown driving through a suburban neighborhood, appearing cheerful and engaged, with occasional scenes of a woman driving, all set in residential areas at different times of day."
-  },
-  "lvlm_error": null
+  "lvlm_summary": null,
+  "lvlm_structured_raw": null,
+  "lvlm_structured": null,
+  "lvlm_error": "LVLM not run in gcp_tuning mode"
 }

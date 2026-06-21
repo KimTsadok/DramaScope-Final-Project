@@ -1,0 +1,34 @@
+{
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09248.mp4",
+  "duration_seconds": 10.291666,
+  "shots": {
+    "count": 1,
+    "avg_shot_length": 10.291666,
+    "shot_variance": 0.0,
+    "shot_lengths": [
+      10.291666
+    ]
+  },
+  "labels": {
+    "unique": [
+      "official"
+    ],
+    "count_unique": 1
+  },
+  "objects": {
+    "total_tracks": 3,
+    "object_frequency_distribution": {
+      "person": 1,
+      "clothing": 1,
+      "shirt": 1
+    },
+    "top_objects": [
+      "person",
+      "clothing",
+      "shirt"
+    ],
+    "object_entropy": 1.584963,
+    "human_presence_ratio": 0.995951,
+    "interaction_density_tracks_per_sec": 0.291498
+  }
+}
