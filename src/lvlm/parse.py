@@ -102,6 +102,7 @@ def normalize_structured_fields(data: Dict[str, Any]) -> Dict[str, Any]:
         "actions": ensure_string_list(data.get("actions")),
         "emotion_words": ensure_string_list(data.get("emotion_words")),
         "interaction_level": coerce_interaction_level(data.get("interaction_level")),
+        "interaction_evidence": ensure_string(data.get("interaction_evidence")),
         "summary": ensure_string(data.get("summary")),
     }
 

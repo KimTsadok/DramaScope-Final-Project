@@ -1,0 +1,34 @@
+{
+  "video_id": "ACCEDE09245",
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09245.mp4",
+  "features_raw": {
+    "shot_frequency": 0.1920000122880008,
+    "object_entropy": 1.521928,
+    "interaction_density": 0.48,
+    "human_presence_ratio": 0.984
+  },
+  "features_norm": {
+    "shot_frequency": 0.1920000122880008,
+    "object_entropy": 0.380482,
+    "interaction_density": 0.096,
+    "human_presence_ratio": 0.984
+  },
+  "scene_complexity_score": 0.31796870430080026,
+  "scene_complexity_breakdown": {
+    "shot_frequency": 0.06720000430080027,
+    "object_entropy": 0.13316869999999997,
+    "interaction_density": 0.019200000000000002,
+    "human_presence_ratio": 0.0984
+  },
+  "narrative_phase": "Static",
+  "phase_reasons": [
+    "Normalized values -> shot_frequency=0.1920, object_entropy=0.3805, interaction_density=0.0960",
+    "Dense rule not satisfied: object_entropy > 0.7 is False, interaction_density > 0.65 is False",
+    "Dynamic rule not satisfied: shot_frequency > 0.35 is False, interaction_density <= 0.75 is True",
+    "Static rule satisfied: shot_frequency < 0.2 is True, interaction_density < 0.3 is True, object_entropy < 0.5 is True"
+  ],
+  "lvlm_summary": null,
+  "lvlm_structured_raw": null,
+  "lvlm_structured": null,
+  "lvlm_error": "LVLM not run in gcp_tuning mode"
+}

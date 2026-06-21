@@ -1,0 +1,39 @@
+{
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09242.mp4",
+  "duration_seconds": 9.75,
+  "shots": {
+    "count": 2,
+    "avg_shot_length": 4.854166,
+    "shot_variance": 1.128907,
+    "shot_lengths": [
+      3.791666,
+      5.916667
+    ]
+  },
+  "labels": {
+    "unique": [],
+    "count_unique": 0
+  },
+  "objects": {
+    "total_tracks": 7,
+    "object_frequency_distribution": {
+      "person": 2,
+      "packaged goods": 1,
+      "glasses": 1,
+      "outerwear": 1,
+      "home appliance": 1,
+      "tie": 1
+    },
+    "top_objects": [
+      "person",
+      "packaged goods",
+      "glasses",
+      "outerwear",
+      "home appliance",
+      "tie"
+    ],
+    "object_entropy": 2.521641,
+    "human_presence_ratio": 0.807692,
+    "interaction_density_tracks_per_sec": 0.717949
+  }
+}

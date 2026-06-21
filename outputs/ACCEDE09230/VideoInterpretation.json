@@ -8,64 +8,25 @@
     "human_presence_ratio": 0.932039
   },
   "features_norm": {
-    "shot_frequency": 0.23300971778678517,
+    "shot_frequency": 0.46601943557357034,
     "object_entropy": 0.80921225,
-    "interaction_density": 0.3262136,
+    "interaction_density": 0.6524272,
     "human_presence_ratio": 0.932039
   },
-  "scene_complexity_score": 0.5232243087253747,
+  "scene_complexity_score": 0.6700204299507495,
   "scene_complexity_breakdown": {
-    "shot_frequency": 0.0815534012253748,
+    "shot_frequency": 0.1631068024507496,
     "object_entropy": 0.28322428749999995,
-    "interaction_density": 0.06524272,
+    "interaction_density": 0.13048544,
     "human_presence_ratio": 0.0932039
   },
-  "narrative_phase": "Calm",
+  "narrative_phase": "Dense",
   "phase_reasons": [
-    "Normalized values -> shot_frequency=0.2330, object_entropy=0.8092, interaction_density=0.3262",
-    "Dense rule not satisfied: object_entropy > 0.65 is True, interaction_density > 0.65 is False",
-    "Dynamic rule not satisfied: shot_frequency > 0.65 is False, interaction_density <= 0.65 is True",
-    "Static rule not satisfied: shot_frequency < 0.35 is True, interaction_density < 0.35 is True, object_entropy < 0.35 is False",
-    "Defaulted to Calm"
+    "Normalized values -> shot_frequency=0.4660, object_entropy=0.8092, interaction_density=0.6524",
+    "Dense rule satisfied: object_entropy > 0.7 is True, interaction_density > 0.65 is True"
   ],
-  "lvlm_summary": {
-    "model": "glm-4.6v-flash",
-    "prompt_version": "v1_summary",
-    "frame_count": 8,
-    "text": "\nThe video takes place in a cozy living room with a brown leather recliner, a floral-patterned couch, side tables (one with a green ceramic frog and lamp, another with a lamp), and framed artwork on the walls. A man in a light blue uniform (likely a public servant) is seated in the recliner, reading a magazine. A woman in a pink top and pearl necklace sits on the couch, holding and reading a letter or card, appearing cheerful as she does so. The man remains focused on his magazine throughout, while the woman engages with the letter, showing positive emotion. They are in the same room but engaged in separate, calm activities, with the woman’s interaction with the letter conveying happiness or contentment.",
-    "usage": {
-      "prompt_tokens": 9645,
-      "completion_tokens": 508,
-      "total_tokens": 10153
-    }
-  },
-  "lvlm_structured_raw": {
-    "model": "glm-4.6v-flash",
-    "prompt_version": "v1_structured",
-    "frame_count": 8,
-    "text": "\n{\n  \"setting\": \"A living room with a brown leather recliner, floral-patterned couch, side tables, lamps, and wall art\",\n  \"main_entities\": [\"Man in police uniform\", \"Woman in pink top\"],\n  \"actions\": [\"Reading a magazine\", \"Reading a letter\"],\n  \"emotion_words\": [\"Focused\", \"Smiling\", \"Calm\"],\n  \"interaction_level\": 0,\n  \"summary\": \"A man in a police uniform reads a magazine while a woman in a pink top reads a letter, both in a cozy living room.\"\n}",
-    "usage": {
-      "prompt_tokens": 9700,
-      "completion_tokens": 559,
-      "total_tokens": 10259
-    }
-  },
-  "lvlm_structured": {
-    "setting": "A living room with a brown leather recliner, floral-patterned couch, side tables, lamps, and wall art",
-    "main_entities": [
-      "Man in police uniform",
-      "Woman in pink top"
-    ],
-    "actions": [
-      "Reading a magazine",
-      "Reading a letter"
-    ],
-    "emotion_words": [
-      "Focused",
-      "Smiling",
-      "Calm"
-    ],
-    "interaction_level": 0,
-    "summary": "A man in a police uniform reads a magazine while a woman in a pink top reads a letter, both in a cozy living room."
-  }
+  "lvlm_summary": null,
+  "lvlm_structured_raw": null,
+  "lvlm_structured": null,
+  "lvlm_error": "LVLM not run in gcp_tuning mode"
 }

@@ -1,0 +1,50 @@
+{
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09235.mp4",
+  "duration_seconds": 11.208333,
+  "shots": {
+    "count": 2,
+    "avg_shot_length": 5.583334,
+    "shot_variance": 2.006944,
+    "shot_lengths": [
+      7.0,
+      4.166667
+    ]
+  },
+  "labels": {
+    "unique": [
+      "food",
+      "meal"
+    ],
+    "count_unique": 2
+  },
+  "objects": {
+    "total_tracks": 32,
+    "object_frequency_distribution": {
+      "food": 9,
+      "tableware": 8,
+      "person": 3,
+      "necklace": 3,
+      "clothing": 3,
+      "packaged goods": 2,
+      "top": 1,
+      "glasses": 1,
+      "bowtie": 1,
+      "outerwear": 1
+    },
+    "top_objects": [
+      "food",
+      "tableware",
+      "person",
+      "necklace",
+      "clothing",
+      "packaged goods",
+      "top",
+      "glasses",
+      "bowtie",
+      "outerwear"
+    ],
+    "object_entropy": 2.850188,
+    "human_presence_ratio": 0.881041,
+    "interaction_density_tracks_per_sec": 2.855019
+  }
+}

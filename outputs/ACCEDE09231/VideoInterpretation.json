@@ -8,64 +8,28 @@
     "human_presence_ratio": 0.981308
   },
   "features_norm": {
-    "shot_frequency": 0.1121495410952928,
+    "shot_frequency": 0.2242990821905856,
     "object_entropy": 0.5561505,
-    "interaction_density": 0.1794393,
+    "interaction_density": 0.3588786,
     "human_presence_ratio": 0.981308
   },
-  "scene_complexity_score": 0.3679236743833525,
+  "scene_complexity_score": 0.443063873766705,
   "scene_complexity_breakdown": {
-    "shot_frequency": 0.03925233938335248,
+    "shot_frequency": 0.07850467876670496,
     "object_entropy": 0.194652675,
-    "interaction_density": 0.03588786,
+    "interaction_density": 0.07177572,
     "human_presence_ratio": 0.0981308
   },
   "narrative_phase": "Calm",
   "phase_reasons": [
-    "Normalized values -> shot_frequency=0.1121, object_entropy=0.5562, interaction_density=0.1794",
-    "Dense rule not satisfied: object_entropy > 0.65 is False, interaction_density > 0.65 is False",
-    "Dynamic rule not satisfied: shot_frequency > 0.65 is False, interaction_density <= 0.65 is True",
-    "Static rule not satisfied: shot_frequency < 0.35 is True, interaction_density < 0.35 is True, object_entropy < 0.35 is False",
+    "Normalized values -> shot_frequency=0.2243, object_entropy=0.5562, interaction_density=0.3589",
+    "Dense rule not satisfied: object_entropy > 0.7 is False, interaction_density > 0.65 is False",
+    "Dynamic rule not satisfied: shot_frequency > 0.35 is False, interaction_density <= 0.75 is True",
+    "Static rule not satisfied: shot_frequency < 0.2 is False, interaction_density < 0.3 is False, object_entropy < 0.5 is False",
     "Defaulted to Calm"
   ],
-  "lvlm_summary": {
-    "model": "glm-4.6v-flash",
-    "prompt_version": "v1_summary",
-    "frame_count": 8,
-    "text": "\nThe video depicts a sequence of frames from inside a car moving through a suburban neighborhood during late afternoon or early evening. The primary setting is residential, with houses, trees, and lawns visible outside the windows.  \n\nMain entities: A woman (driver, wearing a pink top) and a man (passenger, in a dark blazer and yellow shirt).  \n\nVisible actions: The woman is actively driving, holding the steering wheel with varying hand positions (e.g., both hands on the wheel, or one hand slightly raised in one frame). The man is seated in the passenger seat, looking outward or toward the driver.  \n\nEmotional tone: The woman appears focused and at times concerned or attentive, while the man has a neutral to mildly concerned expression.  \n\nInteraction: No direct interaction is shown; the frames emphasize the driver navigating and the passenger observing the environment.",
-    "usage": {
-      "prompt_tokens": 9645,
-      "completion_tokens": 595,
-      "total_tokens": 10240
-    }
-  },
-  "lvlm_structured_raw": {
-    "model": "glm-4.6v-flash",
-    "prompt_version": "v1_structured",
-    "frame_count": 8,
-    "text": "\n{\n  \"setting\": \"A residential neighborhood, viewed from inside a car\",\n  \"main_entities\": [\"A woman driving\", \"A man in the passenger seat\"],\n  \"actions\": [\"Driving (holding the steering wheel)\", \"Sitting in the passenger seat\"],\n  \"emotion_words\": [\"Focused\", \"Neutral\", \"Calm\"],\n  \"interaction_level\": 0,\n  \"summary\": \"A woman drives through a residential area while a man sits in the passenger seat of the car, with the woman focused on driving and the man observing the surroundings.\"\n}",
-    "usage": {
-      "prompt_tokens": 9700,
-      "completion_tokens": 511,
-      "total_tokens": 10211
-    }
-  },
-  "lvlm_structured": {
-    "setting": "A residential neighborhood, viewed from inside a car",
-    "main_entities": [
-      "A woman driving",
-      "A man in the passenger seat"
-    ],
-    "actions": [
-      "Driving (holding the steering wheel)",
-      "Sitting in the passenger seat"
-    ],
-    "emotion_words": [
-      "Focused",
-      "Neutral",
-      "Calm"
-    ],
-    "interaction_level": 0,
-    "summary": "A woman drives through a residential area while a man sits in the passenger seat of the car, with the woman focused on driving and the man observing the surroundings."
-  }
+  "lvlm_summary": null,
+  "lvlm_structured_raw": null,
+  "lvlm_structured": null,
+  "lvlm_error": "LVLM not run in gcp_tuning mode"
 }

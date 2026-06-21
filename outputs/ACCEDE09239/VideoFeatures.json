@@ -1,0 +1,41 @@
+{
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09239.mp4",
+  "duration_seconds": 9.666666,
+  "shots": {
+    "count": 4,
+    "avg_shot_length": 2.385416,
+    "shot_variance": 0.837132,
+    "shot_lengths": [
+      1.041666,
+      3.625,
+      2.416666,
+      2.458333
+    ]
+  },
+  "labels": {
+    "unique": [
+      "official"
+    ],
+    "count_unique": 1
+  },
+  "objects": {
+    "total_tracks": 13,
+    "object_frequency_distribution": {
+      "person": 4,
+      "tie": 3,
+      "shirt": 3,
+      "glasses": 2,
+      "top": 1
+    },
+    "top_objects": [
+      "person",
+      "tie",
+      "shirt",
+      "glasses",
+      "top"
+    ],
+    "object_entropy": 2.199688,
+    "human_presence_ratio": 0.956897,
+    "interaction_density_tracks_per_sec": 1.344828
+  }
+}

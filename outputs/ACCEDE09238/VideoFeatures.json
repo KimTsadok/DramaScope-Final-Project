@@ -1,0 +1,49 @@
+{
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09238.mp4",
+  "duration_seconds": 11.25,
+  "shots": {
+    "count": 2,
+    "avg_shot_length": 5.604166,
+    "shot_variance": 2.441405,
+    "shot_lengths": [
+      7.166666,
+      4.041667
+    ]
+  },
+  "labels": {
+    "unique": [],
+    "count_unique": 0
+  },
+  "objects": {
+    "total_tracks": 28,
+    "object_frequency_distribution": {
+      "person": 8,
+      "packaged goods": 4,
+      "chair": 3,
+      "furniture": 3,
+      "curtain": 2,
+      "suit": 2,
+      "table": 1,
+      "top": 1,
+      "pants": 1,
+      "dress": 1,
+      "clothing": 1,
+      "outerwear": 1
+    },
+    "top_objects": [
+      "person",
+      "packaged goods",
+      "chair",
+      "furniture",
+      "curtain",
+      "suit",
+      "table",
+      "top",
+      "pants",
+      "dress"
+    ],
+    "object_entropy": 3.182006,
+    "human_presence_ratio": 0.966667,
+    "interaction_density_tracks_per_sec": 2.488889
+  }
+}
