@@ -32,36 +32,39 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "**Setting:** A quiet suburban or campus street with a grassy verge, sidewalk, parked cars (including a silver pickup truck), brick buildings, and trees. The scene is lit by late afternoon/early evening light.\n\n**People:**\n- **Foreground:** A person in a brown jacket and khaki pants holding papers, partially visible on the left side of the frame\n- **Background:** A uniformed officer (appears to be parking enforcement) standing near a parking meter\n\n**Visible Actions:**\n- The foreground person remains relatively stationary, holding documents\n- The officer stands by the meter, appears to be writing or checking something, then begins walking slowly toward the camera/left side of the frame in the later frames\n- A black car drives past the silver truck and exits the frame to the right\n\n**Emotional Tone:** Calm, routine, observational - no apparent tension or urgency\n\n**Interaction:** No direct interaction between the two individuals; they appear to be engaged in separate activities, though the person in the foreground may be observing the officer's actions",
+    "text": "**Setting:** A quiet residential street with brick houses, sidewalks, grassy verges, and parked cars, filmed during late afternoon/early evening.\n\n**People:** Two individuals are visible - one in the foreground (partial view: brown jacket, khaki pants, holding papers) who remains stationary, and a uniformed officer (dark blue uniform, cap) standing near a parking meter on the sidewalk.\n\n**Actions:** The officer is initially standing still near the meter, looking down at something in their hands (possibly a notepad or device). After several seconds, the officer begins walking slowly toward the camera/left along the sidewalk. The person in the foreground remains motionless throughout.\n\n**Emotional tone:** Calm, routine, observational. No apparent tension or urgency.\n\n**Interaction:** There is no direct interaction between the two individuals; the officer appears focused on their task while the foreground person observes or waits.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 215,
-      "total_tokens": 8739
+      "completion_tokens": 183,
+      "total_tokens": 8707
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"outdoor sidewalk and street with parked cars, trees, and brick buildings\",\n  \"main_entities\": [\"man in brown jacket holding papers\", \"police officer in dark uniform\"],\n  \"actions\": [\"standing still\", \"writing or checking device\", \"walking forward\"],\n  \"emotion_words\": [\"neutral\", \"routine\", \"calm\"],\n  \"interaction_level\": 0,\n  \"interaction_evidence\": \"The two individuals are separated by a significant distance with no visible eye contact, gestures, or communicative cues between them. The officer is focused on a handheld device or notepad while the man in the foreground remains stationary holding papers. They appear to be engaged in independent activities without any observable social connection.\",\n  \"summary\": \"A man in a brown jacket stands in the foreground holding papers while a police officer stands near a parking meter on the street, appearing to write a ticket or check a device. A white pickup truck drives past, and the officer eventually begins walking toward the camera as the scene remains calm and routine.\"\n}",
+    "text": "{\n  \"setting\": \"outdoor sidewalk and street in a residential or campus area\",\n  \"main_entities\": [\"person with papers\", \"police officer\", \"white pickup truck\", \"black car\"],\n  \"actions\": [\"standing\", \"holding papers\", \"writing on notepad\", \"walking\"],\n  \"emotion_words\": [\"neutral\", \"routine\", \"calm\"],\n  \"interaction_level\": 0,\n  \"interaction_evidence\": \"The two individuals are separated by a significant distance and appear to be engaged in independent activities. The person in the foreground is holding papers and standing still, while the officer is focused on writing at the parking meter. There are no visible gestures, eye contact, or communicative cues between them.\",\n  \"summary\": \"A person stands in the foreground holding papers while a police officer writes at a parking meter near parked vehicles along a tree-lined street.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 216,
-      "total_tokens": 9124
+      "completion_tokens": 183,
+      "total_tokens": 9091
     }
   },
   "lvlm_structured": {
-    "setting": "outdoor sidewalk and street with parked cars, trees, and brick buildings",
+    "setting": "outdoor sidewalk and street in a residential or campus area",
     "main_entities": [
-      "man in brown jacket holding papers",
-      "police officer in dark uniform"
+      "person with papers",
+      "police officer",
+      "white pickup truck",
+      "black car"
     ],
     "actions": [
-      "standing still",
-      "writing or checking device",
-      "walking forward"
+      "standing",
+      "holding papers",
+      "writing on notepad",
+      "walking"
     ],
     "emotion_words": [
       "neutral",
@@ -69,8 +72,8 @@
       "calm"
     ],
     "interaction_level": 0,
-    "interaction_evidence": "The two individuals are separated by a significant distance with no visible eye contact, gestures, or communicative cues between them. The officer is focused on a handheld device or notepad while the man in the foreground remains stationary holding papers. They appear to be engaged in independent activities without any observable social connection.",
-    "summary": "A man in a brown jacket stands in the foreground holding papers while a police officer stands near a parking meter on the street, appearing to write a ticket or check a device. A white pickup truck drives past, and the officer eventually begins walking toward the camera as the scene remains calm and routine."
+    "interaction_evidence": "The two individuals are separated by a significant distance and appear to be engaged in independent activities. The person in the foreground is holding papers and standing still, while the officer is focused on writing at the parking meter. There are no visible gestures, eye contact, or communicative cues between them.",
+    "summary": "A person stands in the foreground holding papers while a police officer writes at a parking meter near parked vehicles along a tree-lined street."
   },
   "lvlm_error": null
 }

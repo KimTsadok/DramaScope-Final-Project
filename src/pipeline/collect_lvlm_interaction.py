@@ -35,6 +35,12 @@ def safe_int(value: Any) -> int | None:
         if value is None:
             return None
 
+        if isinstance(value, bool):
+            return None
+
+        if isinstance(value, float) and not value.is_integer():
+            return None
+
         # CHANGED:
         # Explicitly support placeholder strings used in the Markdown table.
         if isinstance(value, str):
@@ -58,6 +64,14 @@ def safe_int(value: Any) -> int | None:
 
     except (TypeError, ValueError):
         return None
+
+
+def safe_interaction_level(value: Any) -> int | None:
+    """Return an interaction level only when it is an integer in [0, 3]."""
+    level = safe_int(value)
+    if level is None or not 0 <= level <= 3:
+        return None
+    return level
 
 
 def extract_video_id(
@@ -191,6 +205,12 @@ def parse_expected_levels_from_section(
         if expected_value is None:
             continue
 
+        if not 0 <= expected_value <= 3:
+            raise ValueError(
+                f"Invalid expected interaction level for {video_id!r} "
+                f"in {heading!r}: {expected_value}. Expected 0 through 3."
+            )
+
         expected_levels[video_id] = expected_value
 
     return expected_levels
@@ -264,6 +284,12 @@ def build_interpretation_file_map(
             data,
             file_path,
         )
+        existing_path = result.get(video_id)
+        if existing_path is not None and existing_path != file_path:
+            raise ValueError(
+                f"Duplicate video_id {video_id!r} found in both "
+                f"{existing_path} and {file_path}."
+            )
         result[video_id] = file_path
 
     return result
@@ -379,15 +405,20 @@ def collect_eval_rows(
         data = load_json(file_path)
         structured = get_lvlm_structured(data)
 
-        predicted = safe_int(
-            structured.get("interaction_level")
-        )
+        predicted_value = structured.get("interaction_level")
+        predicted = safe_interaction_level(predicted_value)
 
         evidence = (
             structured.get("interaction_evidence")
             or structured.get("summary")
             or "N/A"
         )
+
+        notes = build_auto_note(expected, predicted)
+        if safe_int(predicted_value) is not None and predicted is None:
+            notes = (
+                "Invalid LVLM interaction_level; expected a value from 0 to 3"
+            )
 
         rows.append(
             {
@@ -403,10 +434,7 @@ def collect_eval_rows(
                 "evidence": sanitize_markdown_cell(
                     evidence
                 ),
-                "notes": build_auto_note(
-                    expected,
-                    predicted,
-                ),
+                "notes": notes,
             }
         )
 

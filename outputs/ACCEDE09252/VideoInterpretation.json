@@ -32,24 +32,24 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "**Setting:** A dimly lit living room at night, with a desk, lamp, and couch visible.\n\n**People:** A man (seated at a desk) and a woman (asleep on the couch under a blanket).\n\n**Actions:** The man types on a blue typewriter, removes the paper, and reads it with a somber expression. The woman remains sleeping throughout.\n\n**Emotional Tone:** Quiet, intimate, and melancholic.\n\n**Interaction:** None—the man is focused on his writing while the woman sleeps, suggesting solitude or contemplation.",
+    "text": "**Setting:** A dimly lit living room at night, with a desk, typewriter, lamp, and couch visible.\n\n**People:** A man (seated at desk) and a woman (asleep on couch under a blanket).\n\n**Actions:** The man types on a blue typewriter, removes the paper, and reads it with a somber expression. The woman remains sleeping throughout.\n\n**Emotional Tone:** Quiet, intimate, melancholic, and contemplative.\n\n**Interaction:** None—the man is focused on his writing while the woman sleeps, suggesting a moment of solitary work or reflection.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 114,
-      "total_tokens": 8638
+      "completion_tokens": 121,
+      "total_tokens": 8645
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"dimly lit living room or home office at night\",\n  \"main_entities\": [\"man\", \"woman\"],\n  \"actions\": [\"typing on a typewriter\", \"reading a document\", \"sleeping on the couch\", \"looking down with a somber expression\"],\n  \"emotion_words\": [\"somber\", \"contemplative\", \"quiet\", \"focused\", \"restful\"],\n  \"interaction_level\": 0,\n  \"interaction_evidence\": \"The man is focused on his work at the desk, and the woman is asleep on the couch. There are no visible social cues such as eye contact, gestures, or communication between them. They appear to be engaged in independent activities in the same space.\",\n  \"summary\": \"In a dimly lit room at night, a man sits at a desk typing on a blue typewriter and reviewing documents while a woman sleeps on a nearby couch under a blanket. The scene conveys a quiet, solitary atmosphere as each person remains absorbed in their own activity.\"\n}",
+    "text": "{\n  \"setting\": \"dimly lit living room or home office at night\",\n  \"main_entities\": [\"man\", \"woman\"],\n  \"actions\": [\"typing on a typewriter\", \"reading a document\", \"sleeping on a couch\", \"looking down with a somber expression\"],\n  \"emotion_words\": [\"somber\", \"contemplative\", \"focused\", \"peaceful\", \"solitary\"],\n  \"interaction_level\": 0,\n  \"interaction_evidence\": \"The man is completely absorbed in his work at the desk, typing and reading documents, while the woman is asleep on the couch. There is no eye contact, physical proximity, or any communicative gesture between them; they are engaged in entirely separate, independent activities.\",\n  \"summary\": \"In a dark, quiet room, a man works intently at a desk using a blue typewriter while a woman sleeps on a nearby couch, creating an atmosphere of solitary focus and domestic stillness.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 212,
-      "total_tokens": 9120
+      "completion_tokens": 200,
+      "total_tokens": 9108
     }
   },
   "lvlm_structured": {
@@ -61,19 +61,19 @@
     "actions": [
       "typing on a typewriter",
       "reading a document",
-      "sleeping on the couch",
+      "sleeping on a couch",
       "looking down with a somber expression"
     ],
     "emotion_words": [
       "somber",
       "contemplative",
-      "quiet",
       "focused",
-      "restful"
+      "peaceful",
+      "solitary"
     ],
     "interaction_level": 0,
-    "interaction_evidence": "The man is focused on his work at the desk, and the woman is asleep on the couch. There are no visible social cues such as eye contact, gestures, or communication between them. They appear to be engaged in independent activities in the same space.",
-    "summary": "In a dimly lit room at night, a man sits at a desk typing on a blue typewriter and reviewing documents while a woman sleeps on a nearby couch under a blanket. The scene conveys a quiet, solitary atmosphere as each person remains absorbed in their own activity."
+    "interaction_evidence": "The man is completely absorbed in his work at the desk, typing and reading documents, while the woman is asleep on the couch. There is no eye contact, physical proximity, or any communicative gesture between them; they are engaged in entirely separate, independent activities.",
+    "summary": "In a dark, quiet room, a man works intently at a desk using a blue typewriter while a woman sleeps on a nearby couch, creating an atmosphere of solitary focus and domestic stillness."
   },
   "lvlm_error": null
 }

@@ -32,24 +32,24 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "**Setting:** An outdoor parking lot or roadside area with grass, trees with autumn foliage, and other parked vehicles visible in the background during daylight hours.\n\n**Main Entity:** A uniformed officer wearing a dark jacket with a \"Royal Oak Mobile Patrol\" patch on the sleeve and a baseball cap.\n\n**Visible Actions:** The officer is writing on a ticket or citation pad, reviewing the document, then placing a red violation notice under the windshield wiper of a silver/white vehicle.\n\n**Emotional Tone:** Neutral, procedural, and official—depicting routine enforcement activity without dramatic emotion.\n\n**Interaction:** No direct interaction between people is shown; the officer interacts only with the vehicle by issuing and affixing the parking violation notice.",
+    "text": "The video depicts a parking enforcement officer from the Royal Oak Mobile Patrol issuing a traffic violation ticket to a silver SUV parked in an outdoor lot. The setting is a grassy area with trees showing autumn foliage and other vehicles in the background. The officer, wearing a dark uniform jacket with a visible patch and a cap, is shown writing on a notepad, reviewing the completed citation, and then placing a red violation notice under the vehicle's windshield wiper. The tone is procedural and matter-of-fact, documenting the standard administrative process of issuing a parking ticket without any interpersonal interaction or emotional display.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 148,
-      "total_tokens": 8672
+      "completion_tokens": 120,
+      "total_tokens": 8644
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"outdoor parking lot with trees and grass\",\n  \"main_entities\": [\"parking enforcement officer\", \"silver car\", \"parking ticket\"],\n  \"actions\": [\"writing on a notepad\", \"placing a red violation notice on the car's windshield\"],\n  \"emotion_words\": [\"focused\", \"professional\", \"routine\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The officer is engaged in a task-based interaction with the vehicle, showing focused attention and coordinated action to issue and place the ticket.\",\n  \"summary\": \"A Royal Oak Mobile Patrol officer writes a ticket and places a red violation notice on the windshield of a silver car in an outdoor lot.\"\n}",
+    "text": "{\n  \"setting\": \"outdoor parking lot with trees and grass\",\n  \"main_entities\": [\"parking enforcement officer\", \"silver car\", \"parking ticket\"],\n  \"actions\": [\"writing on a notepad\", \"reviewing the ticket\", \"placing the ticket under the windshield wiper\"],\n  \"emotion_words\": [\"focused\", \"professional\", \"routine\"],\n  \"interaction_level\": 0,\n  \"interaction_evidence\": \"The officer is performing a task directed at an inanimate object (the car) without any other people present or visible social cues.\",\n  \"summary\": \"A Royal Oak Mobile Patrol officer writes and issues a parking violation notice to a silver car in a lot.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 147,
-      "total_tokens": 9055
+      "completion_tokens": 145,
+      "total_tokens": 9053
     }
   },
   "lvlm_structured": {
@@ -61,16 +61,17 @@
     ],
     "actions": [
       "writing on a notepad",
-      "placing a red violation notice on the car's windshield"
+      "reviewing the ticket",
+      "placing the ticket under the windshield wiper"
     ],
     "emotion_words": [
       "focused",
       "professional",
       "routine"
     ],
-    "interaction_level": 1,
-    "interaction_evidence": "The officer is engaged in a task-based interaction with the vehicle, showing focused attention and coordinated action to issue and place the ticket.",
-    "summary": "A Royal Oak Mobile Patrol officer writes a ticket and places a red violation notice on the windshield of a silver car in an outdoor lot."
+    "interaction_level": 0,
+    "interaction_evidence": "The officer is performing a task directed at an inanimate object (the car) without any other people present or visible social cues.",
+    "summary": "A Royal Oak Mobile Patrol officer writes and issues a parking violation notice to a silver car in a lot."
   },
   "lvlm_error": null
 }

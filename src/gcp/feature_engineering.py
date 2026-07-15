@@ -90,21 +90,18 @@ def compute_video_duration_seconds(annotations) -> float:
     """
     Estimate video duration.
 
-    Prefer the latest shot end time.
-    If no shots exist, fall back to object segment end times.
+    Use the latest available end time across shot and object annotations.
     """
     shot_ends = [
         duration_to_seconds(shot.end_time_offset)
         for shot in getattr(annotations, "shot_annotations", [])
     ]
-    if shot_ends:
-        return max(shot_ends)
+    object_ends = [
+        duration_to_seconds(obj.segment.end_time_offset)
+        for obj in getattr(annotations, "object_annotations", [])
+    ]
 
-    object_ends = []
-    for obj in getattr(annotations, "object_annotations", []):
-        object_ends.append(duration_to_seconds(obj.segment.end_time_offset))
-
-    return max(object_ends) if object_ends else 0.0
+    return max(shot_ends + object_ends, default=0.0)
 
 
 def compute_features(annotations, video_uri: str) -> dict:

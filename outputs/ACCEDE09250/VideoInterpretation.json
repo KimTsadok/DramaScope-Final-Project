@@ -32,24 +32,24 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "The video takes place in a domestic kitchen with wooden cabinets, a sink, and rooster-themed wall decor. A woman in a yellow robe is preparing food at the counter, initially holding a plastic bag and then using a ladle to serve food into a dish. A man wearing a dark jacket with a circular patch on the sleeve stands nearby, observing her. The interaction appears calm and routine, with the woman focused on her task while the man watches her with a neutral, attentive expression, suggesting a quiet, everyday moment between the two individuals.",
+    "text": "In a domestic kitchen with rooster-themed wall art, a woman in a yellow robe interacts briefly with a man in a dark uniform (with a visible shoulder patch) before turning to the counter. She proceeds to serve food from a pan into a dish using a ladle, while the man watches her with a subtle, knowing smile. The scene has a quiet, observational tone, suggesting a moment of routine domesticity under the watchful presence of the uniformed figure.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 110,
-      "total_tokens": 8634
+      "completion_tokens": 95,
+      "total_tokens": 8619
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"kitchen\",\n  \"main_entities\": [\"man in uniform\", \"woman\"],\n  \"actions\": [\"looking up\", \"smiling\", \"turning away\", \"serving food\", \"observing\"],\n  \"emotion_words\": [\"amused\", \"attentive\", \"content\", \"calm\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The woman looks directly at the man and smiles, indicating she is aware of his presence and responding to him. The man is shown observing her with a slight smile. While the woman then turns to focus on serving food, the man remains present and attentive, suggesting a shared social situation with one-sided or passive observation.\",\n  \"summary\": \"In a kitchen setting, a woman in a yellow robe smiles at a uniformed man before turning to serve food from a pan into a bowl. The man watches her attentively, creating a quiet, domestic scene with subtle social connection.\"\n}",
+    "text": "{\n  \"setting\": \"kitchen\",\n  \"main_entities\": [\"man in uniform\", \"woman\"],\n  \"actions\": [\"looking up\", \"smiling\", \"turning away\", \"serving food\", \"observing\", \"smiling slightly\"],\n  \"emotion_words\": [\"amused\", \"content\", \"attentive\", \"pleasant\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The woman looks up at the man and smiles before turning to her task, while the man observes her with a slight smile, indicating mutual awareness and a subtle social connection.\",\n  \"summary\": \"In a kitchen, a woman in a yellow robe smiles at a uniformed man, then turns to serve food from a pan while he watches her with an attentive expression.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 201,
-      "total_tokens": 9109
+      "completion_tokens": 163,
+      "total_tokens": 9071
     }
   },
   "lvlm_structured": {
@@ -63,17 +63,18 @@
       "smiling",
       "turning away",
       "serving food",
-      "observing"
+      "observing",
+      "smiling slightly"
     ],
     "emotion_words": [
       "amused",
-      "attentive",
       "content",
-      "calm"
+      "attentive",
+      "pleasant"
     ],
     "interaction_level": 1,
-    "interaction_evidence": "The woman looks directly at the man and smiles, indicating she is aware of his presence and responding to him. The man is shown observing her with a slight smile. While the woman then turns to focus on serving food, the man remains present and attentive, suggesting a shared social situation with one-sided or passive observation.",
-    "summary": "In a kitchen setting, a woman in a yellow robe smiles at a uniformed man before turning to serve food from a pan into a bowl. The man watches her attentively, creating a quiet, domestic scene with subtle social connection."
+    "interaction_evidence": "The woman looks up at the man and smiles before turning to her task, while the man observes her with a slight smile, indicating mutual awareness and a subtle social connection.",
+    "summary": "In a kitchen, a woman in a yellow robe smiles at a uniformed man, then turns to serve food from a pan while he watches her with an attentive expression."
   },
   "lvlm_error": null
 }

@@ -19,6 +19,7 @@ from src.gcp.upload import (
 )
 from src.gcp.analyze import analyze_video_uri
 from src.gcp.feature_engineering import compute_features, save_json
+from src.config import OUTPUT_FILES
 
 def extract_video_id(video_uri: str) -> str:
     """
@@ -37,7 +38,7 @@ def build_features_output_path(video_id: str) -> Path:
     Example:
     outputs/ACCEDE09230/VideoFeatures.json
     """
-    return Path("outputs") / video_id / "VideoFeatures.json"
+    return Path("outputs") / video_id / OUTPUT_FILES.raw_features_filename
 
 
 def parse_args() -> argparse.Namespace:

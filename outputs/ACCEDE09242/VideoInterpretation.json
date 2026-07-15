@@ -32,44 +32,44 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "The video opens with a close-up of a booklet titled \"Coping With Terminal Illness,\" featuring an illustration of two people embracing, set against a brown couch background. The scene then cuts to a middle-aged man with graying hair, a goatee, and glasses, wearing a white lab coat over a shirt and red tie. He appears to be in a medical office or clinical setting, with cabinets and medical equipment visible behind him.\n\nThroughout the sequence, the man's facial expressions shift subtly—he looks down, then up with a concerned or serious expression, suggesting he is delivering difficult news or having an emotionally heavy conversation. The juxtaposition of the terminal illness pamphlet and the doctor's somber demeanor indicates this is likely a scene involving a grave medical diagnosis or discussion about end-of-life care. The overall tone is somber, serious, and emotionally weighty, focusing on the gravity of terminal illness and its impact on patients and caregivers.",
+    "text": "The video opens with a close-up of a booklet titled **\"Coping With Terminal Illness\"** resting on a brown surface, featuring an illustration of two people embracing. The camera slowly zooms in on the title, emphasizing the somber subject matter.\n\nThe scene then cuts to a **doctor** (middle-aged man with glasses, graying hair, beard, wearing a white lab coat and red tie) in what appears to be a **medical office or clinic** (visible medical equipment, cabinets, and sink in background). He looks down, then up with a serious, concerned expression as he speaks—likely delivering difficult news to an unseen patient.\n\n**Setting:** Medical office/clinic  \n**People:** Doctor (main visible character), implied patient  \n**Actions:** Camera focuses on terminal illness pamphlet; doctor delivers grave news with heavy emotional weight  \n**Emotional tone:** Somber, serious, melancholic, tense  \n**Interaction:** One-sided delivery of devastating medical information\n\nThe juxtaposition of the \"Terminal Illness\" booklet with the doctor's grave expression suggests he is informing someone about a life-limiting diagnosis.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 190,
-      "total_tokens": 8714
+      "completion_tokens": 228,
+      "total_tokens": 8752
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"Medical office or clinical room\",\n  \"main_entities\": [\"Doctor\", \"Booklet\"],\n  \"actions\": [\"Doctor speaking\", \"Displaying booklet\"],\n  \"emotion_words\": [\"Serious\", \"Solemn\", \"Concerned\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The doctor appears to be speaking and looking attentively, likely addressing a patient or family member, while the booklet about terminal illness is displayed as part of this serious conversation context.\",\n  \"summary\": \"A doctor in a white lab coat is shown speaking in what appears to be a medical office, followed by close-up shots of a booklet titled 'Coping With Terminal Illness' featuring an illustration of two people embracing, suggesting a difficult conversation about end-of-life care.\"\n}",
+    "text": "{\n  \"setting\": \"Medical office or examination room\",\n  \"main_entities\": [\"Doctor\", \"Booklet titled 'Coping With Terminal Illness'\"],\n  \"actions\": [\"Doctor speaking or listening intently\", \"Booklet being held and displayed\"],\n  \"emotion_words\": [\"serious\", \"concerned\", \"somber\"],\n  \"interaction_level\": 0,\n  \"interaction_evidence\": \"The video alternates between a close-up of the doctor speaking/listening alone in an office setting and a close-up of a booklet being held. There is no visible second person, no direct eye contact between entities, and no clear communicative exchange shown within these frames.\",\n  \"summary\": \"The frames show a doctor with glasses and a white lab coat in what appears to be a medical office, looking serious and engaged in conversation. The video also focuses on a booklet titled 'Coping With Terminal Illness,' suggesting a grave medical discussion about end-of-life care.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 166,
-      "total_tokens": 9074
+      "completion_tokens": 201,
+      "total_tokens": 9109
     }
   },
   "lvlm_structured": {
-    "setting": "Medical office or clinical room",
+    "setting": "Medical office or examination room",
     "main_entities": [
       "Doctor",
-      "Booklet"
+      "Booklet titled 'Coping With Terminal Illness'"
     ],
     "actions": [
-      "Doctor speaking",
-      "Displaying booklet"
+      "Doctor speaking or listening intently",
+      "Booklet being held and displayed"
     ],
     "emotion_words": [
-      "Serious",
-      "Solemn",
-      "Concerned"
+      "serious",
+      "concerned",
+      "somber"
     ],
-    "interaction_level": 1,
-    "interaction_evidence": "The doctor appears to be speaking and looking attentively, likely addressing a patient or family member, while the booklet about terminal illness is displayed as part of this serious conversation context.",
-    "summary": "A doctor in a white lab coat is shown speaking in what appears to be a medical office, followed by close-up shots of a booklet titled 'Coping With Terminal Illness' featuring an illustration of two people embracing, suggesting a difficult conversation about end-of-life care."
+    "interaction_level": 0,
+    "interaction_evidence": "The video alternates between a close-up of the doctor speaking/listening alone in an office setting and a close-up of a booklet being held. There is no visible second person, no direct eye contact between entities, and no clear communicative exchange shown within these frames.",
+    "summary": "The frames show a doctor with glasses and a white lab coat in what appears to be a medical office, looking serious and engaged in conversation. The video also focuses on a booklet titled 'Coping With Terminal Illness,' suggesting a grave medical discussion about end-of-life care."
   },
   "lvlm_error": null
 }

@@ -32,45 +32,46 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "**Setting:** A clinical or medical facility, likely a morgue or examination room, indicated by the stainless steel equipment, sink, and institutional appearance.\n\n**People:** Two men are featured:\n- A man in a white lab coat, dress shirt, red tie, and glasses (appears to be a doctor or medical examiner)\n- A man in a light blue uniform with shoulder patches (appears to be a corrections officer or security personnel)\n\n**Actions:** The video alternates between close-ups of both men. The man in the lab coat is shown in profile looking downward, then turns his head to look forward/upward with an expression of concern or surprise. The uniformed officer is shown looking down with a serious, troubled, or somber expression.\n\n**Emotional Tone:** Serious, tense, and somber. Both individuals display concerned, worried, or troubled expressions suggesting they are dealing with a difficult or disturbing situation.\n\n**Interaction:** While the two men are not shown in the same frame, the alternating shots suggest they are engaged in a conversation or reacting to the same event/situation. The editing implies a dialogue or exchange between the medical professional and the officer.",
+    "text": "The video takes place in a medical or clinical setting, likely a doctor's office or examination room, featuring two men in professional attire. The first is a middle-aged man with dark hair, glasses, and a goatee, wearing a white lab coat over a collared shirt and red tie, suggesting he is a physician or scientist. The second is an older man in a light blue uniform with visible patches (including one that reads \"CORRECTIONS DEPARTMENT\"), indicating he is a corrections officer or prison guard.\n\nThe sequence shows the man in the lab coat initially looking down and to the side with a focused, serious expression, as if concentrating on something out of frame or preparing to speak. He then slowly turns his head upward and toward the camera/off-screen, his expression shifting to one of concern, surprise, or urgency as he appears to be speaking or reacting to something. The scene then cuts to the corrections officer, who maintains a stern, troubled, or deeply concerned expression while looking downward, suggesting he is processing difficult information or delivering grave news.\n\nThe emotional tone is tense, somber, and dramatic. While the two characters do not appear in the same frame simultaneously, their alternating shots suggest a serious conversation or confrontation is taking place between them, likely involving troubling medical or institutional information. The interaction implies a power dynamic or professional exchange under stressful circumstances.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 237,
-      "total_tokens": 8761
+      "completion_tokens": 273,
+      "total_tokens": 8797
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"Medical or laboratory facility\",\n  \"main_entities\": [\"Doctor in white lab coat\", \"Correctional officer in uniform\"],\n  \"actions\": [\"Doctor looking down and then up as if speaking\", \"Officer listening with a serious, concerned expression\"],\n  \"emotion_words\": [\"serious\", \"concerned\", \"focused\", \"somber\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The video alternates between the doctor and the officer. The doctor looks up and appears to be speaking, while the officer maintains a focused, attentive gaze downward, suggesting he is listening to the doctor in a shared professional context.\",\n  \"summary\": \"A doctor in a lab coat and an officer in a correctional uniform are shown in what appears to be a serious conversation within a medical or institutional setting.\"\n}",
+    "text": "{\n  \"setting\": \"Medical or forensic facility\",\n  \"main_entities\": [\"Doctor in white coat\", \"Police officer in uniform\"],\n  \"actions\": [\"Looking down\", \"Turning head\", \"Speaking\", \"Looking down with serious expression\"],\n  \"emotion_words\": [\"Serious\", \"Concerned\", \"Focused\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The doctor appears to be speaking and looking toward the officer, while the officer is present and looking down in a listening or attentive posture, suggesting a conversation or exchange of information between them.\",\n  \"summary\": \"A doctor in a lab coat speaks with a serious expression while a police officer listens intently in what appears to be a medical or forensic setting.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 174,
-      "total_tokens": 9082
+      "completion_tokens": 154,
+      "total_tokens": 9062
     }
   },
   "lvlm_structured": {
-    "setting": "Medical or laboratory facility",
+    "setting": "Medical or forensic facility",
     "main_entities": [
-      "Doctor in white lab coat",
-      "Correctional officer in uniform"
+      "Doctor in white coat",
+      "Police officer in uniform"
     ],
     "actions": [
-      "Doctor looking down and then up as if speaking",
-      "Officer listening with a serious, concerned expression"
+      "Looking down",
+      "Turning head",
+      "Speaking",
+      "Looking down with serious expression"
     ],
     "emotion_words": [
-      "serious",
-      "concerned",
-      "focused",
-      "somber"
+      "Serious",
+      "Concerned",
+      "Focused"
     ],
     "interaction_level": 1,
-    "interaction_evidence": "The video alternates between the doctor and the officer. The doctor looks up and appears to be speaking, while the officer maintains a focused, attentive gaze downward, suggesting he is listening to the doctor in a shared professional context.",
-    "summary": "A doctor in a lab coat and an officer in a correctional uniform are shown in what appears to be a serious conversation within a medical or institutional setting."
+    "interaction_evidence": "The doctor appears to be speaking and looking toward the officer, while the officer is present and looking down in a listening or attentive posture, suggesting a conversation or exchange of information between them.",
+    "summary": "A doctor in a lab coat speaks with a serious expression while a police officer listens intently in what appears to be a medical or forensic setting."
   },
   "lvlm_error": null
 }

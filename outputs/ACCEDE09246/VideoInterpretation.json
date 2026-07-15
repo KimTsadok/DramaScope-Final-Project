@@ -32,46 +32,46 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "The video clip features a man, likely a doctor or scientist given his white lab coat and professional attire (light blue shirt with a red tie), in what appears to be a medical or laboratory setting. The background includes a stainless steel appliance (possibly a refrigerator), wooden cabinets, and a sink area.\n\nThroughout the sequence of frames, the man is engaged in conversation or delivering a monologue. His actions include looking directly forward, glancing down and to the side, adjusting his glasses with both hands, and using hand gestures to emphasize his points. His facial expressions shift from serious and concerned to more animated as he speaks.\n\nThe emotional tone is serious and intense, suggesting he is discussing something important or delivering significant information. The setting is static, focusing entirely on this single individual's expressive delivery.",
+    "text": "**Setting:** A medical or clinical office, indicated by the white lab coat, cabinets, sink, and medical equipment in the background.\n\n**Main Entity:** A middle-aged man with graying hair and a goatee, wearing glasses, a white lab coat over a light blue shirt, and a red tie.\n\n**Visible Actions:** The man is engaged in conversation. He looks around, adjusts his glasses with both hands (frame 3), and uses hand gestures while speaking (frame 4). His head turns slightly as he talks to someone off-camera.\n\n**Emotional Tone:** Serious, concerned, or intense. His furrowed brows, focused gaze, and earnest facial expressions suggest he is delivering important, possibly troubling information.\n\n**Interaction:** The man appears to be speaking to another person who is not visible in the frame, likely explaining something with gravity and urgency.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 159,
-      "total_tokens": 8683
+      "completion_tokens": 175,
+      "total_tokens": 8699
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"Medical office or examination room\",\n  \"main_entities\": [\"Middle-aged man in white lab coat\"],\n  \"actions\": [\"Speaking\", \"Adjusting glasses\", \"Gesturing with hand\", \"Looking around\"],\n  \"emotion_words\": [\"Concerned\", \"Serious\", \"Thoughtful\", \"Intense\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The man appears to be engaged in conversation, displaying speaking posture, attentive facial expressions, and gestures that suggest he is addressing someone off-camera or explaining something to a patient.\",\n  \"summary\": \"A middle-aged male doctor wearing glasses and a white lab coat is shown in what appears to be a medical office. He speaks seriously, adjusts his glasses, and uses hand gestures while conveying information, suggesting he is delivering important medical news or instructions to someone.\"\n}",
+    "text": "{\n  \"setting\": \"Medical office or laboratory\",\n  \"main_entities\": [\"Man in white lab coat\"],\n  \"actions\": [\"Speaking\", \"Adjusting glasses\", \"Gesturing\", \"Looking around\"],\n  \"emotion_words\": [\"Concerned\", \"Serious\", \"Puzzled\", \"Intense\"],\n  \"interaction_level\": 0,\n  \"interaction_evidence\": \"The man appears to be alone in the frame with no other visible entities to interact with. His gaze and gestures suggest he is addressing someone off-camera or delivering a monologue, but there is no visible second party showing responsive or coordinated behavior.\",\n  \"summary\": \"A middle-aged man with glasses and a goatee, wearing a white lab coat and red tie, is shown in what appears to be a medical or laboratory setting. He displays a range of concerned and serious expressions, speaks, adjusts his glasses, and uses hand gestures while looking slightly off-camera, suggesting he is engaged in an intense conversation or explanation.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 177,
-      "total_tokens": 9085
+      "completion_tokens": 206,
+      "total_tokens": 9114
     }
   },
   "lvlm_structured": {
-    "setting": "Medical office or examination room",
+    "setting": "Medical office or laboratory",
     "main_entities": [
-      "Middle-aged man in white lab coat"
+      "Man in white lab coat"
     ],
     "actions": [
       "Speaking",
       "Adjusting glasses",
-      "Gesturing with hand",
+      "Gesturing",
       "Looking around"
     ],
     "emotion_words": [
       "Concerned",
       "Serious",
-      "Thoughtful",
+      "Puzzled",
       "Intense"
     ],
-    "interaction_level": 1,
-    "interaction_evidence": "The man appears to be engaged in conversation, displaying speaking posture, attentive facial expressions, and gestures that suggest he is addressing someone off-camera or explaining something to a patient.",
-    "summary": "A middle-aged male doctor wearing glasses and a white lab coat is shown in what appears to be a medical office. He speaks seriously, adjusts his glasses, and uses hand gestures while conveying information, suggesting he is delivering important medical news or instructions to someone."
+    "interaction_level": 0,
+    "interaction_evidence": "The man appears to be alone in the frame with no other visible entities to interact with. His gaze and gestures suggest he is addressing someone off-camera or delivering a monologue, but there is no visible second party showing responsive or coordinated behavior.",
+    "summary": "A middle-aged man with glasses and a goatee, wearing a white lab coat and red tie, is shown in what appears to be a medical or laboratory setting. He displays a range of concerned and serious expressions, speaks, adjusts his glasses, and uses hand gestures while looking slightly off-camera, suggesting he is engaged in an intense conversation or explanation."
   },
   "lvlm_error": null
 }

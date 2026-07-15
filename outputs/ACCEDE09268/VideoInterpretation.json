@@ -32,46 +32,45 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "**Setting:** Outdoor scene in a park or campus-like area with trees, grass, and a building visible in the background. Daytime lighting suggests it's late afternoon.\n\n**People:** Two men engaged in conversation:\n- **Man on left:** Wearing glasses and a brown jacket over a dark collared shirt; seen mostly in profile\n- **Man on right:** Wearing a dark baseball cap, dark jacket (with a patch on the left sleeve), and light blue button-down shirt\n\n**Actions:** The two men are standing face-to-face having a conversation. The man in the cap is speaking and reacting emotionally, while the other man listens attentively.\n\n**Emotional Tone:** The man in the cap displays a range of expressions—concerned, earnest, slightly frustrated, and thoughtful—suggesting a serious or emotionally charged discussion. His facial expressions shift from looking upward thoughtfully to making direct eye contact with the other man.\n\n**Interaction:** This appears to be an intense dialogue where the man in the cap is explaining something important or persuasive, possibly delivering difficult news or making a serious point, while the other man listens intently.",
+    "text": "**Setting:** Outdoor scene in a park or campus-like area with trees, grass, and a building in the background, lit by natural daylight.\n\n**People:** Two men engaged in conversation. The man on the right (wearing a dark baseball cap, blue button-down shirt, and dark jacket with a patch on the left sleeve) is the primary speaker. The man on the left (wearing glasses, a brown jacket over a dark collared shirt) is listening attentively.\n\n**Actions:** The man in the cap is speaking with animated facial expressions—his mouth moves as he talks, his eyebrows raise and furrow, and his head tilts slightly. He appears to be explaining something earnestly or emphatically. The other man remains relatively still, facing him and listening.\n\n**Emotional Tone:** Serious and focused; the speaker seems to be conveying important information with a mix of concern and intensity, while maintaining eye contact with his listener.\n\n**Interaction:** A one-sided conversation where the man in the cap is actively speaking and the other man is passively listening, suggesting an exchange of information or instructions.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 231,
-      "total_tokens": 8755
+      "completion_tokens": 224,
+      "total_tokens": 8748
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"outdoor, park or campus with trees and building in background\",\n  \"main_entities\": [\"man in brown jacket with glasses\", \"man in dark jacket and cap\"],\n  \"actions\": [\"talking\", \"listening\", \"conversing\"],\n  \"emotion_words\": [\"serious\", \"concerned\", \"attentive\", \"thoughtful\"],\n  \"interaction_level\": 2,\n  \"interaction_evidence\": \"The two men are facing each other in close proximity. The man on the right is actively speaking with changing facial expressions (mouth movements, eye contact), while the man on the left is oriented toward him in a listening posture, indicating a clear mutual conversation.\",\n  \"summary\": \"Two men are engaged in an outdoor conversation; the man wearing a cap and jacket appears to be speaking earnestly to the other man who is listening attentively.\"\n}",
+    "text": "{\n  \"setting\": \"outdoor park or campus with trees and buildings in the background\",\n  \"main_entities\": [\"man in brown jacket with glasses\", \"man in dark jacket and baseball cap\"],\n  \"actions\": [\"talking\", \"listening\", \"looking at each other\"],\n  \"emotion_words\": [\"serious\", \"concerned\", \"thoughtful\"],\n  \"interaction_level\": 2,\n  \"interaction_evidence\": \"The two men are facing each other in close proximity, maintaining eye contact. The man on the right is actively speaking with changing facial expressions while the man on the left is attentively listening, indicating a clear mutual conversation.\",\n  \"summary\": \"Two men are engaged in a serious outdoor conversation, with one man speaking expressively while the other listens intently.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 183,
-      "total_tokens": 9091
+      "completion_tokens": 164,
+      "total_tokens": 9072
     }
   },
   "lvlm_structured": {
-    "setting": "outdoor, park or campus with trees and building in background",
+    "setting": "outdoor park or campus with trees and buildings in the background",
     "main_entities": [
       "man in brown jacket with glasses",
-      "man in dark jacket and cap"
+      "man in dark jacket and baseball cap"
     ],
     "actions": [
       "talking",
       "listening",
-      "conversing"
+      "looking at each other"
     ],
     "emotion_words": [
       "serious",
       "concerned",
-      "attentive",
       "thoughtful"
     ],
     "interaction_level": 2,
-    "interaction_evidence": "The two men are facing each other in close proximity. The man on the right is actively speaking with changing facial expressions (mouth movements, eye contact), while the man on the left is oriented toward him in a listening posture, indicating a clear mutual conversation.",
-    "summary": "Two men are engaged in an outdoor conversation; the man wearing a cap and jacket appears to be speaking earnestly to the other man who is listening attentively."
+    "interaction_evidence": "The two men are facing each other in close proximity, maintaining eye contact. The man on the right is actively speaking with changing facial expressions while the man on the left is attentively listening, indicating a clear mutual conversation.",
+    "summary": "Two men are engaged in a serious outdoor conversation, with one man speaking expressively while the other listens intently."
   },
   "lvlm_error": null
 }

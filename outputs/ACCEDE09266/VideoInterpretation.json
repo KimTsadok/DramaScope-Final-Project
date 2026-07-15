@@ -32,24 +32,24 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "The video opens with a static shot of a white wooden fence with lattice detailing, set in front of a house with columns and a brick facade, flanked by trees. The scene then cuts to two men standing outdoors against a brick wall background. The man on the left, wearing glasses, a brown blazer, and a dark sweater, is speaking and looking upward with an animated expression. The man on the right, dressed in a baseball cap and jacket, listens attentively while also gazing upward. Their interaction suggests a casual conversation or observation, with the speaker appearing engaged and the listener focused on what is being said or seen above them.",
+    "text": "The video opens with a static shot of a white wooden fence with lattice detailing, positioned in front of a house with columns and a brick facade, framed by trees. The scene then cuts to two men standing outdoors against a backdrop of a brick building and windows. The man on the left, wearing glasses, a brown blazer, and a dark sweater, is speaking animatedly while looking upward and gesturing slightly. The man on the right, dressed in a baseball cap and a jacket, listens attentively, his gaze fixed on the speaker. The interaction appears to be a serious conversation, with the speaker conveying information or making a point while the listener remains focused and engaged. The overall tone is calm and professional, suggesting a discussion of some importance between the two individuals.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 130,
-      "total_tokens": 8654
+      "completion_tokens": 155,
+      "total_tokens": 8679
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"Residential outdoor area with a white fence and brick building\",\n  \"main_entities\": [\"Man with glasses in brown coat\", \"Man in baseball cap\"],\n  \"actions\": [\"Standing\", \"Looking upward\", \"Speaking\"],\n  \"emotion_words\": [\"Contemplative\", \"Attentive\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The man with glasses appears to be speaking or reacting to something while the man in the cap looks attentively in the same direction, indicating shared attention and passive observation.\",\n  \"summary\": \"Two men stand outdoors near a residential fence, looking upward. The man wearing glasses and a brown coat speaks or reacts to something above them while his companion in a baseball cap listens and observes attentively.\"\n}",
+    "text": "{\n  \"setting\": \"Residential outdoor area with a white fence and brick building\",\n  \"main_entities\": [\"Man with glasses in brown coat\", \"Man in baseball cap\"],\n  \"actions\": [\"Standing\", \"Looking upward\", \"Speaking\"],\n  \"emotion_words\": [\"Contemplative\", \"Attentive\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The man with glasses appears to be speaking or reacting to something while the man in the cap looks on attentively; they share a common gaze direction and appear to be engaged in a shared moment of observation or conversation.\",\n  \"summary\": \"Two men stand outdoors near a residential fence, looking upward as one speaks while the other listens attentively.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 161,
-      "total_tokens": 9069
+      "completion_tokens": 152,
+      "total_tokens": 9060
     }
   },
   "lvlm_structured": {
@@ -68,8 +68,8 @@
       "Attentive"
     ],
     "interaction_level": 1,
-    "interaction_evidence": "The man with glasses appears to be speaking or reacting to something while the man in the cap looks attentively in the same direction, indicating shared attention and passive observation.",
-    "summary": "Two men stand outdoors near a residential fence, looking upward. The man wearing glasses and a brown coat speaks or reacts to something above them while his companion in a baseball cap listens and observes attentively."
+    "interaction_evidence": "The man with glasses appears to be speaking or reacting to something while the man in the cap looks on attentively; they share a common gaze direction and appear to be engaged in a shared moment of observation or conversation.",
+    "summary": "Two men stand outdoors near a residential fence, looking upward as one speaks while the other listens attentively."
   },
   "lvlm_error": null
 }

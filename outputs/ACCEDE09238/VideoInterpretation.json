@@ -32,24 +32,24 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "The video takes place in a dimly lit dining room decorated with religious crosses on the walls. Three people are present: a woman in a red dress seated at the table eating, a man in a suit standing nearby, and another man in a black t-shirt and plaid pajama pants who enters the scene carrying a gift. The man in pajamas enthusiastically greets the suited man with a handshake and animated conversation, presenting him with a video game case labeled \"Death Skate 3000.\" The woman remains focused on her meal throughout the interaction, while the two men share a friendly, celebratory exchange suggesting a casual family gathering or birthday celebration.",
+    "text": "The video takes place in a dimly lit dining room with religious crosses on the walls, a round wooden table with gift bags, and a chandelier. Three people are present: a woman in a red dress seated at the table eating, a man in a blue suit standing nearby, and a bearded man in a black t-shirt and plaid pajama pants who enters the scene.\n\n**Actions:** The man in the black shirt walks into frame, stretches, then shakes hands enthusiastically with the suited man. They engage in an animated conversation while the woman continues eating. The video culminates with a close-up of the two men examining a DVD case titled \"Death Skate 3000\" featuring a skateboarder graphic.\n\n**Tone & Interaction:** The atmosphere is casual and humorous. The interaction between the two men is friendly and playful—particularly their exaggerated handshake and excited discussion over the \"Death Skate 3000\" DVD—while the woman remains focused on her meal, seemingly uninvolved in their exchange. The scene suggests a casual family gathering or celebration involving gift-giving.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 131,
-      "total_tokens": 8655
+      "completion_tokens": 219,
+      "total_tokens": 8743
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"Indoor dining room with a table, chairs, and religious wall decorations\",\n  \"main_entities\": [\"Woman in red dress\", \"Man in suit\", \"Man in black shirt and plaid pants\"],\n  \"actions\": [\"Sitting and eating\", \"Entering room and stretching\", \"Shaking hands\", \"Talking and gesturing\", \"Showing a video game case\"],\n  \"emotion_words\": [\"Happy\", \"Excited\", \"Cheerful\", \"Friendly\"],\n  \"interaction_level\": 2,\n  \"interaction_evidence\": \"The man in the suit and the man in the black shirt engage in a handshake, direct eye contact, and a conversation involving showing an object (a video game case), indicating clear mutual social exchange.\",\n  \"summary\": \"A woman sits at a dining table eating while two men enter and greet each other enthusiastically. They shake hands and engage in a friendly conversation where one man shows the other a 'Death Skate 3000' game case.\"\n}",
+    "text": "{\n  \"setting\": \"Indoor dining room with a table, chairs, and religious wall decorations\",\n  \"main_entities\": [\"Woman in red dress\", \"Man in suit\", \"Man in black shirt and plaid pants\"],\n  \"actions\": [\"Sitting and eating\", \"Entering the room\", \"Shaking hands\", \"Talking\", \"Showing a video game case\"],\n  \"emotion_words\": [\"Happy\", \"Excited\", \"Cheerful\"],\n  \"interaction_level\": 2,\n  \"interaction_evidence\": \"The man in the suit and the man in plaid pants engage in a handshake and a lively conversation. They share attention on a 'Death Skate 3000' game case, showing clear mutual engagement and coordinated social behavior.\",\n  \"summary\": \"In a dining room setting, a woman eats at a table while two men interact enthusiastically. One man enters, shakes hands with the other, and they discuss a video game case together in a friendly manner.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 207,
-      "total_tokens": 9115
+      "completion_tokens": 202,
+      "total_tokens": 9110
     }
   },
   "lvlm_structured": {
@@ -61,20 +61,19 @@
     ],
     "actions": [
       "Sitting and eating",
-      "Entering room and stretching",
+      "Entering the room",
       "Shaking hands",
-      "Talking and gesturing",
+      "Talking",
       "Showing a video game case"
     ],
     "emotion_words": [
       "Happy",
       "Excited",
-      "Cheerful",
-      "Friendly"
+      "Cheerful"
     ],
     "interaction_level": 2,
-    "interaction_evidence": "The man in the suit and the man in the black shirt engage in a handshake, direct eye contact, and a conversation involving showing an object (a video game case), indicating clear mutual social exchange.",
-    "summary": "A woman sits at a dining table eating while two men enter and greet each other enthusiastically. They shake hands and engage in a friendly conversation where one man shows the other a 'Death Skate 3000' game case."
+    "interaction_evidence": "The man in the suit and the man in plaid pants engage in a handshake and a lively conversation. They share attention on a 'Death Skate 3000' game case, showing clear mutual engagement and coordinated social behavior.",
+    "summary": "In a dining room setting, a woman eats at a table while two men interact enthusiastically. One man enters, shakes hands with the other, and they discuss a video game case together in a friendly manner."
   },
   "lvlm_error": null
 }

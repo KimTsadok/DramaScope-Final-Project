@@ -5,7 +5,6 @@ import os
 import random
 import tempfile
 import time
-from pathlib import Path
 from typing import Any, Dict, List
 
 import ffmpeg
@@ -18,8 +17,8 @@ from openai import (
 )
 
 from src.config import FRAME_SETTINGS, MODEL_SETTINGS
+from src.io_utils.env_utils import load_dotenv
 from src.lvlm.prompts import ACTIVE_STRUCTURED_PROMPT, ACTIVE_SUMMARY_PROMPT
-from src.gcp.upload import load_dotenv
 
 # ---------------------------------------------------------------------
 # Environment loading

@@ -30,44 +30,45 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "The video depicts a conversation between two men in what appears to be a medical or institutional facility. The setting includes clinical elements like a microwave, sink, and medical equipment in the background.\n\n**People:**\n- A man with glasses, graying hair and goatee, wearing a white lab coat over a striped shirt and red tie (appears to be a doctor or scientist)\n- A man in a light blue uniform with shoulder patches (appears to be a security officer or guard)\n\n**Actions & Interaction:**\nThe video alternates between close-up shots of each man as they engage in dialogue. The doctor is shown speaking with animated facial expressions—his mouth moves expressively and his eyes shift as he talks. The uniformed officer listens intently with a serious, stoic expression, maintaining steady eye contact.\n\n**Emotional Tone:**\nThe interaction carries a tense, serious atmosphere. The doctor appears concerned, earnest, or possibly alarmed based on his expressive delivery, while the officer remains composed and attentive, suggesting he is receiving important or troubling information. The scene feels like a pivotal moment of revelation or explanation within a dramatic narrative.",
+    "text": "The video depicts a conversation between two men in what appears to be a medical or institutional setting. The scene alternates between close-up shots of each speaker.\n\n**Setting:** The background suggests an office or examination room, with medical equipment (including a microwave or medical device and sink) visible behind the first man, and institutional furnishings (shelving, equipment) behind the second man.\n\n**People:**\n- **Man 1:** A man with glasses, graying hair, and a goatee, wearing a white lab coat over a collared shirt and red tie—suggesting he is a doctor or scientist.\n- **Man 2:** A man in a light blue uniform shirt with shoulder patches and a badge, indicating he is a security officer, guard, or corrections officer.\n\n**Actions & Interaction:** The two are engaged in dialogue, with the camera cutting between them as they speak. The doctor appears to be explaining something earnestly or urgently, with expressive facial movements and varying mouth positions indicating speech. The uniformed officer listens intently with a serious, stoic expression, maintaining steady eye contact.\n\n**Emotional Tone:** The atmosphere is tense and serious. The doctor seems concerned, anxious, or emphatic in his delivery, while the officer remains reserved, skeptical, or professionally guarded, suggesting this is a high-stakes conversation involving authority and possibly troubling information.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 229,
-      "total_tokens": 8753
+      "completion_tokens": 277,
+      "total_tokens": 8801
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"Medical or correctional facility office\",\n  \"main_entities\": [\"Doctor in white lab coat\", \"Correctional officer in blue uniform\"],\n  \"actions\": [\"Speaking\", \"Listening\"],\n  \"emotion_words\": [\"Concerned\", \"Serious\", \"Attentive\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The video alternates between close-ups of the doctor speaking with expressive facial movements and the officer listening with a serious, attentive expression, indicating a conversation or interview where one party is addressing the other.\",\n  \"summary\": \"A doctor in a white lab coat and glasses appears to be speaking earnestly to a correctional officer in uniform, who listens intently in what looks like a medical or institutional setting.\"\n}",
+    "text": "{\n  \"setting\": \"Medical or institutional facility, possibly a lab or examination room\",\n  \"main_entities\": [\"Man in white lab coat with glasses\", \"Man in blue uniform with patches\"],\n  \"actions\": [\"Speaking\", \"Listening intently\"],\n  \"emotion_words\": [\"Serious\", \"Concerned\", \"Attentive\", \"Solemn\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The video alternates between the man in the lab coat speaking and the man in the uniform listening. The man in the uniform maintains a fixed, attentive gaze suggesting he is listening to the other person speak, indicating a one-sided communicative exchange.\",\n  \"summary\": \"A man in a white lab coat and glasses appears to be speaking seriously to a man in a blue uniform who is listening attentively in what looks like a medical or institutional setting.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 159,
-      "total_tokens": 9067
+      "completion_tokens": 182,
+      "total_tokens": 9090
     }
   },
   "lvlm_structured": {
-    "setting": "Medical or correctional facility office",
+    "setting": "Medical or institutional facility, possibly a lab or examination room",
     "main_entities": [
-      "Doctor in white lab coat",
-      "Correctional officer in blue uniform"
+      "Man in white lab coat with glasses",
+      "Man in blue uniform with patches"
     ],
     "actions": [
       "Speaking",
-      "Listening"
+      "Listening intently"
     ],
     "emotion_words": [
-      "Concerned",
       "Serious",
-      "Attentive"
+      "Concerned",
+      "Attentive",
+      "Solemn"
     ],
     "interaction_level": 1,
-    "interaction_evidence": "The video alternates between close-ups of the doctor speaking with expressive facial movements and the officer listening with a serious, attentive expression, indicating a conversation or interview where one party is addressing the other.",
-    "summary": "A doctor in a white lab coat and glasses appears to be speaking earnestly to a correctional officer in uniform, who listens intently in what looks like a medical or institutional setting."
+    "interaction_evidence": "The video alternates between the man in the lab coat speaking and the man in the uniform listening. The man in the uniform maintains a fixed, attentive gaze suggesting he is listening to the other person speak, indicating a one-sided communicative exchange.",
+    "summary": "A man in a white lab coat and glasses appears to be speaking seriously to a man in a blue uniform who is listening attentively in what looks like a medical or institutional setting."
   },
   "lvlm_error": null
 }

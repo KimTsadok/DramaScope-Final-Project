@@ -32,31 +32,31 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "This video clip depicts a tense conversation between two men in what appears to be a medical or institutional facility.\n\n**Setting:** The scene takes place indoors, likely in a medical office or clinic break room, evidenced by kitchen cabinets, a refrigerator, and medical equipment visible in the background.\n\n**People:**\n- A man in his 50s wearing a light blue uniform shirt with shoulder patches and a badge (appears to be a corrections officer, security guard, or institutional staff)\n- A man with graying hair, glasses, goatee, white lab coat, and red tie (appears to be a doctor or medical professional)\n\n**Actions & Interaction:** The video alternates between close-up shots of each man as they speak. The uniformed man maintains a serious, intense expression while delivering what appears to be stern information. The doctor listens intently, at one point adjusting his glasses with his hand (revealing a wedding ring), looking concerned and troubled by the conversation.\n\n**Emotional Tone:** The atmosphere is serious, tense, and somber, suggesting a difficult discussion about a patient's condition, an institutional matter, or bad news being delivered. The body language of both characters indicates gravity and concern.",
+    "text": "The video depicts a conversation between two men in what appears to be a medical or institutional facility. The first individual is a middle-aged man in a light blue uniform with shoulder patches, suggesting he is a security officer or corrections officer, shown in a room with medical equipment visible in the background. The second is a man with graying hair, glasses, and a goatee, wearing a white lab coat over a shirt and red tie, indicating he is a doctor or medical professional, situated in an area with cabinets and medical supplies.\n\nThe sequence alternates between close-ups of each man as they speak. The officer maintains a serious, concerned, and slightly skeptical expression throughout his frames. The doctor appears more contemplative and earnest; he looks down thoughtfully, adjusts his glasses with his right hand (revealing a wedding band), and looks up to address the other person.\n\nThe emotional tone is tense and serious, suggesting a discussion of significant matters—possibly involving a medical diagnosis, security incident, or institutional procedure. The interaction appears to be a formal exchange where the officer is questioning or seeking information from the doctor, who responds with measured, thoughtful explanations.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 244,
-      "total_tokens": 8768
+      "completion_tokens": 231,
+      "total_tokens": 8755
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"Medical facility or correctional institution\",\n  \"main_entities\": [\"Correctional officer\", \"Doctor\"],\n  \"actions\": [\"Speaking\", \"Listening\", \"Adjusting glasses\"],\n  \"emotion_words\": [\"Serious\", \"Concerned\", \"Thoughtful\", \"Intense\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The video alternates between two men in different locations (officer in uniform, doctor in lab coat) who appear to be engaged in a conversation. The officer's speaking expressions and the doctor's listening posture, downward glances, and thoughtful adjustment of his glasses suggest they are communicating with each other, likely via phone or intercom.\",\n  \"summary\": \"A correctional officer and a doctor appear to be having a serious conversation across two separate locations. The officer speaks with an intense expression while the doctor listens intently, looking down thoughtfully and adjusting his glasses as he processes the information.\"\n}",
+    "text": "{\n  \"setting\": \"Medical or correctional facility office\",\n  \"main_entities\": [\"Police officer in blue uniform\", \"Doctor in white lab coat\"],\n  \"actions\": [\"Speaking\", \"Listening\", \"Adjusting glasses\"],\n  \"emotion_words\": [\"Serious\", \"Concerned\", \"Thoughtful\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The two individuals appear in separate shots but are clearly engaged in a conversation, with the officer speaking and the doctor listening and reacting with thoughtful expressions and gestures.\",\n  \"summary\": \"A police officer in uniform speaks seriously in what appears to be an institutional setting, while a doctor listens intently, adjusts his glasses, and responds thoughtfully, suggesting a professional consultation or briefing.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 198,
-      "total_tokens": 9106
+      "completion_tokens": 156,
+      "total_tokens": 9064
     }
   },
   "lvlm_structured": {
-    "setting": "Medical facility or correctional institution",
+    "setting": "Medical or correctional facility office",
     "main_entities": [
-      "Correctional officer",
-      "Doctor"
+      "Police officer in blue uniform",
+      "Doctor in white lab coat"
     ],
     "actions": [
       "Speaking",
@@ -66,12 +66,11 @@
     "emotion_words": [
       "Serious",
       "Concerned",
-      "Thoughtful",
-      "Intense"
+      "Thoughtful"
     ],
     "interaction_level": 1,
-    "interaction_evidence": "The video alternates between two men in different locations (officer in uniform, doctor in lab coat) who appear to be engaged in a conversation. The officer's speaking expressions and the doctor's listening posture, downward glances, and thoughtful adjustment of his glasses suggest they are communicating with each other, likely via phone or intercom.",
-    "summary": "A correctional officer and a doctor appear to be having a serious conversation across two separate locations. The officer speaks with an intense expression while the doctor listens intently, looking down thoughtfully and adjusting his glasses as he processes the information."
+    "interaction_evidence": "The two individuals appear in separate shots but are clearly engaged in a conversation, with the officer speaking and the doctor listening and reacting with thoughtful expressions and gestures.",
+    "summary": "A police officer in uniform speaks seriously in what appears to be an institutional setting, while a doctor listens intently, adjusts his glasses, and responds thoughtfully, suggesting a professional consultation or briefing."
   },
   "lvlm_error": null
 }

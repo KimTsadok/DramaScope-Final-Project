@@ -54,6 +54,7 @@ from src.gcp.upload import (
     DEFAULT_GCS_PREFIX,
     upload_to_gcs,
 )
+from src.io_utils.json_utils import load_json_object
 from src.lvlm.client import (
     extract_frames,
     run_structured_inference_from_frames,
@@ -89,34 +90,6 @@ def build_interpretation_output_path(
         / video_id
         / OUTPUT_FILES.interpretation_filename
     )
-
-
-def load_json_object(
-    path: Path,
-) -> Dict[str, Any]:
-    """
-    Load a JSON file and verify that its root value is an object.
-    """
-    if not path.exists():
-        raise FileNotFoundError(
-            f"JSON file not found: {path}"
-        )
-
-    if not path.is_file():
-        raise ValueError(
-            f"Expected a file, received: {path}"
-        )
-
-    with path.open("r", encoding="utf-8") as file:
-        data = json.load(file)
-
-    if not isinstance(data, dict):
-        raise ValueError(
-            f"Expected a JSON object in {path}, "
-            f"received {type(data).__name__}."
-        )
-
-    return data
 
 
 def validate_local_video_path(
@@ -386,98 +359,64 @@ def run_lvlm_stage(
             f"No frames were extracted from: {video_path}"
         )
 
-    print(
-        "\nRunning LVLM summary inference..."
-    )
+    lvlm_summary = None
+    lvlm_structured_raw = None
+    lvlm_structured = None
+    stage_errors = []
 
-    lvlm_summary = (
-        run_summary_inference_from_frames(
-            frames_b64
-        )
-    )
+    print("\nRunning LVLM summary inference...")
 
-    # CHANGED:
-    # Keep response validation, but do not print the full response payload.
-    if not isinstance(
-        lvlm_summary,
-        dict,
-    ):
-        raise TypeError(
-            "LVLM summary inference must return "
-            f"a dictionary, received "
-            f"{type(lvlm_summary).__name__}."
-        )
-
-    print(
-        "\nRunning LVLM structured inference..."
-    )
-
-    lvlm_structured_raw = (
-        run_structured_inference_from_frames(
-            frames_b64
-        )
-    )
-
-    # CHANGED:
-    # Keep structured-response validation without terminal JSON dumps.
-    if not isinstance(
-        lvlm_structured_raw,
-        dict,
-    ):
-        raise TypeError(
-            "LVLM structured inference must return "
-            f"a dictionary, received "
-            f"{type(lvlm_structured_raw).__name__}."
-        )
-
-    structured_text = (
-        lvlm_structured_raw.get("text")
-    )
-
-    if not isinstance(
-        structured_text,
-        str,
-    ):
-        raise ValueError(
-            "LVLM structured response is missing "
-            "a string 'text' field."
-        )
-
-    if not structured_text.strip():
-        finish_reason = (
-            lvlm_structured_raw.get(
-                "finish_reason"
+    try:
+        summary_result = run_summary_inference_from_frames(frames_b64)
+        if not isinstance(summary_result, dict):
+            raise TypeError(
+                "LVLM summary inference must return "
+                f"a dictionary, received {type(summary_result).__name__}."
             )
+        lvlm_summary = summary_result
+    except Exception as exc:
+        stage_errors.append(
+            f"summary: {type(exc).__name__}: {exc}"
         )
 
-        raise ValueError(
-            "LVLM structured response contains empty text. "
-            f"finish_reason={finish_reason!r}"
+    print("\nRunning LVLM structured inference...")
+
+    try:
+        structured_result = run_structured_inference_from_frames(frames_b64)
+        if not isinstance(structured_result, dict):
+            raise TypeError(
+                "LVLM structured inference must return "
+                f"a dictionary, received {type(structured_result).__name__}."
+            )
+
+        lvlm_structured_raw = structured_result
+        structured_text = lvlm_structured_raw.get("text")
+
+        if not isinstance(structured_text, str):
+            raise ValueError(
+                "LVLM structured response is missing a string 'text' field."
+            )
+
+        if not structured_text.strip():
+            finish_reason = lvlm_structured_raw.get("finish_reason")
+            raise ValueError(
+                "LVLM structured response contains empty text. "
+                f"finish_reason={finish_reason!r}"
+            )
+
+        print("\nParsing LVLM structured response...")
+        parsed_structured = parse_structured_response(structured_text)
+        lvlm_structured = validate_lvlm_structured(parsed_structured)
+    except Exception as exc:
+        stage_errors.append(
+            f"structured: {type(exc).__name__}: {exc}"
         )
 
-    print(
-        "\nParsing LVLM structured response..."
-    )
-
-    parsed_structured = (
-        parse_structured_response(
-            structured_text
-        )
-    )
-
-    lvlm_structured = (
-        validate_lvlm_structured(
-            parsed_structured
-        )
-    )
-
-    # CHANGED:
-    # The complete payload is returned for saving but is not printed.
     return {
         "lvlm_summary": lvlm_summary,
         "lvlm_structured_raw": lvlm_structured_raw,
         "lvlm_structured": lvlm_structured,
-        "lvlm_error": None,
+        "lvlm_error": "; ".join(stage_errors) or None,
     }
 
 
@@ -495,7 +434,16 @@ def run_lvlm_stage_with_fallback(
             video_path
         )
 
-        return lvlm_fields, True
+        succeeded = has_complete_lvlm_output(lvlm_fields)
+
+        if not succeeded:
+            print(
+                "\nLVLM inference completed with partial results. "
+                "The available fields will still be saved."
+            )
+            print(f"LVLM error: {lvlm_fields.get('lvlm_error')}")
+
+        return lvlm_fields, succeeded
 
     except Exception as exc:
         lvlm_error = (
