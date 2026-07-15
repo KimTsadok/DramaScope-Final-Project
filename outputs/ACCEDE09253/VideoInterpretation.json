@@ -1,0 +1,78 @@
+{
+  "video_id": "ACCEDE09253",
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09253.mp4",
+  "features_raw": {
+    "shot_frequency": 0.11267605633802817,
+    "object_entropy": 3.003702,
+    "interaction_density": 2.253521,
+    "human_presence_ratio": 1.0
+  },
+  "features_norm": {
+    "shot_frequency": 0.11267605633802817,
+    "object_entropy": 0.7509255,
+    "interaction_density": 0.4507042,
+    "human_presence_ratio": 1.0
+  },
+  "scene_complexity_score": 0.49240138471830985,
+  "scene_complexity_breakdown": {
+    "shot_frequency": 0.039436619718309855,
+    "object_entropy": 0.262823925,
+    "interaction_density": 0.09014084,
+    "human_presence_ratio": 0.1
+  },
+  "narrative_phase": "Calm",
+  "phase_reasons": [
+    "Normalized values -> shot_frequency=0.1127, object_entropy=0.7509, interaction_density=0.4507",
+    "Dense rule not satisfied: object_entropy > 0.7 is True, interaction_density > 0.65 is False",
+    "Dynamic rule not satisfied: shot_frequency > 0.35 is False, interaction_density <= 0.75 is True",
+    "Static rule not satisfied: shot_frequency < 0.2 is True, interaction_density < 0.3 is False, object_entropy < 0.5 is False",
+    "Defaulted to Calm"
+  ],
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "In a dimly lit living room, a man wearing a dark t-shirt approaches a woman who is asleep on a couch. He gently pulls a green blanket over her to ensure she is covered, then kneels beside her to watch her with a look of tenderness and concern. The scene conveys a quiet, caring atmosphere as he looks after the sleeping woman.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 74,
+      "total_tokens": 8598
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"dimly lit living room at night\",\n  \"main_entities\": [\"man\", \"woman\"],\n  \"actions\": [\"standing\", \"approaching\", \"kneeling\", \"tucking blanket\", \"looking down\"],\n  \"emotion_words\": [\"tender\", \"caring\", \"gentle\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The man approaches the sleeping woman and carefully tucks a blanket around her, showing attentive care and physical proximity, though she remains asleep and does not reciprocate.\",\n  \"summary\": \"In a darkened room, a man approaches a woman sleeping on a couch and gently tucks a blanket around her, watching over her with a caring expression.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 154,
+      "total_tokens": 9062
+    }
+  },
+  "lvlm_structured": {
+    "setting": "dimly lit living room at night",
+    "main_entities": [
+      "man",
+      "woman"
+    ],
+    "actions": [
+      "standing",
+      "approaching",
+      "kneeling",
+      "tucking blanket",
+      "looking down"
+    ],
+    "emotion_words": [
+      "tender",
+      "caring",
+      "gentle"
+    ],
+    "interaction_level": 1,
+    "interaction_evidence": "The man approaches the sleeping woman and carefully tucks a blanket around her, showing attentive care and physical proximity, though she remains asleep and does not reciprocate.",
+    "summary": "In a darkened room, a man approaches a woman sleeping on a couch and gently tucks a blanket around her, watching over her with a caring expression."
+  },
+  "lvlm_error": null
+}

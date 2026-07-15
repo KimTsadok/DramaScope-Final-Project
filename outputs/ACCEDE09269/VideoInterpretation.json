@@ -1,0 +1,76 @@
+{
+  "video_id": "ACCEDE09269",
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09269.mp4",
+  "features_raw": {
+    "shot_frequency": 0.2222222222222222,
+    "object_entropy": 2.440224,
+    "interaction_density": 1.666667,
+    "human_presence_ratio": 0.986111
+  },
+  "features_norm": {
+    "shot_frequency": 0.2222222222222222,
+    "object_entropy": 0.610056,
+    "interaction_density": 0.3333334,
+    "human_presence_ratio": 0.986111
+  },
+  "scene_complexity_score": 0.4565751577777778,
+  "scene_complexity_breakdown": {
+    "shot_frequency": 0.07777777777777777,
+    "object_entropy": 0.2135196,
+    "interaction_density": 0.06666668,
+    "human_presence_ratio": 0.09861110000000001
+  },
+  "narrative_phase": "Calm",
+  "phase_reasons": [
+    "Normalized values -> shot_frequency=0.2222, object_entropy=0.6101, interaction_density=0.3333",
+    "Dense rule not satisfied: object_entropy > 0.7 is False, interaction_density > 0.65 is False",
+    "Dynamic rule not satisfied: shot_frequency > 0.35 is False, interaction_density <= 0.75 is True",
+    "Static rule not satisfied: shot_frequency < 0.2 is False, interaction_density < 0.3 is False, object_entropy < 0.5 is False",
+    "Defaulted to Calm"
+  ],
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "**Setting:** Outdoor scene in front of a brick building with green doors, likely a campus or institutional setting, during daytime with natural lighting.\n\n**People:** Two men engaged in conversation. The primary subject is a middle-aged man with glasses wearing a brown blazer over a dark V-neck sweater and collared shirt, holding papers. The second man wears a dark baseball cap, dark jacket, and light blue shirt.\n\n**Actions:** The two men are having an animated conversation. The man in the blazer is speaking and reacting with various facial expressions—smiling, laughing, and looking upward thoughtfully—while gesturing slightly with papers in hand. The man in the cap listens attentively, facing the speaker.\n\n**Emotional Tone:** Warm, friendly, and lighthearted. The man in the blacer displays amusement and engagement through smiles and laughter.\n\n**Interaction:** A casual but focused dialogue where the man in the blazer appears to be explaining or recounting something amusing to the other man, who is listening intently. Their body language suggests a comfortable rapport between them.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 220,
+      "total_tokens": 8744
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"outdoors, near a brick building\",\n  \"main_entities\": [\"man in brown suit\", \"man in dark jacket and cap\"],\n  \"actions\": [\"talking\", \"listening\", \"holding papers\"],\n  \"emotion_words\": [\"smiling\", \"engaged\", \"attentive\"],\n  \"interaction_level\": 2,\n  \"interaction_evidence\": \"The two men are facing each other and engaged in a conversation. The man in the suit is speaking and smiling, while the man in the cap is looking at him and listening attentively, indicating a clear mutual exchange.\",\n  \"summary\": \"A man wearing glasses and a brown suit is having an outdoor conversation with another man who is wearing a cap and a dark jacket, appearing to be in a friendly and professional discussion.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 168,
+      "total_tokens": 9076
+    }
+  },
+  "lvlm_structured": {
+    "setting": "outdoors, near a brick building",
+    "main_entities": [
+      "man in brown suit",
+      "man in dark jacket and cap"
+    ],
+    "actions": [
+      "talking",
+      "listening",
+      "holding papers"
+    ],
+    "emotion_words": [
+      "smiling",
+      "engaged",
+      "attentive"
+    ],
+    "interaction_level": 2,
+    "interaction_evidence": "The two men are facing each other and engaged in a conversation. The man in the suit is speaking and smiling, while the man in the cap is looking at him and listening attentively, indicating a clear mutual exchange.",
+    "summary": "A man wearing glasses and a brown suit is having an outdoor conversation with another man who is wearing a cap and a dark jacket, appearing to be in a friendly and professional discussion."
+  },
+  "lvlm_error": null
+}

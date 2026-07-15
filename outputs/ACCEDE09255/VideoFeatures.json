@@ -1,0 +1,40 @@
+{
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09255.mp4",
+  "duration_seconds": 9.833333,
+  "shots": {
+    "count": 1,
+    "avg_shot_length": 9.833333,
+    "shot_variance": 0.0,
+    "shot_lengths": [
+      9.833333
+    ]
+  },
+  "labels": {
+    "unique": [
+      "sitting"
+    ],
+    "count_unique": 1
+  },
+  "objects": {
+    "total_tracks": 9,
+    "object_frequency_distribution": {
+      "lamp": 2,
+      "table": 2,
+      "pants": 2,
+      "person": 1,
+      "chair": 1,
+      "shoe": 1
+    },
+    "top_objects": [
+      "lamp",
+      "table",
+      "pants",
+      "person",
+      "chair",
+      "shoe"
+    ],
+    "object_entropy": 2.503258,
+    "human_presence_ratio": 0.991525,
+    "interaction_density_tracks_per_sec": 0.915254
+  }
+}

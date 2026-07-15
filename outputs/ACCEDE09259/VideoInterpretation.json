@@ -1,0 +1,77 @@
+{
+  "video_id": "ACCEDE09259",
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09259.mp4",
+  "features_raw": {
+    "shot_frequency": 0.188976383904768,
+    "object_entropy": 2.855905,
+    "interaction_density": 1.984252,
+    "human_presence_ratio": 0.980315
+  },
+  "features_norm": {
+    "shot_frequency": 0.188976383904768,
+    "object_entropy": 0.71397625,
+    "interaction_density": 0.3968504,
+    "human_presence_ratio": 0.980315
+  },
+  "scene_complexity_score": 0.4934350018666688,
+  "scene_complexity_breakdown": {
+    "shot_frequency": 0.0661417343666688,
+    "object_entropy": 0.2498916875,
+    "interaction_density": 0.07937008000000001,
+    "human_presence_ratio": 0.09803150000000001
+  },
+  "narrative_phase": "Calm",
+  "phase_reasons": [
+    "Normalized values -> shot_frequency=0.1890, object_entropy=0.7140, interaction_density=0.3969",
+    "Dense rule not satisfied: object_entropy > 0.7 is True, interaction_density > 0.65 is False",
+    "Dynamic rule not satisfied: shot_frequency > 0.35 is False, interaction_density <= 0.75 is True",
+    "Static rule not satisfied: shot_frequency < 0.2 is True, interaction_density < 0.3 is False, object_entropy < 0.5 is False",
+    "Defaulted to Calm"
+  ],
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "This video clip depicts an interview or interrogation scene set in a modest, cluttered office. Two men are seated across from each other at a wooden desk: one is a bald man in a dark suit with a distinctive orange patterned tie (appearing to be an interviewer or detective), and the other is a man in a light blue uniform shirt with shoulder patches (likely a security guard or officer).\n\n**Actions and Interaction:** The suited man holds a pen and notebook, taking notes while engaging the uniformed man in conversation. He smiles and nods, at one point gesturing with his left hand to emphasize a point, then picks up an envelope or document from the desk to reference it. The camera angle shifts between showing the suited man's face and the uniformed man's back, then reverses to show the uniformed man speaking calmly while the suited man writes.\n\n**Tone:** The atmosphere appears professional but relaxed and conversational rather than adversarial. The suited man maintains a friendly, attentive demeanor throughout, suggesting this is a routine informational interview or statement-taking session rather than a hostile confrontation. The office background contains typical items like a tissue box, wire file organizer, thermos, calendar on the wall, and various office supplies.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 249,
+      "total_tokens": 8773
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"office\",\n  \"main_entities\": [\"man in suit\", \"man in uniform\"],\n  \"actions\": [\"sitting\", \"writing\", \"talking\", \"gesturing with paper\"],\n  \"emotion_words\": [\"smiling\", \"engaged\", \"attentive\"],\n  \"interaction_level\": 2,\n  \"interaction_evidence\": \"The two men are facing each other across a desk, engaged in conversation. The man in the suit smiles, gestures with a piece of paper while speaking, and writes notes. The man in the uniform maintains eye contact and responds, indicating clear mutual communication.\",\n  \"summary\": \"A man in a dark suit and orange tie conducts an interview or meeting with a uniformed officer in an office setting. They are actively conversing, with the suited man taking notes and using a document to emphasize his points.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 180,
+      "total_tokens": 9088
+    }
+  },
+  "lvlm_structured": {
+    "setting": "office",
+    "main_entities": [
+      "man in suit",
+      "man in uniform"
+    ],
+    "actions": [
+      "sitting",
+      "writing",
+      "talking",
+      "gesturing with paper"
+    ],
+    "emotion_words": [
+      "smiling",
+      "engaged",
+      "attentive"
+    ],
+    "interaction_level": 2,
+    "interaction_evidence": "The two men are facing each other across a desk, engaged in conversation. The man in the suit smiles, gestures with a piece of paper while speaking, and writes notes. The man in the uniform maintains eye contact and responds, indicating clear mutual communication.",
+    "summary": "A man in a dark suit and orange tie conducts an interview or meeting with a uniformed officer in an office setting. They are actively conversing, with the suited man taking notes and using a document to emphasize his points."
+  },
+  "lvlm_error": null
+}

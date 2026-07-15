@@ -7,6 +7,7 @@ The structured prompt asks the model for JSON only, but models sometimes still r
 * malformed JSON
 So this file should clean that up.
 """
+
 import json
 import math
 import re
@@ -20,7 +21,7 @@ def strip_code_fences(text: str) -> str:
     cleaned = text.strip()
 
     if cleaned.startswith("```"):
-        cleaned = re.sub(r"^```(?:json)?\s*", "", cleaned)
+        cleaned = re.sub(r"^```[a-zA-Z0-9_-]*\s*", "", cleaned)
         cleaned = re.sub(r"\s*```$", "", cleaned)
 
     return cleaned.strip()
@@ -35,7 +36,11 @@ def extract_json_block(text: str) -> str:
     """
     start_index = text.find("{")
     if start_index == -1:
-        raise ValueError("No JSON object start ('{') found in response.")
+        preview = text[:500].replace("\n", "\\n")
+        raise ValueError(
+            "No JSON object start ('{') found in response. "
+            f"Response preview: {preview!r}"
+        )
 
     depth = 0
     end_index = None
@@ -52,7 +57,11 @@ def extract_json_block(text: str) -> str:
                 break
 
     if end_index is None:
-        raise ValueError("Could not find the end of the JSON object in response.")
+        preview = text[:500].replace("\n", "\\n")
+        raise ValueError(
+            "Could not find the end of the JSON object in response. "
+            f"Response preview: {preview!r}"
+        )
 
     return text[start_index:end_index + 1]
 
@@ -112,24 +121,28 @@ def parse_structured_response(response_text: str) -> Dict[str, Any]:
     Parse a structured LVLM response into a validated dictionary.
 
     Steps:
-    1. Strip markdown code fences
-    2. Try direct JSON parsing
-    3. If that fails, extract the first JSON block and try again
-    4. Normalize fields to the expected schema
+    1. Reject empty responses clearly
+    2. Strip markdown code fences
+    3. Try direct JSON parsing
+    4. If that fails, extract the first JSON block and try again
+    5. Normalize fields to the expected schema
     """
-    cleaned_text = strip_code_fences(response_text)
+    if response_text is None:
+        raise ValueError("Structured LVLM response is None.")
+
+    cleaned_text = strip_code_fences(str(response_text))
+
+    if not cleaned_text:
+        raise ValueError("Structured LVLM response is empty.")
 
     try:
         parsed = json.loads(cleaned_text)
-        if not isinstance(parsed, dict):
-            raise ValueError("Structured LVLM response is not a JSON object.")
-        return normalize_structured_fields(parsed)
 
-    except Exception:
+    except json.JSONDecodeError:
         json_block = extract_json_block(cleaned_text)
         parsed = json.loads(json_block)
 
-        if not isinstance(parsed, dict):
-            raise ValueError("Structured LVLM response is not a JSON object.")
+    if not isinstance(parsed, dict):
+        raise ValueError("Structured LVLM response is not a JSON object.")
 
-        return normalize_structured_fields(parsed)
+    return normalize_structured_fields(parsed)

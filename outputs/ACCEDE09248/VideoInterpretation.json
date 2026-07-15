@@ -27,8 +27,48 @@
     "Dynamic rule not satisfied: shot_frequency > 0.35 is False, interaction_density <= 0.75 is True",
     "Static rule satisfied: shot_frequency < 0.2 is True, interaction_density < 0.3 is True, object_entropy < 0.5 is True"
   ],
-  "lvlm_summary": null,
-  "lvlm_structured_raw": null,
-  "lvlm_structured": null,
-  "lvlm_error": "LVLM not run in gcp_tuning mode"
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "The video shows a close-up of a middle-aged man with short brown hair, wearing a light blue collared shirt under a dark jacket. He is outdoors with a blurred background of greenery and what appears to be a building structure.\n\n**Actions and Movement:** The man begins facing forward, then slowly turns his head to his right (viewer's left), holding the profile position for several frames before turning back to face forward again. His facial expressions shift subtly throughout - his brow furrows slightly, his mouth opens and closes as if speaking or reacting, and his eyes move as he looks around.\n\n**Emotional Tone:** The man appears serious, contemplative, or concerned. His expressions suggest he is engaged in an intense conversation or processing difficult information.\n\n**Setting:** Outdoor location, likely a residential or institutional setting with natural lighting.\n\n**Interaction:** No other people are visible in these frames; this appears to be a reaction shot or solo moment focusing on this character's emotional response.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 197,
+      "total_tokens": 8721
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"outdoor\",\n  \"main_entities\": [\"man\"],\n  \"actions\": [\"looking around\", \"listening\", \"processing information\"],\n  \"emotion_words\": [\"serious\", \"concerned\", \"contemplative\"],\n  \"interaction_level\": 0,\n  \"interaction_evidence\": \"The video frames show only a single individual with no other people visible in the frame. The man appears to be alone, looking in different directions and processing something internally without any visible social cues, communication, or coordinated behavior with others.\",\n  \"summary\": \"A close-up shot of a middle-aged man with short brown hair wearing a blue shirt and dark jacket outdoors. He displays a serious and contemplative expression as he looks around, appearing to listen intently or process difficult information.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 163,
+      "total_tokens": 9071
+    }
+  },
+  "lvlm_structured": {
+    "setting": "outdoor",
+    "main_entities": [
+      "man"
+    ],
+    "actions": [
+      "looking around",
+      "listening",
+      "processing information"
+    ],
+    "emotion_words": [
+      "serious",
+      "concerned",
+      "contemplative"
+    ],
+    "interaction_level": 0,
+    "interaction_evidence": "The video frames show only a single individual with no other people visible in the frame. The man appears to be alone, looking in different directions and processing something internally without any visible social cues, communication, or coordinated behavior with others.",
+    "summary": "A close-up shot of a middle-aged man with short brown hair wearing a blue shirt and dark jacket outdoors. He displays a serious and contemplative expression as he looks around, appearing to listen intently or process difficult information."
+  },
+  "lvlm_error": null
 }

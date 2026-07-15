@@ -9,9 +9,10 @@ Good for:
 * quick sanity check
 * storing a human-readable summary
 
-PROMPT_STRUCTURED_V1
+PROMPT_STRUCTURED_V3
 Good for:
 * stable fields
+* interaction-level tuning
 * easier downstream usage
 * easier validation
 * easier future comparison across videos
@@ -29,9 +30,13 @@ Focus on:
 Keep the answer concise and factual.
 """.strip()
 
-#updated LVLM interaction level description
-PROMPT_STRUCTURED_V1 = """
-Return JSON only.
+PROMPT_STRUCTURED_V3 = """
+Return exactly one valid JSON object.
+
+Do not include markdown.
+Do not include explanations before or after the JSON.
+Do not use code fences.
+The response must start with { and end with }.
 
 Schema:
 {
@@ -45,20 +50,31 @@ Schema:
 }
 
 Interaction level scale:
-0 = no visible interaction between entities.
-    Examples: people are present but doing separate activities; one person walks alone.
-1 = weak or indirect interaction.
-    Examples: one person speaks while another listens; one person glances at another; people share the same activity but do not clearly respond to each other.
-2 = clear mutual interaction.
-    Examples: two people talk to each other, react to each other, gesture toward each other, or coordinate actions.
-3 = strong or intense interaction.
-    Examples: argument, physical struggle, urgent emotional exchange, chase, direct confrontation, intense cooperation.
+0 = No visible interaction.
+    Use only when entities are alone, separated, or clearly focused on unrelated independent activities.
+    If there is no visible social, communicative, responsive, or coordinated cue, use 0.
 
-Rules:
-- interaction_level must be based on visible behavior only.
-- If there is speaking, looking, gesturing, or reaction between people, do not return 0.
-- Return 0 only when entities are present but no direct or indirect interaction is visible.
-- Include a short interaction_evidence string explaining the chosen level.
-- Do not include markdown.
-- Do not include text outside the JSON.
+1 = Weak or indirect interaction.
+    Use when there is a subtle social or task-based connection between entities.
+    This includes one-sided communication, speaking posture, listening posture, attentive gaze, shared attention, passive observation, brief reaction, or people participating in the same shared situation without strong mutual exchange.
+    Level 1 does not require physical contact, large gestures, direct eye contact, or obvious back-and-forth conversation.
+
+2 = Clear mutual interaction.
+    Use when entities visibly communicate, respond to each other, gesture toward each other, coordinate actions, or appear engaged in the same exchange.
+    This requires clearer mutual involvement than level 1.
+
+3 = Strong or highly active interaction.
+    Use when the interaction is intense, urgent, emotionally strong, or involves clearly active coordinated behavior between entities.
+
+Important rules:
+- Do not return 0 if there is visible speaking, listening, attentive gaze, reaction, shared attention, or coordinated behavior between entities.
+- If one entity appears to be communicating and another entity appears present, attentive, affected, or contextually involved, choose at least interaction_level 1.
+- Use interaction_level 0 only when there is no visible social, communicative, responsive, or coordinated cue.
+- Prefer level 1 over level 0 when weak interaction cues are visible but not strong enough for level 2.
+- Always include interaction_evidence explaining the chosen level.
 """.strip()
+
+# Active prompts used by the LVLM client.
+# Update these aliases when changing prompt versions.
+ACTIVE_SUMMARY_PROMPT = PROMPT_SUMMARY_V1
+ACTIVE_STRUCTURED_PROMPT = PROMPT_STRUCTURED_V3

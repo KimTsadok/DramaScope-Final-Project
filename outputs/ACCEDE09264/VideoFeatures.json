@@ -1,0 +1,43 @@
+{
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09264.mp4",
+  "duration_seconds": 8.875,
+  "shots": {
+    "count": 1,
+    "avg_shot_length": 8.875,
+    "shot_variance": 0.0,
+    "shot_lengths": [
+      8.875
+    ]
+  },
+  "labels": {
+    "unique": [
+      "plant",
+      "public space",
+      "tree",
+      "walking"
+    ],
+    "count_unique": 4
+  },
+  "objects": {
+    "total_tracks": 11,
+    "object_frequency_distribution": {
+      "pants": 3,
+      "person": 2,
+      "car": 2,
+      "outerwear": 2,
+      "suit": 1,
+      "tie": 1
+    },
+    "top_objects": [
+      "pants",
+      "person",
+      "car",
+      "outerwear",
+      "suit",
+      "tie"
+    ],
+    "object_entropy": 2.481715,
+    "human_presence_ratio": 1.0,
+    "interaction_density_tracks_per_sec": 1.239437
+  }
+}

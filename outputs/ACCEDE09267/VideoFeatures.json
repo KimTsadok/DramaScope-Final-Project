@@ -1,0 +1,41 @@
+{
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09267.mp4",
+  "duration_seconds": 11.25,
+  "shots": {
+    "count": 1,
+    "avg_shot_length": 11.25,
+    "shot_variance": 0.0,
+    "shot_lengths": [
+      11.25
+    ]
+  },
+  "labels": {
+    "unique": [
+      "car",
+      "land vehicle",
+      "motor vehicle",
+      "vehicle"
+    ],
+    "count_unique": 4
+  },
+  "objects": {
+    "total_tracks": 8,
+    "object_frequency_distribution": {
+      "person": 2,
+      "hat": 2,
+      "outerwear": 2,
+      "glasses": 1,
+      "shirt": 1
+    },
+    "top_objects": [
+      "person",
+      "hat",
+      "outerwear",
+      "glasses",
+      "shirt"
+    ],
+    "object_entropy": 2.25,
+    "human_presence_ratio": 1.0,
+    "interaction_density_tracks_per_sec": 0.711111
+  }
+}

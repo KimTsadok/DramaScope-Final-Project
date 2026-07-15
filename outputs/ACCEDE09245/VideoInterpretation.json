@@ -27,8 +27,49 @@
     "Dynamic rule not satisfied: shot_frequency > 0.35 is False, interaction_density <= 0.75 is True",
     "Static rule satisfied: shot_frequency < 0.2 is True, interaction_density < 0.3 is True, object_entropy < 0.5 is True"
   ],
-  "lvlm_summary": null,
-  "lvlm_structured_raw": null,
-  "lvlm_structured": null,
-  "lvlm_error": "LVLM not run in gcp_tuning mode"
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "**Setting:** A clinical or medical examination room, indicated by the white lab coat, medical equipment (refrigerator, sink), and institutional background.\n\n**People:** Two men appear in sequence:\n- A middle-aged man with graying hair, glasses, goatee, wearing a white lab coat over a shirt and red tie (appears to be a doctor or scientist)\n- A man in a light blue uniform with shoulder patches and a badge (appears to be a corrections officer or security personnel)\n\n**Actions:** The first man is speaking with animated facial expressions—his eyes shift, eyebrows raise, and mouth moves as if delivering serious news or an explanation. The scene then cuts to the second man looking downward with a somber, troubled expression.\n\n**Emotional Tone:** Serious, tense, and somber. The first man conveys urgency or concern through his expressive face; the second man appears distressed, resigned, or burdened by what he has heard.\n\n**Interaction:** Though not shown in the same frame, the sequence suggests a conversation where the first character is delivering difficult information to the second character, who receives it with visible emotional weight.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 232,
+      "total_tokens": 8756
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"Medical or correctional facility office\",\n  \"main_entities\": [\"Doctor in white lab coat\", \"Correctional officer in blue uniform\"],\n  \"actions\": [\"Speaking\", \"Listening\", \"Looking down\"],\n  \"emotion_words\": [\"Concerned\", \"Serious\", \"Contemplative\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The doctor appears to be speaking and looking toward the officer, while the officer is listening with a serious expression, indicating a one-sided communication or conversation between the two individuals.\",\n  \"summary\": \"A doctor wearing glasses and a lab coat speaks with concern to a correctional officer who listens intently, suggesting a serious discussion about an inmate's medical condition or situation.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 155,
+      "total_tokens": 9063
+    }
+  },
+  "lvlm_structured": {
+    "setting": "Medical or correctional facility office",
+    "main_entities": [
+      "Doctor in white lab coat",
+      "Correctional officer in blue uniform"
+    ],
+    "actions": [
+      "Speaking",
+      "Listening",
+      "Looking down"
+    ],
+    "emotion_words": [
+      "Concerned",
+      "Serious",
+      "Contemplative"
+    ],
+    "interaction_level": 1,
+    "interaction_evidence": "The doctor appears to be speaking and looking toward the officer, while the officer is listening with a serious expression, indicating a one-sided communication or conversation between the two individuals.",
+    "summary": "A doctor wearing glasses and a lab coat speaks with concern to a correctional officer who listens intently, suggesting a serious discussion about an inmate's medical condition or situation."
+  },
+  "lvlm_error": null
 }

@@ -26,8 +26,48 @@
     "Dense rule not satisfied: object_entropy > 0.7 is False, interaction_density > 0.65 is False",
     "Dynamic rule satisfied: shot_frequency > 0.35 is True, interaction_density <= 0.75 is True"
   ],
-  "lvlm_summary": null,
-  "lvlm_structured_raw": null,
-  "lvlm_structured": null,
-  "lvlm_error": "LVLM not run in gcp_tuning mode"
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "The video depicts a conversation between two men in what appears to be a medical or institutional facility. The setting includes clinical elements like a microwave, sink, and medical equipment in the background.\n\n**People:**\n- A man with glasses, graying hair and goatee, wearing a white lab coat over a striped shirt and red tie (appears to be a doctor or scientist)\n- A man in a light blue uniform with shoulder patches (appears to be a security officer or guard)\n\n**Actions & Interaction:**\nThe video alternates between close-up shots of each man as they engage in dialogue. The doctor is shown speaking with animated facial expressions—his mouth moves expressively and his eyes shift as he talks. The uniformed officer listens intently with a serious, stoic expression, maintaining steady eye contact.\n\n**Emotional Tone:**\nThe interaction carries a tense, serious atmosphere. The doctor appears concerned, earnest, or possibly alarmed based on his expressive delivery, while the officer remains composed and attentive, suggesting he is receiving important or troubling information. The scene feels like a pivotal moment of revelation or explanation within a dramatic narrative.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 229,
+      "total_tokens": 8753
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"Medical or correctional facility office\",\n  \"main_entities\": [\"Doctor in white lab coat\", \"Correctional officer in blue uniform\"],\n  \"actions\": [\"Speaking\", \"Listening\"],\n  \"emotion_words\": [\"Concerned\", \"Serious\", \"Attentive\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The video alternates between close-ups of the doctor speaking with expressive facial movements and the officer listening with a serious, attentive expression, indicating a conversation or interview where one party is addressing the other.\",\n  \"summary\": \"A doctor in a white lab coat and glasses appears to be speaking earnestly to a correctional officer in uniform, who listens intently in what looks like a medical or institutional setting.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 159,
+      "total_tokens": 9067
+    }
+  },
+  "lvlm_structured": {
+    "setting": "Medical or correctional facility office",
+    "main_entities": [
+      "Doctor in white lab coat",
+      "Correctional officer in blue uniform"
+    ],
+    "actions": [
+      "Speaking",
+      "Listening"
+    ],
+    "emotion_words": [
+      "Concerned",
+      "Serious",
+      "Attentive"
+    ],
+    "interaction_level": 1,
+    "interaction_evidence": "The video alternates between close-ups of the doctor speaking with expressive facial movements and the officer listening with a serious, attentive expression, indicating a conversation or interview where one party is addressing the other.",
+    "summary": "A doctor in a white lab coat and glasses appears to be speaking earnestly to a correctional officer in uniform, who listens intently in what looks like a medical or institutional setting."
+  },
+  "lvlm_error": null
 }

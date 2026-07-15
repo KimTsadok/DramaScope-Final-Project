@@ -18,7 +18,7 @@ from openai import (
 )
 
 from src.config import FRAME_SETTINGS, MODEL_SETTINGS
-from src.lvlm.prompts import PROMPT_SUMMARY_V1, PROMPT_STRUCTURED_V1
+from src.lvlm.prompts import ACTIVE_STRUCTURED_PROMPT, ACTIVE_SUMMARY_PROMPT
 from src.gcp.upload import load_dotenv
 
 # ---------------------------------------------------------------------
@@ -31,7 +31,8 @@ load_dotenv()
 # ---------------------------------------------------------------------
 # LVLM client configuration
 # ---------------------------------------------------------------------
-GLM_API_KEY = os.getenv("GLM_API_KEY", "")
+# ZHIPU_API_KEY is accepted as a fallback name for the same z.ai key.
+GLM_API_KEY = os.getenv("GLM_API_KEY", "") or os.getenv("ZHIPU_API_KEY", "")
 GLM_BASE_URL = "https://api.z.ai/api/paas/v4/"
 
 MAX_RETRIES = 5
@@ -161,6 +162,11 @@ def call_glm_with_retry(
     """
     Call chat completion with retry/backoff on transient API errors.
     """
+    # Thinking control is a z.ai extension, passed via extra_body.
+    # See ModelSettings.lvlm_enable_thinking in config.py for why this
+    # is disabled by default.
+    thinking_type = "enabled" if MODEL_SETTINGS.lvlm_enable_thinking else "disabled"
+
     attempt = 1
 
     while attempt <= MAX_RETRIES:
@@ -170,6 +176,7 @@ def call_glm_with_retry(
                 messages=messages,
                 max_tokens=max_tokens,
                 timeout=REQUEST_TIMEOUT_SECONDS,
+                extra_body={"thinking": {"type": thinking_type}},
             )
 
         except Exception as exc:
@@ -203,7 +210,24 @@ def build_result(
     """
     Build the standard result dictionary returned by LVLM inference functions.
     """
-    response_text = response.choices[0].message.content or ""
+    choice = response.choices[0]
+    response_text = choice.message.content or ""
+    finish_reason = choice.finish_reason
+
+    if not response_text.strip():
+        # Thinking models put reasoning in message.reasoning_content; if the
+        # max_tokens budget runs out mid-reasoning, content comes back empty
+        # with finish_reason="length". Fail with a clear message instead of
+        # letting JSON parsing fail downstream with a cryptic one.
+        reasoning_text = getattr(choice.message, "reasoning_content", None) or ""
+        raise RuntimeError(
+            "LVLM returned empty content "
+            f"(finish_reason={finish_reason!r}, "
+            f"reasoning_content_chars={len(reasoning_text)}). "
+            "The model likely spent the whole max_tokens budget on internal "
+            "reasoning. Keep lvlm_enable_thinking=False in config.py or "
+            "increase MAX_COMPLETION_TOKENS."
+        )
 
     usage = {}
     if getattr(response, "usage", None):
@@ -218,6 +242,7 @@ def build_result(
         "prompt_version": prompt_version,
         "frame_count": frame_count,
         "text": response_text,
+        "finish_reason": finish_reason,
         "usage": usage,
     }
 
@@ -277,13 +302,13 @@ def run_inference(
     frames_b64 = extract_frames(
         video_path=video_path,
         fps=FRAME_SETTINGS.frame_rate,
-        max_frames=FRAME_SETTINGS.max_frames,
+        max_frames=FRAME_SETTINGS.max_frames
     )
 
     return run_inference_from_frames(
         frames_b64=frames_b64,
         prompt=prompt,
-        prompt_version=prompt_version,
+        prompt_version=prompt_version
     )
 
 
@@ -302,8 +327,9 @@ def run_summary_inference(video_path: str) -> Dict[str, Any]:
     """
     return run_inference(
         video_path=video_path,
-        prompt=PROMPT_SUMMARY_V1,
-        prompt_version=MODEL_SETTINGS.lvlm_prompt_version + "_summary",
+        prompt=ACTIVE_SUMMARY_PROMPT,
+        prompt_version=MODEL_SETTINGS.lvlm_summary_prompt_version
+
     )
 
 
@@ -313,8 +339,8 @@ def run_structured_inference(video_path: str) -> Dict[str, Any]:
     """
     return run_inference(
         video_path=video_path,
-        prompt=PROMPT_STRUCTURED_V1,
-        prompt_version=MODEL_SETTINGS.lvlm_prompt_version + "_structured",
+        prompt=ACTIVE_STRUCTURED_PROMPT,
+        prompt_version=MODEL_SETTINGS.lvlm_structured_prompt_version
     )
 
 
@@ -324,8 +350,8 @@ def run_summary_inference_from_frames(frames_b64: List[str]) -> Dict[str, Any]:
     """
     return run_inference_from_frames(
         frames_b64=frames_b64,
-        prompt=PROMPT_SUMMARY_V1,
-        prompt_version=MODEL_SETTINGS.lvlm_prompt_version + "_summary",
+        prompt=ACTIVE_SUMMARY_PROMPT,
+        prompt_version=MODEL_SETTINGS.lvlm_summary_prompt_version
     )
 
 
@@ -335,6 +361,6 @@ def run_structured_inference_from_frames(frames_b64: List[str]) -> Dict[str, Any
     """
     return run_inference_from_frames(
         frames_b64=frames_b64,
-        prompt=PROMPT_STRUCTURED_V1,
-        prompt_version=MODEL_SETTINGS.lvlm_prompt_version + "_structured",
+        prompt= ACTIVE_STRUCTURED_PROMPT,
+        prompt_version=MODEL_SETTINGS.lvlm_structured_prompt_version
     )

@@ -1,0 +1,76 @@
+{
+  "video_id": "ACCEDE09263",
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09263.mp4",
+  "features_raw": {
+    "shot_frequency": 0.1111111111111111,
+    "object_entropy": 2.739572,
+    "interaction_density": 1.666667,
+    "human_presence_ratio": 1.0
+  },
+  "features_norm": {
+    "shot_frequency": 0.1111111111111111,
+    "object_entropy": 0.684893,
+    "interaction_density": 0.3333334,
+    "human_presence_ratio": 1.0
+  },
+  "scene_complexity_score": 0.44526811888888884,
+  "scene_complexity_breakdown": {
+    "shot_frequency": 0.03888888888888888,
+    "object_entropy": 0.23971254999999997,
+    "interaction_density": 0.06666668,
+    "human_presence_ratio": 0.1
+  },
+  "narrative_phase": "Calm",
+  "phase_reasons": [
+    "Normalized values -> shot_frequency=0.1111, object_entropy=0.6849, interaction_density=0.3333",
+    "Dense rule not satisfied: object_entropy > 0.7 is False, interaction_density > 0.65 is False",
+    "Dynamic rule not satisfied: shot_frequency > 0.35 is False, interaction_density <= 0.75 is True",
+    "Static rule not satisfied: shot_frequency < 0.2 is True, interaction_density < 0.3 is False, object_entropy < 0.5 is False",
+    "Defaulted to Calm"
+  ],
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "**Setting:** A quiet suburban or campus street with a grassy verge, sidewalk, parked cars (including a silver pickup truck), brick buildings, and trees. The scene is lit by late afternoon/early evening light.\n\n**People:**\n- **Foreground:** A person in a brown jacket and khaki pants holding papers, partially visible on the left side of the frame\n- **Background:** A uniformed officer (appears to be parking enforcement) standing near a parking meter\n\n**Visible Actions:**\n- The foreground person remains relatively stationary, holding documents\n- The officer stands by the meter, appears to be writing or checking something, then begins walking slowly toward the camera/left side of the frame in the later frames\n- A black car drives past the silver truck and exits the frame to the right\n\n**Emotional Tone:** Calm, routine, observational - no apparent tension or urgency\n\n**Interaction:** No direct interaction between the two individuals; they appear to be engaged in separate activities, though the person in the foreground may be observing the officer's actions",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 215,
+      "total_tokens": 8739
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"outdoor sidewalk and street with parked cars, trees, and brick buildings\",\n  \"main_entities\": [\"man in brown jacket holding papers\", \"police officer in dark uniform\"],\n  \"actions\": [\"standing still\", \"writing or checking device\", \"walking forward\"],\n  \"emotion_words\": [\"neutral\", \"routine\", \"calm\"],\n  \"interaction_level\": 0,\n  \"interaction_evidence\": \"The two individuals are separated by a significant distance with no visible eye contact, gestures, or communicative cues between them. The officer is focused on a handheld device or notepad while the man in the foreground remains stationary holding papers. They appear to be engaged in independent activities without any observable social connection.\",\n  \"summary\": \"A man in a brown jacket stands in the foreground holding papers while a police officer stands near a parking meter on the street, appearing to write a ticket or check a device. A white pickup truck drives past, and the officer eventually begins walking toward the camera as the scene remains calm and routine.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 216,
+      "total_tokens": 9124
+    }
+  },
+  "lvlm_structured": {
+    "setting": "outdoor sidewalk and street with parked cars, trees, and brick buildings",
+    "main_entities": [
+      "man in brown jacket holding papers",
+      "police officer in dark uniform"
+    ],
+    "actions": [
+      "standing still",
+      "writing or checking device",
+      "walking forward"
+    ],
+    "emotion_words": [
+      "neutral",
+      "routine",
+      "calm"
+    ],
+    "interaction_level": 0,
+    "interaction_evidence": "The two individuals are separated by a significant distance with no visible eye contact, gestures, or communicative cues between them. The officer is focused on a handheld device or notepad while the man in the foreground remains stationary holding papers. They appear to be engaged in independent activities without any observable social connection.",
+    "summary": "A man in a brown jacket stands in the foreground holding papers while a police officer stands near a parking meter on the street, appearing to write a ticket or check a device. A white pickup truck drives past, and the officer eventually begins walking toward the camera as the scene remains calm and routine."
+  },
+  "lvlm_error": null
+}

@@ -25,8 +25,53 @@
     "Normalized values -> shot_frequency=0.1244, object_entropy=0.7381, interaction_density=0.6715",
     "Dense rule satisfied: object_entropy > 0.7 is True, interaction_density > 0.65 is True"
   ],
-  "lvlm_summary": null,
-  "lvlm_structured_raw": null,
-  "lvlm_structured": null,
-  "lvlm_error": "LVLM not run in gcp_tuning mode"
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "**Setting:** A domestic dining room with wooden paneling, a table set with plates, cutlery, and glasses, plus gift bags with tissue paper suggesting a celebration.\n\n**People:** Two women seated at the table - one younger with blonde hair wearing a pink collared shirt and pearl necklace (left), and one older with short brown hair, glasses, and a red patterned top (right).\n\n**Actions:** The women are eating a meal together. The blonde woman holds her plate, smiles, then looks around before standing up, picking up her plate, and walking away from the table. The older woman eats, gestures while talking, watches her companion leave, then looks down at her own plate.\n\n**Emotional Tone:** Begins warm and convivial (smiling, relaxed dining), shifts to casual conversation, ends with the older woman appearing slightly surprised or contemplative as the other departs.\n\n**Interaction:** They engage in conversation during the meal; the departure of the younger woman appears to be the focal interaction, prompting a reaction from the remaining woman.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 214,
+      "total_tokens": 8738
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"Indoor dining room\",\n  \"main_entities\": [\"Woman in pink shirt\", \"Woman in red patterned shirt\"],\n  \"actions\": [\"Sitting at a table\", \"Eating\", \"Talking\", \"Looking at each other\", \"Standing up and leaving with plate\"],\n  \"emotion_words\": [\"Happy\", \"Smiling\", \"Attentive\", \"Surprised\", \"Concerned\"],\n  \"interaction_level\": 2,\n  \"interaction_evidence\": \"The two women are seated together at the table, engaging in conversation. The woman on the right speaks and gestures while the woman on the left listens, smiles, and reacts to her. They maintain eye contact and share attention, indicating clear mutual interaction.\",\n  \"summary\": \"Two women are having dinner and a conversation at a dining table. They are engaged in an animated discussion, but the woman in pink eventually stands up, takes her plate, and leaves while the other woman continues speaking.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 203,
+      "total_tokens": 9111
+    }
+  },
+  "lvlm_structured": {
+    "setting": "Indoor dining room",
+    "main_entities": [
+      "Woman in pink shirt",
+      "Woman in red patterned shirt"
+    ],
+    "actions": [
+      "Sitting at a table",
+      "Eating",
+      "Talking",
+      "Looking at each other",
+      "Standing up and leaving with plate"
+    ],
+    "emotion_words": [
+      "Happy",
+      "Smiling",
+      "Attentive",
+      "Surprised",
+      "Concerned"
+    ],
+    "interaction_level": 2,
+    "interaction_evidence": "The two women are seated together at the table, engaging in conversation. The woman on the right speaks and gestures while the woman on the left listens, smiles, and reacts to her. They maintain eye contact and share attention, indicating clear mutual interaction.",
+    "summary": "Two women are having dinner and a conversation at a dining table. They are engaged in an animated discussion, but the woman in pink eventually stands up, takes her plate, and leaves while the other woman continues speaking."
+  },
+  "lvlm_error": null
 }

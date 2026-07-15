@@ -1,0 +1,47 @@
+{
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09270.mp4",
+  "duration_seconds": 9.041666,
+  "shots": {
+    "count": 1,
+    "avg_shot_length": 9.041666,
+    "shot_variance": 0.0,
+    "shot_lengths": [
+      9.041666
+    ]
+  },
+  "labels": {
+    "unique": [
+      "guitar",
+      "guitarist",
+      "musical instrument",
+      "official",
+      "plucked string instruments",
+      "police"
+    ],
+    "count_unique": 6
+  },
+  "objects": {
+    "total_tracks": 10,
+    "object_frequency_distribution": {
+      "person": 3,
+      "hat": 2,
+      "curtain": 1,
+      "shirt": 1,
+      "belt": 1,
+      "luggage & bags": 1,
+      "glasses": 1
+    },
+    "top_objects": [
+      "person",
+      "hat",
+      "curtain",
+      "shirt",
+      "belt",
+      "luggage & bags",
+      "glasses"
+    ],
+    "object_entropy": 2.646439,
+    "human_presence_ratio": 0.995392,
+    "interaction_density_tracks_per_sec": 1.105991
+  }
+}

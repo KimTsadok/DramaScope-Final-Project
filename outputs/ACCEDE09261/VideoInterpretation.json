@@ -1,0 +1,74 @@
+{
+  "video_id": "ACCEDE09261",
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09261.mp4",
+  "features_raw": {
+    "shot_frequency": 0.35294117647058826,
+    "object_entropy": 2.765957,
+    "interaction_density": 2.352941,
+    "human_presence_ratio": 0.970588
+  },
+  "features_norm": {
+    "shot_frequency": 0.35294117647058826,
+    "object_entropy": 0.69148925,
+    "interaction_density": 0.4705882,
+    "human_presence_ratio": 0.970588
+  },
+  "scene_complexity_score": 0.5567270892647059,
+  "scene_complexity_breakdown": {
+    "shot_frequency": 0.12352941176470589,
+    "object_entropy": 0.2420212375,
+    "interaction_density": 0.09411764,
+    "human_presence_ratio": 0.0970588
+  },
+  "narrative_phase": "Dynamic",
+  "phase_reasons": [
+    "Normalized values -> shot_frequency=0.3529, object_entropy=0.6915, interaction_density=0.4706",
+    "Dense rule not satisfied: object_entropy > 0.7 is False, interaction_density > 0.65 is False",
+    "Dynamic rule satisfied: shot_frequency > 0.35 is True, interaction_density <= 0.75 is True"
+  ],
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "The video depicts a tense, clandestine meeting in an outdoor urban setting, likely near a brick institutional building or school. A man in a dark uniform and cap emerges from behind a corner of the building, walks down a concrete path toward the camera, and pulls out a stack of cash to count or display. Simultaneously, another man in a black leather jacket is shown sitting on the tailgate of a white pickup truck parked on the street, waiting and observing. The interaction suggests a payoff or illicit transaction is taking place between the two individuals, with the uniformed man approaching the leather-jacketed man with money in hand. The atmosphere is suspenseful and secretive, underscored by the autumn setting with golden trees and the cautious body language of both men.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 154,
+      "total_tokens": 8678
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"Outdoor sidewalk next to a brick building with autumn trees and parked cars\",\n  \"main_entities\": [\"Man in uniform\", \"Man in leather jacket\"],\n  \"actions\": [\"Walking out of a doorway\", \"Sitting on the back of a pickup truck\", \"Looking at money\"],\n  \"emotion_words\": [\"neutral\", \"contemplative\", \"focused\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The man in the uniform walks toward the camera while looking at money, and the man in the leather jacket is visible in the foreground (out of focus) watching him, suggesting observation or anticipation of an interaction.\",\n  \"summary\": \"A uniformed man exits a brick building and walks down a sidewalk counting money, while another man in a leather jacket sits on a nearby truck and watches him approach.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 176,
+      "total_tokens": 9084
+    }
+  },
+  "lvlm_structured": {
+    "setting": "Outdoor sidewalk next to a brick building with autumn trees and parked cars",
+    "main_entities": [
+      "Man in uniform",
+      "Man in leather jacket"
+    ],
+    "actions": [
+      "Walking out of a doorway",
+      "Sitting on the back of a pickup truck",
+      "Looking at money"
+    ],
+    "emotion_words": [
+      "neutral",
+      "contemplative",
+      "focused"
+    ],
+    "interaction_level": 1,
+    "interaction_evidence": "The man in the uniform walks toward the camera while looking at money, and the man in the leather jacket is visible in the foreground (out of focus) watching him, suggesting observation or anticipation of an interaction.",
+    "summary": "A uniformed man exits a brick building and walks down a sidewalk counting money, while another man in a leather jacket sits on a nearby truck and watches him approach."
+  },
+  "lvlm_error": null
+}

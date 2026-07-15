@@ -1,0 +1,44 @@
+{
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09251.mp4",
+  "duration_seconds": 10.041666,
+  "shots": {
+    "count": 2,
+    "avg_shot_length": 4.999999,
+    "shot_variance": 0.840277,
+    "shot_lengths": [
+      5.916666,
+      4.083333
+    ]
+  },
+  "labels": {
+    "unique": [
+      "office supplies",
+      "typewriter"
+    ],
+    "count_unique": 2
+  },
+  "objects": {
+    "total_tracks": 14,
+    "object_frequency_distribution": {
+      "person": 6,
+      "table": 2,
+      "t-shirt": 2,
+      "lighting": 1,
+      "couch": 1,
+      "packaged goods": 1,
+      "computer keyboard": 1
+    },
+    "top_objects": [
+      "person",
+      "table",
+      "t-shirt",
+      "lighting",
+      "couch",
+      "packaged goods",
+      "computer keyboard"
+    ],
+    "object_entropy": 2.4138,
+    "human_presence_ratio": 0.93361,
+    "interaction_density_tracks_per_sec": 1.394191
+  }
+}

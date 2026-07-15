@@ -1,0 +1,77 @@
+{
+  "video_id": "ACCEDE09270",
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09270.mp4",
+  "features_raw": {
+    "shot_frequency": 0.11059908649578519,
+    "object_entropy": 2.646439,
+    "interaction_density": 1.105991,
+    "human_presence_ratio": 0.995392
+  },
+  "features_norm": {
+    "shot_frequency": 0.11059908649578519,
+    "object_entropy": 0.66160975,
+    "interaction_density": 0.22119819999999998,
+    "human_presence_ratio": 0.995392
+  },
+  "scene_complexity_score": 0.4140519327735248,
+  "scene_complexity_breakdown": {
+    "shot_frequency": 0.03870968027352482,
+    "object_entropy": 0.23156341249999998,
+    "interaction_density": 0.04423964,
+    "human_presence_ratio": 0.09953920000000001
+  },
+  "narrative_phase": "Calm",
+  "phase_reasons": [
+    "Normalized values -> shot_frequency=0.1106, object_entropy=0.6616, interaction_density=0.2212",
+    "Dense rule not satisfied: object_entropy > 0.7 is False, interaction_density > 0.65 is False",
+    "Dynamic rule not satisfied: shot_frequency > 0.35 is False, interaction_density <= 0.75 is True",
+    "Static rule not satisfied: shot_frequency < 0.2 is True, interaction_density < 0.3 is True, object_entropy < 0.5 is False",
+    "Defaulted to Calm"
+  ],
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "The video depicts a law enforcement officer entering an indoor setting, likely a public building or office. The scene begins with a view of a doorway or window with vertical blinds, through which a man in a light blue uniform shirt (with \"LAW ENFORCEMENT\" patch visible) enters. He is holding a dark jacket or cap and raises his hand to his head as he steps inside. He then proceeds to walk forward into the room, moving closer to the camera. As he advances, a woman with dark hair and glasses becomes visible in the background behind him. The officer maintains a calm, neutral expression throughout, suggesting a routine or professional interaction. The lighting is natural, coming from windows behind him, and the overall tone is matter-of-fact and observational.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 154,
+      "total_tokens": 8678
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"Indoor doorway or entrance of a building\",\n  \"main_entities\": [\"Police officer\", \"Woman\"],\n  \"actions\": [\"Entering through a doorway\", \"Saluting or adjusting hair\", \"Holding a jacket\", \"Standing and looking forward\"],\n  \"emotion_words\": [\"Calm\", \"Neutral\", \"Professional\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"A woman appears in the background behind the officer in the later frames, suggesting she is present and potentially observing or interacting with him in a shared space, though no direct communication is visible.\",\n  \"summary\": \"A police officer in a light blue uniform enters a building through a glass door, holding a dark jacket. He pauses to adjust his hair or salute before standing still and looking forward as a woman appears in the background.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 173,
+      "total_tokens": 9081
+    }
+  },
+  "lvlm_structured": {
+    "setting": "Indoor doorway or entrance of a building",
+    "main_entities": [
+      "Police officer",
+      "Woman"
+    ],
+    "actions": [
+      "Entering through a doorway",
+      "Saluting or adjusting hair",
+      "Holding a jacket",
+      "Standing and looking forward"
+    ],
+    "emotion_words": [
+      "Calm",
+      "Neutral",
+      "Professional"
+    ],
+    "interaction_level": 1,
+    "interaction_evidence": "A woman appears in the background behind the officer in the later frames, suggesting she is present and potentially observing or interacting with him in a shared space, though no direct communication is visible.",
+    "summary": "A police officer in a light blue uniform enters a building through a glass door, holding a dark jacket. He pauses to adjust his hair or salute before standing still and looking forward as a woman appears in the background."
+  },
+  "lvlm_error": null
+}

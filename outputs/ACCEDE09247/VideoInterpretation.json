@@ -28,8 +28,48 @@
     "Static rule not satisfied: shot_frequency < 0.2 is True, interaction_density < 0.3 is False, object_entropy < 0.5 is False",
     "Defaulted to Calm"
   ],
-  "lvlm_summary": null,
-  "lvlm_structured_raw": null,
-  "lvlm_structured": null,
-  "lvlm_error": "LVLM not run in gcp_tuning mode"
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "The video captures a street scene where a black sedan pulls up to the curb and parks. A man wearing a black jacket with yellow stripes exits the driver's side, carrying a bag. He walks along the sidewalk, passing a parking meter and bench, before exiting the frame. The setting is an urban area with trees, parked cars, and a grassy background. The tone is neutral and observational, documenting routine daily activity without any notable emotional content or interpersonal interaction.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 94,
+      "total_tokens": 8618
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"outdoor parking area with trees and grass\",\n  \"main_entities\": [\"black sedan\", \"man in black jacket with yellow stripes\"],\n  \"actions\": [\"parking car\", \"exiting vehicle\", \"walking on sidewalk\"],\n  \"emotion_words\": [\"neutral\", \"focused\"],\n  \"interaction_level\": 0,\n  \"interaction_evidence\": \"The man is alone, exiting his parked car and walking away. There are no other people present to interact with, and he shows no social or communicative cues toward any other entity.\",\n  \"summary\": \"A man parks a black sedan on a street next to a parking meter and bench, exits the driver's side door carrying a bag, and walks along the sidewalk past the meter.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 158,
+      "total_tokens": 9066
+    }
+  },
+  "lvlm_structured": {
+    "setting": "outdoor parking area with trees and grass",
+    "main_entities": [
+      "black sedan",
+      "man in black jacket with yellow stripes"
+    ],
+    "actions": [
+      "parking car",
+      "exiting vehicle",
+      "walking on sidewalk"
+    ],
+    "emotion_words": [
+      "neutral",
+      "focused"
+    ],
+    "interaction_level": 0,
+    "interaction_evidence": "The man is alone, exiting his parked car and walking away. There are no other people present to interact with, and he shows no social or communicative cues toward any other entity.",
+    "summary": "A man parks a black sedan on a street next to a parking meter and bench, exits the driver's side door carrying a bag, and walks along the sidewalk past the meter."
+  },
+  "lvlm_error": null
 }
