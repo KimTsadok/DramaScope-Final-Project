@@ -1,0 +1,75 @@
+{
+  "video_id": "ACCEDE09266",
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09266.mp4",
+  "features_raw": {
+    "shot_frequency": 0.18532819677703147,
+    "object_entropy": 2.550341,
+    "interaction_density": 1.019305,
+    "human_presence_ratio": 0.810811
+  },
+  "features_norm": {
+    "shot_frequency": 0.18532819677703147,
+    "object_entropy": 0.63758525,
+    "interaction_density": 0.203861,
+    "human_presence_ratio": 0.810811
+  },
+  "scene_complexity_score": 0.409873006371961,
+  "scene_complexity_breakdown": {
+    "shot_frequency": 0.06486486887196101,
+    "object_entropy": 0.22315483749999998,
+    "interaction_density": 0.0407722,
+    "human_presence_ratio": 0.0810811
+  },
+  "narrative_phase": "Calm",
+  "phase_reasons": [
+    "Normalized values -> shot_frequency=0.1853, object_entropy=0.6376, interaction_density=0.2039",
+    "Dense rule not satisfied: object_entropy > 0.7 is False, interaction_density > 0.65 is False",
+    "Dynamic rule not satisfied: shot_frequency > 0.35 is False, interaction_density <= 0.75 is True",
+    "Static rule not satisfied: shot_frequency < 0.2 is True, interaction_density < 0.3 is True, object_entropy < 0.5 is False",
+    "Defaulted to Calm"
+  ],
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "The video opens with a static shot of a white wooden fence with lattice detailing, set in front of a house with columns and a brick facade, flanked by trees. The scene then cuts to two men standing outdoors against a brick wall background. The man on the left, wearing glasses, a brown blazer, and a dark sweater, is speaking and looking upward with an animated expression. The man on the right, dressed in a baseball cap and jacket, listens attentively while also gazing upward. Their interaction suggests a casual conversation or observation, with the speaker appearing engaged and the listener focused on what is being said or seen above them.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 130,
+      "total_tokens": 8654
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"Residential outdoor area with a white fence and brick building\",\n  \"main_entities\": [\"Man with glasses in brown coat\", \"Man in baseball cap\"],\n  \"actions\": [\"Standing\", \"Looking upward\", \"Speaking\"],\n  \"emotion_words\": [\"Contemplative\", \"Attentive\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The man with glasses appears to be speaking or reacting to something while the man in the cap looks attentively in the same direction, indicating shared attention and passive observation.\",\n  \"summary\": \"Two men stand outdoors near a residential fence, looking upward. The man wearing glasses and a brown coat speaks or reacts to something above them while his companion in a baseball cap listens and observes attentively.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 161,
+      "total_tokens": 9069
+    }
+  },
+  "lvlm_structured": {
+    "setting": "Residential outdoor area with a white fence and brick building",
+    "main_entities": [
+      "Man with glasses in brown coat",
+      "Man in baseball cap"
+    ],
+    "actions": [
+      "Standing",
+      "Looking upward",
+      "Speaking"
+    ],
+    "emotion_words": [
+      "Contemplative",
+      "Attentive"
+    ],
+    "interaction_level": 1,
+    "interaction_evidence": "The man with glasses appears to be speaking or reacting to something while the man in the cap looks attentively in the same direction, indicating shared attention and passive observation.",
+    "summary": "Two men stand outdoors near a residential fence, looking upward. The man wearing glasses and a brown coat speaks or reacts to something above them while his companion in a baseball cap listens and observes attentively."
+  },
+  "lvlm_error": null
+}

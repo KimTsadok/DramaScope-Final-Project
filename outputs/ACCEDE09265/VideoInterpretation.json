@@ -1,0 +1,76 @@
+{
+  "video_id": "ACCEDE09265",
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09265.mp4",
+  "features_raw": {
+    "shot_frequency": 0.12060302477210251,
+    "object_entropy": 2.20282,
+    "interaction_density": 1.929648,
+    "human_presence_ratio": 0.889447
+  },
+  "features_norm": {
+    "shot_frequency": 0.12060302477210251,
+    "object_entropy": 0.550705,
+    "interaction_density": 0.3859296,
+    "human_presence_ratio": 0.889447
+  },
+  "scene_complexity_score": 0.40108842867023586,
+  "scene_complexity_breakdown": {
+    "shot_frequency": 0.042211058670235876,
+    "object_entropy": 0.19274675,
+    "interaction_density": 0.07718592,
+    "human_presence_ratio": 0.0889447
+  },
+  "narrative_phase": "Calm",
+  "phase_reasons": [
+    "Normalized values -> shot_frequency=0.1206, object_entropy=0.5507, interaction_density=0.3859",
+    "Dense rule not satisfied: object_entropy > 0.7 is False, interaction_density > 0.65 is False",
+    "Dynamic rule not satisfied: shot_frequency > 0.35 is False, interaction_density <= 0.75 is True",
+    "Static rule not satisfied: shot_frequency < 0.2 is True, interaction_density < 0.3 is False, object_entropy < 0.5 is False",
+    "Defaulted to Calm"
+  ],
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "**Setting:** An outdoor parking lot or roadside area with grass, trees with autumn foliage, and other parked vehicles visible in the background during daylight hours.\n\n**Main Entity:** A uniformed officer wearing a dark jacket with a \"Royal Oak Mobile Patrol\" patch on the sleeve and a baseball cap.\n\n**Visible Actions:** The officer is writing on a ticket or citation pad, reviewing the document, then placing a red violation notice under the windshield wiper of a silver/white vehicle.\n\n**Emotional Tone:** Neutral, procedural, and official—depicting routine enforcement activity without dramatic emotion.\n\n**Interaction:** No direct interaction between people is shown; the officer interacts only with the vehicle by issuing and affixing the parking violation notice.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 148,
+      "total_tokens": 8672
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"outdoor parking lot with trees and grass\",\n  \"main_entities\": [\"parking enforcement officer\", \"silver car\", \"parking ticket\"],\n  \"actions\": [\"writing on a notepad\", \"placing a red violation notice on the car's windshield\"],\n  \"emotion_words\": [\"focused\", \"professional\", \"routine\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The officer is engaged in a task-based interaction with the vehicle, showing focused attention and coordinated action to issue and place the ticket.\",\n  \"summary\": \"A Royal Oak Mobile Patrol officer writes a ticket and places a red violation notice on the windshield of a silver car in an outdoor lot.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 147,
+      "total_tokens": 9055
+    }
+  },
+  "lvlm_structured": {
+    "setting": "outdoor parking lot with trees and grass",
+    "main_entities": [
+      "parking enforcement officer",
+      "silver car",
+      "parking ticket"
+    ],
+    "actions": [
+      "writing on a notepad",
+      "placing a red violation notice on the car's windshield"
+    ],
+    "emotion_words": [
+      "focused",
+      "professional",
+      "routine"
+    ],
+    "interaction_level": 1,
+    "interaction_evidence": "The officer is engaged in a task-based interaction with the vehicle, showing focused attention and coordinated action to issue and place the ticket.",
+    "summary": "A Royal Oak Mobile Patrol officer writes a ticket and places a red violation notice on the windshield of a silver car in an outdoor lot."
+  },
+  "lvlm_error": null
+}

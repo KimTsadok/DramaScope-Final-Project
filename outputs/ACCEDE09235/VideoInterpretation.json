@@ -28,8 +28,50 @@
     "Static rule not satisfied: shot_frequency < 0.2 is True, interaction_density < 0.3 is False, object_entropy < 0.5 is False",
     "Defaulted to Calm"
   ],
-  "lvlm_summary": null,
-  "lvlm_structured_raw": null,
-  "lvlm_structured": null,
-  "lvlm_error": "LVLM not run in gcp_tuning mode"
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "The video depicts a casual indoor dinner scene, likely in a home dining room. Two women are seated at a table with yellow plates, glasses, and gift bags (suggesting a celebration). The woman on the left, wearing a pink blouse and pearls, listens, laughs, and wipes her plate with a napkin. The woman on the right, in red with glasses, talks animatedly while holding her glass. Their interaction is warm and friendly. The camera then cuts to a man in a suit jacket at the same table, who appears to be listening or reacting thoughtfully. The overall tone is relaxed and social.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 125,
+      "total_tokens": 8649
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"Indoor dining room with a wooden table, plates, glasses, and gift bags\",\n  \"main_entities\": [\"Woman in pink shirt\", \"Woman in red patterned top\", \"Man in purple suit\"],\n  \"actions\": [\"Talking and gesturing\", \"Wiping plate with napkin\", \"Sitting at table\"],\n  \"emotion_words\": [\"Smiling\", \"Engaged\", \"Serious\"],\n  \"interaction_level\": 2,\n  \"interaction_evidence\": \"The two women are engaged in a clear mutual conversation, looking directly at each other, gesturing, and reacting to one another's speech. The woman on the left smiles and wipes her plate while responding to the woman on the right.\",\n  \"summary\": \"Two women sit at a dining table having a lively conversation after a meal, while a man sits nearby listening or observing.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 182,
+      "total_tokens": 9090
+    }
+  },
+  "lvlm_structured": {
+    "setting": "Indoor dining room with a wooden table, plates, glasses, and gift bags",
+    "main_entities": [
+      "Woman in pink shirt",
+      "Woman in red patterned top",
+      "Man in purple suit"
+    ],
+    "actions": [
+      "Talking and gesturing",
+      "Wiping plate with napkin",
+      "Sitting at table"
+    ],
+    "emotion_words": [
+      "Smiling",
+      "Engaged",
+      "Serious"
+    ],
+    "interaction_level": 2,
+    "interaction_evidence": "The two women are engaged in a clear mutual conversation, looking directly at each other, gesturing, and reacting to one another's speech. The woman on the left smiles and wipes her plate while responding to the woman on the right.",
+    "summary": "Two women sit at a dining table having a lively conversation after a meal, while a man sits nearby listening or observing."
+  },
+  "lvlm_error": null
 }

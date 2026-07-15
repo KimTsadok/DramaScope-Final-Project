@@ -1,0 +1,51 @@
+{
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09253.mp4",
+  "duration_seconds": 8.875,
+  "shots": {
+    "count": 1,
+    "avg_shot_length": 8.875,
+    "shot_variance": 0.0,
+    "shot_lengths": [
+      8.875
+    ]
+  },
+  "labels": {
+    "unique": [
+      "keyboard",
+      "musical instrument",
+      "musical keyboard",
+      "pianist",
+      "piano",
+      "sitting"
+    ],
+    "count_unique": 6
+  },
+  "objects": {
+    "total_tracks": 20,
+    "object_frequency_distribution": {
+      "table": 5,
+      "person": 3,
+      "top": 2,
+      "lighting": 2,
+      "couch": 2,
+      "chair": 2,
+      "table top": 2,
+      "pants": 1,
+      "t-shirt": 1
+    },
+    "top_objects": [
+      "table",
+      "person",
+      "top",
+      "lighting",
+      "couch",
+      "chair",
+      "table top",
+      "pants",
+      "t-shirt"
+    ],
+    "object_entropy": 3.003702,
+    "human_presence_ratio": 1.0,
+    "interaction_density_tracks_per_sec": 2.253521
+  }
+}

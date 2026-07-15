@@ -28,8 +28,50 @@
     "Static rule not satisfied: shot_frequency < 0.2 is False, interaction_density < 0.3 is False, object_entropy < 0.5 is False",
     "Defaulted to Calm"
   ],
-  "lvlm_summary": null,
-  "lvlm_structured_raw": null,
-  "lvlm_structured": null,
-  "lvlm_error": "LVLM not run in gcp_tuning mode"
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "The video depicts a warm, emotional farewell scene at the entrance of a modest, light-blue house with a white porch swing. A man in a dark suit is greeted by a woman with short blonde hair and glasses, wearing a red top, who embraces him enthusiastically while smiling broadly. Another woman in a pink top stands nearby observing the interaction. After the hug ends, the man turns to enter the house, pausing briefly at the doorway as the woman in red watches him go inside before the door closes behind him. The sequence conveys a heartfelt goodbye between family or close friends in a domestic setting.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 121,
+      "total_tokens": 8645
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"Front porch and doorway of a house\",\n  \"main_entities\": [\"Man in suit\", \"Woman in red dress\", \"Woman in pink top\"],\n  \"actions\": [\"Hugging\", \"Speaking\", \"Entering house\"],\n  \"emotion_words\": [\"Happy\", \"Affectionate\", \"Warm\"],\n  \"interaction_level\": 3,\n  \"interaction_evidence\": \"The woman in red enthusiastically hugs the man, with her arms wrapped around him and an expressive face showing joy. They then engage in direct conversation with eye contact before entering the house together.\",\n  \"summary\": \"A man arriving at a house is greeted warmly by a woman in a red dress who gives him a tight hug at the door. After the embrace, they smile and speak to each other while another woman looks on. The group then enters the house together.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 177,
+      "total_tokens": 9085
+    }
+  },
+  "lvlm_structured": {
+    "setting": "Front porch and doorway of a house",
+    "main_entities": [
+      "Man in suit",
+      "Woman in red dress",
+      "Woman in pink top"
+    ],
+    "actions": [
+      "Hugging",
+      "Speaking",
+      "Entering house"
+    ],
+    "emotion_words": [
+      "Happy",
+      "Affectionate",
+      "Warm"
+    ],
+    "interaction_level": 3,
+    "interaction_evidence": "The woman in red enthusiastically hugs the man, with her arms wrapped around him and an expressive face showing joy. They then engage in direct conversation with eye contact before entering the house together.",
+    "summary": "A man arriving at a house is greeted warmly by a woman in a red dress who gives him a tight hug at the door. After the embrace, they smile and speak to each other while another woman looks on. The group then enters the house together."
+  },
+  "lvlm_error": null
 }

@@ -1,0 +1,54 @@
+{
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09265.mp4",
+  "duration_seconds": 8.291666,
+  "shots": {
+    "count": 1,
+    "avg_shot_length": 8.291666,
+    "shot_variance": 0.0,
+    "shot_lengths": [
+      8.291666
+    ]
+  },
+  "labels": {
+    "unique": [
+      "automotive exterior",
+      "automotive window part",
+      "car",
+      "family car",
+      "glass",
+      "hood",
+      "land vehicle",
+      "motor vehicle",
+      "police",
+      "police officer",
+      "vehicle",
+      "window",
+      "windshield"
+    ],
+    "count_unique": 13
+  },
+  "objects": {
+    "total_tracks": 16,
+    "object_frequency_distribution": {
+      "car": 8,
+      "packaged goods": 3,
+      "person": 1,
+      "hat": 1,
+      "outerwear": 1,
+      "tie": 1,
+      "sunglasses": 1
+    },
+    "top_objects": [
+      "car",
+      "packaged goods",
+      "person",
+      "hat",
+      "outerwear",
+      "tie",
+      "sunglasses"
+    ],
+    "object_entropy": 2.20282,
+    "human_presence_ratio": 0.889447,
+    "interaction_density_tracks_per_sec": 1.929648
+  }
+}

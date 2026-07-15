@@ -1,284 +1,428 @@
 # src/pipeline/run_batch_pipeline.py
 """
-Batch runner for the video analysis pipeline.
+Batch runner for the video-analysis pipeline.
 
-Purpose:
-- avoid manually running run_full_pipeline.py for every video
-- process X videos from a local video folder
-- skip videos that already have VideoInterpretation.json unless --force is used
-- run without LVLM by default for cost-efficient Week 5 numeric tuning
+This script is responsible only for batch orchestration:
 
-Modes:
-    full:
-        Run the full GCP pipeline for local videos.
-        Use this for new videos that do not have VideoFeatures.json yet.
+1. Discover local video files.
+2. Select all videos, a limited number, or one specific video.
+3. Decide whether each video is already complete for the requested mode.
+4. Call src.pipeline.run_full_pipeline once per video.
+5. Track processed, skipped, and failed videos.
 
-    gcp_tuning:
-        Recompute VideoInterpretation.json from existing VideoFeatures.json.
-        Use this after changing normalization ranges or phase thresholds in config.py.
-        This mode does not call GCS, Google Video Intelligence, or LVLM.
+All actual video-processing logic belongs in run_full_pipeline.py.
 
-    lvlm_tuning:
-        Recompute VideoInterpretation.json from existing VideoFeatures.json
-        and refresh LVLM semantic fields from local video frames.
-        Use this after changing LVLM prompts, parsing, or validation.
+Supported modes
+---------------
+
+gcp:
+    Run GCP feature extraction and algorithmic interpretation.
+    Does not run LVLM.
+
+lvlm:
+    Load an existing VideoFeatures.json and run:
+    algorithmic interpretation + LVLM.
+
+full:
+    Run the complete pipeline:
+    GCP + algorithmic interpretation + LVLM.
 """
 
-
 import argparse
+import json
 import subprocess
 import sys
-import json
 from pathlib import Path
-from typing import List
-from typing import Any, Dict
+from typing import Any, Dict, List
 
 from src.config import OUTPUT_FILES
-
-# newly added
-from src.algorithm.complexity import compute_scene_complexity
-from src.algorithm.features import build_raw_features
-from src.algorithm.normalize import normalize_features
-from src.algorithm.phase import classify_narrative_phase
-from src.algorithm.validate import (
-    validate_video_features,
-    validate_raw_features,
-    validate_normalized_features,
-    validate_lvlm_structured,
+from src.gcp.upload import (
+    DEFAULT_BUCKET_NAME,
+    DEFAULT_GCS_PREFIX,
 )
-from src.gcp.feature_engineering import save_json
-from src.lvlm.client import (
-    extract_frames,
-    run_summary_inference_from_frames,
-    run_structured_inference_from_frames,
-)
-from src.lvlm.parse import parse_structured_response
 
 
-VIDEO_EXTENSIONS = {".mp4", ".mov", ".avi", ".mkv"}
+VIDEO_EXTENSIONS = {
+    ".mp4",
+    ".mov",
+    ".avi",
+    ".mkv",
+}
 
-#---------------- Helpers ----------------
+PIPELINE_MODES = {
+    "gcp",
+    "lvlm",
+    "full",
+}
+
+
+# ---------------------------------------------------------------------------
+# Path helpers
+# ---------------------------------------------------------------------------
 
 def build_features_path(video_path: Path) -> Path:
     """
-    Build expected path to existing VideoFeatures.json.
+    Build the expected VideoFeatures.json path.
+
+    Example:
+        videos/videos/ACCEDE09230.mp4
+        -> outputs/ACCEDE09230/VideoFeatures.json
     """
-    video_id = video_path.stem
-    return Path("outputs") / video_id / OUTPUT_FILES.raw_features_filename
-
-
-def load_json(path: Path) -> Dict[str, Any]:
-    """
-    Load JSON from disk.
-    """
-    with path.open("r", encoding="utf-8") as file:
-        return json.load(file)
-
-
-def extract_video_id_from_features(video_features: Dict[str, Any], video_path: Path) -> str:
-    """
-    Prefer video_uri filename stem. Fallback to local video filename stem.
-    """
-    video_uri = video_features.get("video_uri", "")
-    if video_uri:
-        return Path(video_uri).stem
-
-    return video_path.stem
-
-
-def build_algorithm_interpretation_base(
-    video_features: Dict[str, Any],
-    video_id: str,
-) -> Dict[str, Any]:
-    """
-    Build the algorithmic part of VideoInterpretation.json.
-    """
-    video_features = validate_video_features(video_features)
-
-    raw_features = build_raw_features(video_features)
-    raw_features = validate_raw_features(raw_features)
-
-    norm_features = normalize_features(raw_features)
-    norm_features = validate_normalized_features(norm_features)
-
-    complexity_score, breakdown = compute_scene_complexity(norm_features)
-    narrative_phase, phase_reasons = classify_narrative_phase(norm_features)
-
-    return {
-        "video_id": video_id,
-        "video_uri": video_features.get("video_uri", ""),
-        "features_raw": raw_features,
-        "features_norm": norm_features,
-        "scene_complexity_score": complexity_score,
-        "scene_complexity_breakdown": breakdown,
-        "narrative_phase": narrative_phase,
-        "phase_reasons": phase_reasons,
-    }
-
-#---------------- Helpers 2 ----------------
-
-def find_video_files(videos_dir: Path) -> List[Path]:
-    """
-    Find supported video files in the given directory.
-    Non-recursive by default for safety and predictability.
-    """
-    if not videos_dir.exists():
-        raise FileNotFoundError(f"Videos directory not found: {videos_dir}")
-
-    if not videos_dir.is_dir():
-        raise NotADirectoryError(f"Not a directory: {videos_dir}")
-
-    videos = [
-        path
-        for path in videos_dir.iterdir()
-        if path.is_file() and path.suffix.lower() in VIDEO_EXTENSIONS
-    ]
-
-    return sorted(videos)
+    return (
+        Path("outputs")
+        / video_path.stem
+        / OUTPUT_FILES.raw_features_filename
+    )
 
 
 def build_interpretation_path(video_path: Path) -> Path:
     """
-    Build expected output path for a video's VideoInterpretation.json.
+    Build the expected VideoInterpretation.json path.
 
     Example:
-        videos/ACCEDE09230.mp4
+        videos/videos/ACCEDE09230.mp4
         -> outputs/ACCEDE09230/VideoInterpretation.json
     """
-    video_id = video_path.stem
-    return Path("outputs") / video_id / OUTPUT_FILES.interpretation_filename
+    return (
+        Path("outputs")
+        / video_path.stem
+        / OUTPUT_FILES.interpretation_filename
+    )
 
 
-def should_skip_video(video_path: Path, force: bool) -> bool:
+def load_json_object(path: Path) -> Dict[str, Any]:
     """
-    Decide whether to skip a video.
-    By default, skip if VideoInterpretation.json already exists.
+    Load a JSON file and verify that its root value is an object.
+    """
+    if not path.exists():
+        raise FileNotFoundError(
+            f"JSON file not found: {path}"
+        )
+
+    if not path.is_file():
+        raise ValueError(
+            f"Expected a JSON file, received: {path}"
+        )
+
+    with path.open("r", encoding="utf-8") as file:
+        data = json.load(file)
+
+    if not isinstance(data, dict):
+        raise ValueError(
+            f"Expected a JSON object in {path}, "
+            f"received {type(data).__name__}."
+        )
+
+    return data
+
+
+# ---------------------------------------------------------------------------
+# Video discovery and selection
+# ---------------------------------------------------------------------------
+
+def find_video_files(
+    videos_dir: Path,
+) -> List[Path]:
+    """
+    Find supported video files in the selected directory.
+
+    The search is non-recursive for predictable batch behavior.
+    """
+    if not videos_dir.exists():
+        raise FileNotFoundError(
+            f"Videos directory not found: {videos_dir}"
+        )
+
+    if not videos_dir.is_dir():
+        raise NotADirectoryError(
+            f"Expected a directory, received: {videos_dir}"
+        )
+
+    videos = [
+        path
+        for path in videos_dir.iterdir()
+        if (
+            path.is_file()
+            and path.suffix.lower() in VIDEO_EXTENSIONS
+        )
+    ]
+
+    return sorted(
+        videos,
+        key=lambda path: path.name.lower(),
+    )
+
+
+def select_videos(
+    all_videos: List[Path],
+    video_id: str | None,
+    limit: int | None,
+) -> List[Path]:
+    """
+    Select videos using the following priority:
+
+    1. --video_id
+    2. --limit
+    3. all discovered videos
+    """
+    # CHANGED:
+    # Support selecting one specific video without relying on --limit.
+    if video_id:
+        normalized_video_id = Path(
+            video_id
+        ).stem.lower()
+
+        selected = [
+            video_path
+            for video_path in all_videos
+            if video_path.stem.lower()
+            == normalized_video_id
+        ]
+
+        if not selected:
+            raise FileNotFoundError(
+                f"Video ID not found in the selected directory: "
+                f"{video_id}"
+            )
+
+        return selected
+
+    if limit is not None:
+        if limit <= 0:
+            raise ValueError(
+                "--limit must be greater than zero."
+            )
+
+        return all_videos[:limit]
+
+    return all_videos
+
+
+# ---------------------------------------------------------------------------
+# Output completeness checks
+# ---------------------------------------------------------------------------
+
+def has_valid_algorithm_output(
+    interpretation: Dict[str, Any],
+) -> bool:
+    """
+    Check whether VideoInterpretation.json contains the required
+    algorithmic output fields.
+    """
+    required_fields = (
+        "video_id",
+        "features_raw",
+        "features_norm",
+        "scene_complexity_score",
+        "scene_complexity_breakdown",
+        "narrative_phase",
+        "phase_reasons",
+    )
+
+    return all(
+        field in interpretation
+        and interpretation[field] is not None
+        for field in required_fields
+    )
+
+
+def has_valid_lvlm_output(
+    interpretation: Dict[str, Any],
+) -> bool:
+    """
+    Check whether VideoInterpretation.json contains complete LVLM output.
+    """
+    lvlm_summary = interpretation.get(
+        "lvlm_summary"
+    )
+
+    lvlm_structured_raw = interpretation.get(
+        "lvlm_structured_raw"
+    )
+
+    lvlm_structured = interpretation.get(
+        "lvlm_structured"
+    )
+
+    lvlm_error = interpretation.get(
+        "lvlm_error"
+    )
+
+    return (
+        isinstance(lvlm_summary, dict)
+        and isinstance(lvlm_structured_raw, dict)
+        and isinstance(lvlm_structured, dict)
+        and lvlm_error is None
+    )
+
+
+def should_skip_video(
+    video_path: Path,
+    mode: str,
+    force: bool,
+) -> bool:
+    """
+    Decide whether a video is already complete for the selected mode.
+
+    Behavior
+    --------
+
+    gcp:
+        Skip only when both VideoFeatures.json and a valid algorithmic
+        VideoInterpretation.json already exist.
+
+    lvlm:
+        Skip only when VideoFeatures.json exists and
+        VideoInterpretation.json contains complete LVLM output.
+
+    full:
+        Skip only when VideoFeatures.json exists,
+        algorithmic output is valid,
+        and LVLM output is complete.
+
+    --force:
+        Always rerun.
     """
     if force:
         return False
 
-    interpretation_path = build_interpretation_path(video_path)
-    return interpretation_path.exists()
+    features_path = build_features_path(
+        video_path
+    )
 
-
-#---------------- GCP tuning mode ----------------
-
-def run_gcp_tuning_mode(video_path: Path) -> bool:
-    """
-    Regenerate VideoInterpretation.json from existing VideoFeatures.json only.
-
-    Cost-efficient mode for Week 5 numeric tuning.
-    """
-    features_path = build_features_path(video_path)
-    interpretation_path = build_interpretation_path(video_path)
-
-    if not features_path.exists():
-        print(f"Missing VideoFeatures.json: {features_path}")
-        return False
-
-    try:
-        video_features = load_json(features_path)
-        video_id = extract_video_id_from_features(video_features, video_path)
-
-        interpretation = build_algorithm_interpretation_base(
-            video_features=video_features,
-            video_id=video_id,
+    interpretation_path = (
+        build_interpretation_path(
+            video_path
         )
+    )
 
-        interpretation.update(
-            {
-                "lvlm_summary": None,
-                "lvlm_structured_raw": None,
-                "lvlm_structured": None,
-                "lvlm_error": "LVLM not run in gcp_tuning mode",
-            }
-        )
-
-        save_json(interpretation, interpretation_path, label="interpretation JSON")
-        print(f"Regenerated interpretation from existing features: {interpretation_path}")
-        return True
-
-    except Exception as exc:
-        print(f"Failed gcp_tuning mode for: {video_path.name}")
-        print(f"Error: {type(exc).__name__}: {exc}")
-        return False
-    
-#---------------- LVLM tuning mode ----------------
-
-def run_lvlm_tuning_mode(video_path: Path) -> bool:
-    """
-    Regenerate VideoInterpretation.json from existing VideoFeatures.json,
-    then refresh LVLM semantic fields using the local video.
-
-    Cost-aware mode for Week 5 LVLM prompt/interaction tuning.
-    """
-    features_path = build_features_path(video_path)
-    interpretation_path = build_interpretation_path(video_path)
-
-    if not features_path.exists():
-        print(f"Missing VideoFeatures.json: {features_path}")
-        return False
-
-    try:
-        video_features = load_json(features_path)
-        video_id = extract_video_id_from_features(video_features, video_path)
-
-        interpretation = build_algorithm_interpretation_base(
-            video_features=video_features,
-            video_id=video_id,
-        )
-
-        lvlm_summary = None
-        lvlm_structured_raw = None
-        lvlm_structured = None
-        lvlm_error = None
+    if mode == "gcp":
+        if (
+            not features_path.exists()
+            or not interpretation_path.exists()
+        ):
+            return False
 
         try:
-            print("Extracting shared frames for LVLM inference...")
-            frames_b64 = extract_frames(str(video_path))
+            interpretation = load_json_object(
+                interpretation_path
+            )
+        except (
+            OSError,
+            ValueError,
+            json.JSONDecodeError,
+        ):
+            return False
 
-            print("Running LVLM summary inference...")
-            lvlm_summary = run_summary_inference_from_frames(frames_b64)
-
-            print("Running LVLM structured inference...")
-            lvlm_structured_raw = run_structured_inference_from_frames(frames_b64)
-
-            print("Parsing LVLM structured response...")
-            parsed_structured = parse_structured_response(lvlm_structured_raw["text"])
-            lvlm_structured = validate_lvlm_structured(parsed_structured)
-
-        except Exception as exc:
-            lvlm_error = f"{type(exc).__name__}: {exc}"
-            print("LVLM failed, saving interpretation without LVLM output.")
-            print(f"LVLM error: {lvlm_error}")
-
-        interpretation.update(
-            {
-                "lvlm_summary": lvlm_summary,
-                "lvlm_structured_raw": lvlm_structured_raw,
-                "lvlm_structured": lvlm_structured,
-                "lvlm_error": lvlm_error,
-            }
+        return has_valid_algorithm_output(
+            interpretation
         )
 
-        save_json(interpretation, interpretation_path, label="interpretation JSON")
-        print(f"Regenerated interpretation with LVLM tuning fields: {interpretation_path}")
-        return True
+    if mode == "lvlm":
+        # LVLM mode requires existing GCP features.
+        if not features_path.exists():
+            return False
 
-    except Exception as exc:
-        print(f"Failed lvlm_tuning mode for: {video_path.name}")
-        print(f"Error: {type(exc).__name__}: {exc}")
-        return False
-    
+        if not interpretation_path.exists():
+            return False
+
+        try:
+            interpretation = load_json_object(
+                interpretation_path
+            )
+        except (
+            OSError,
+            ValueError,
+            json.JSONDecodeError,
+        ):
+            return False
+
+        return has_valid_lvlm_output(
+            interpretation
+        )
+
+    if mode == "full":
+        if (
+            not features_path.exists()
+            or not interpretation_path.exists()
+        ):
+            return False
+
+        try:
+            interpretation = load_json_object(
+                interpretation_path
+            )
+        except (
+            OSError,
+            ValueError,
+            json.JSONDecodeError,
+        ):
+            return False
+
+        return (
+            has_valid_algorithm_output(
+                interpretation
+            )
+            and has_valid_lvlm_output(
+                interpretation
+            )
+        )
+
+    return False
 
 
-def build_command(
+def explain_skip(
     video_path: Path,
-    with_lvlm: bool,
+    mode: str,
+) -> None:
+    """
+    Print a mode-specific skip message.
+    """
+    if mode == "gcp":
+        print(
+            "Skipping: existing GCP features and "
+            "algorithmic interpretation are complete."
+        )
+
+    elif mode == "lvlm":
+        print(
+            "Skipping: existing LVLM output is complete "
+            "and contains no LVLM error."
+        )
+
+    elif mode == "full":
+        print(
+            "Skipping: GCP, algorithmic, and LVLM "
+            "outputs are already complete."
+        )
+
+    print(
+        "Interpretation path: "
+        f"{build_interpretation_path(video_path)}"
+    )
+    print(
+        "Use --force to rerun this video."
+    )
+
+
+# ---------------------------------------------------------------------------
+# Single-video pipeline command
+# ---------------------------------------------------------------------------
+
+def build_pipeline_command(
+    video_path: Path,
+    mode: str,
+    bucket_name: str,
+    prefix: str,
+    timeout_seconds: int,
     print_summary: bool,
 ) -> List[str]:
     """
-    Build the command that runs run_full_pipeline.py for one video.
+    Build the command that invokes run_full_pipeline.py for one video.
+
+    CHANGED:
+    Every mode now delegates to the same single-video pipeline script.
+    The batch runner no longer implements algorithm or LVLM logic itself.
     """
     command = [
         sys.executable,
@@ -286,135 +430,378 @@ def build_command(
         "src.pipeline.run_full_pipeline",
         "--video",
         str(video_path),
+        "--mode",
+        mode,
     ]
 
-    if with_lvlm:
-        command.append("--with_lvlm")
+    # GCP configuration is relevant for gcp and full modes.
+    if mode in {"gcp", "full"}:
+        command.extend(
+            [
+                "--bucket",
+                bucket_name,
+                "--prefix",
+                prefix,
+                "--timeout",
+                str(timeout_seconds),
+            ]
+        )
 
     if print_summary:
-        command.append("--print_summary")
+        command.append(
+            "--print_summary"
+        )
 
     return command
 
 
+def format_command(
+    command: List[str],
+) -> str:
+    """
+    Format a subprocess command for readable console output.
+    """
+    return " ".join(
+        f'"{part}"' if " " in part else part
+        for part in command
+    )
+
+
+def run_pipeline_for_video(
+    video_path: Path,
+    mode: str,
+    bucket_name: str,
+    prefix: str,
+    timeout_seconds: int,
+    print_summary: bool,
+) -> bool:
+    """
+    Invoke the single-video pipeline and return whether it succeeded.
+    """
+    command = build_pipeline_command(
+        video_path=video_path,
+        mode=mode,
+        bucket_name=bucket_name,
+        prefix=prefix,
+        timeout_seconds=timeout_seconds,
+        print_summary=print_summary,
+    )
+
+    print("Running pipeline command:")
+    print(
+        format_command(command)
+    )
+
+    try:
+        result = subprocess.run(
+            command,
+            check=False,
+        )
+
+    except OSError as exc:
+        print(
+            "Could not launch the single-video pipeline."
+        )
+        print(
+            f"Error: {type(exc).__name__}: {exc}"
+        )
+        return False
+
+    if result.returncode != 0:
+        print(
+            "Single-video pipeline returned "
+            f"exit code {result.returncode}."
+        )
+        return False
+
+    return True
+
+
+# ---------------------------------------------------------------------------
+# CLI
+# ---------------------------------------------------------------------------
+
 def parse_args() -> argparse.Namespace:
+    """
+    Parse batch-runner arguments.
+    """
     parser = argparse.ArgumentParser(
-        description="Run the video analysis pipeline on a batch of local videos."
+        description=(
+            "Run the single-video analysis pipeline "
+            "over a batch of local videos."
+        )
     )
 
     parser.add_argument(
         "--videos_dir",
         type=str,
         default="videos/videos",
-        help="Directory containing local video files",
+        help=(
+            "Directory containing local video files."
+        ),
     )
 
-    # if u wish to run all videos - remove --limit
     parser.add_argument(
         "--limit",
         type=int,
         default=None,
-        help="Maximum number of videos to process. If omitted, process all found videos.",
+        help=(
+            "Maximum number of videos to process. "
+            "If omitted, process all discovered videos."
+        ),
     )
 
     parser.add_argument(
-    "--mode",
-    choices=["full", "gcp_tuning", "lvlm_tuning"],
-    default="gcp_tuning",
-    help=(
-        "Batch mode: "
-        "'full' runs the complete GCP pipeline, "
-        "'gcp_tuning' regenerates VideoInterpretation.json from existing VideoFeatures.json, "
-        "'lvlm_tuning' regenerates VideoInterpretation.json and refreshes LVLM fields."
-    ),
-)
-    # in order to run full mode with LVLM too:
+        "--video_id",
+        type=str,
+        default=None,
+        help=(
+            "Process one specific video ID, such as "
+            "ACCEDE09250 or ACCEDE09250.mp4."
+        ),
+    )
+
+    # CHANGED:
+    # Mode names now match run_full_pipeline.py exactly.
     parser.add_argument(
-        "--with_lvlm",
-        action="store_true",
-        help="Also run LVLM. Disabled by default for cost-efficient numeric tuning.",
+        "--mode",
+        choices=sorted(
+            PIPELINE_MODES
+        ),
+        default="full",
+        help=(
+            "'gcp': GCP + algorithm only; "
+            "'lvlm': existing features + algorithm + LVLM; "
+            "'full': GCP + algorithm + LVLM."
+        ),
+    )
+
+    parser.add_argument(
+        "--bucket",
+        type=str,
+        default=DEFAULT_BUCKET_NAME,
+        help=(
+            "Google Cloud Storage bucket used by "
+            "gcp and full modes."
+        ),
+    )
+
+    parser.add_argument(
+        "--prefix",
+        type=str,
+        default=DEFAULT_GCS_PREFIX,
+        help=(
+            "Google Cloud Storage prefix used by "
+            "gcp and full modes."
+        ),
+    )
+
+    parser.add_argument(
+        "--timeout",
+        type=int,
+        default=600,
+        help=(
+            "Google Video Intelligence timeout in seconds."
+        ),
     )
 
     parser.add_argument(
         "--print_summary",
         action="store_true",
-        help="Pass --print_summary to run_full_pipeline.py in full mode.",
+        help=(
+            "Print detailed per-video pipeline summaries."
+        ),
+    )
+
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help=(
+            "Rerun videos even when the requested "
+            "mode appears complete."
+        ),
     )
 
     return parser.parse_args()
 
 
-def main() -> None:
+# ---------------------------------------------------------------------------
+# Main orchestration
+# ---------------------------------------------------------------------------
+
+def main() -> int:
+    """
+    Run the requested pipeline mode over the selected videos.
+
+    Returns:
+        0 when every selected video succeeds or is skipped.
+        1 when one or more videos fail.
+    """
     args = parse_args()
 
-    videos_dir = Path(args.videos_dir)
-    all_videos = find_video_files(videos_dir)
+    videos_dir = Path(
+        args.videos_dir
+    )
 
-    if args.limit is not None:
-        selected_videos = all_videos[: args.limit]
-    else:
-        selected_videos = all_videos
+    try:
+        all_videos = find_video_files(
+            videos_dir
+        )
 
-    print(f"Found {len(all_videos)} video files in: {videos_dir}")
-    print(f"Selected {len(selected_videos)} video files for this batch")
-    print(f"Mode: {args.mode}")
-    print(f"LVLM enabled in full mode: {args.with_lvlm}")
+        selected_videos = select_videos(
+            all_videos=all_videos,
+            video_id=args.video_id,
+            limit=args.limit,
+        )
+
+    except (
+        FileNotFoundError,
+        NotADirectoryError,
+        ValueError,
+    ) as exc:
+        print(
+            "Batch setup failed: "
+            f"{type(exc).__name__}: {exc}"
+        )
+        return 1
+
+    print(
+        f"Found {len(all_videos)} video files in: "
+        f"{videos_dir}"
+    )
+    print(
+        f"Selected {len(selected_videos)} "
+        "video files for this batch"
+    )
+    print(
+        f"Mode: {args.mode}"
+    )
+
+    if args.mode == "gcp":
+        print(
+            "Stages: GCP + algorithmic interpretation"
+        )
+
+    elif args.mode == "lvlm":
+        print(
+            "Stages: existing features + "
+            "algorithmic interpretation + LVLM"
+        )
+
+    elif args.mode == "full":
+        print(
+            "Stages: GCP + algorithmic interpretation + LVLM"
+        )
+
+    if args.force:
+        print(
+            "Force mode enabled: existing outputs "
+            "will not be skipped."
+        )
 
     processed = 0
     skipped = 0
     failed = 0
 
-    for index, video_path in enumerate(selected_videos, start=1):
+    failed_videos: List[str] = []
+
+    for index, video_path in enumerate(
+        selected_videos,
+        start=1,
+    ):
         print("\n" + "=" * 80)
-        print(f"[{index}/{len(selected_videos)}] Video: {video_path.name}")
+        print(
+            f"[{index}/{len(selected_videos)}] "
+            f"Video: {video_path.name}"
+        )
 
-        # In full mode, we may want to skip videos that already have interpretation output.
-        # In tuning modes, we usually want to overwrite VideoInterpretation.json
-        # because config.py / prompts may have changed.
-        # if args.mode == "full" and should_skip_video(video_path, force=args.force):
-        #    print(
-        #        f"Skipping: {build_interpretation_path(video_path)} already exists. "
-        #        "Use --force to rerun."
-        #    )
-        #    skipped += 1
-        #    continue
-
-        if args.mode == "gcp_tuning":
-            success = run_gcp_tuning_mode(video_path)
-
-        elif args.mode == "lvlm_tuning":
-            success = run_lvlm_tuning_mode(video_path)
-
-        elif args.mode == "full":
-            command = build_command(
+        if should_skip_video(
+            video_path=video_path,
+            mode=args.mode,
+            force=args.force,
+        ):
+            explain_skip(
                 video_path=video_path,
-                with_lvlm=args.with_lvlm,
-                print_summary=args.print_summary,
+                mode=args.mode,
             )
 
-            print("Running command:")
-            print(" ".join(f'"{part}"' if " " in part else part for part in command))
+            skipped += 1
+            continue
 
-            result = subprocess.run(command)
-            success = result.returncode == 0
+        # CHANGED:
+        # lvlm mode depends on an existing VideoFeatures.json.
+        # Fail early with a clear message rather than launching
+        # the child process unnecessarily.
+        if args.mode == "lvlm":
+            features_path = build_features_path(
+                video_path
+            )
 
-        else:
-            print(f"Unknown mode: {args.mode}")
-            success = False
+            if not features_path.exists():
+                print(
+                    "Cannot run lvlm mode because "
+                    "VideoFeatures.json is missing:"
+                )
+                print(
+                    features_path
+                )
+
+                failed += 1
+                failed_videos.append(
+                    video_path.name
+                )
+                continue
+
+        success = run_pipeline_for_video(
+            video_path=video_path,
+            mode=args.mode,
+            bucket_name=args.bucket,
+            prefix=args.prefix,
+            timeout_seconds=args.timeout,
+            print_summary=args.print_summary,
+        )
 
         if success:
-            print(f"Finished successfully: {video_path.name}")
+            print(
+                "Finished successfully: "
+                f"{video_path.name}"
+            )
             processed += 1
+
         else:
-            print(f"Failed: {video_path.name}")
+            print(
+                f"Failed: {video_path.name}"
+            )
             failed += 1
+            failed_videos.append(
+                video_path.name
+            )
 
     print("\n" + "=" * 80)
     print("Batch run complete.")
-    print(f"Mode: {args.mode}")
-    print(f"Processed: {processed}")
-    print(f"Skipped: {skipped}")
-    print(f"Failed: {failed}")
+    print(
+        f"Mode: {args.mode}"
+    )
+    print(
+        f"Processed: {processed}"
+    )
+    print(
+        f"Skipped: {skipped}"
+    )
+    print(
+        f"Failed: {failed}"
+    )
+
+    if failed_videos:
+        print("\nFailed videos:")
+
+        for video_name in failed_videos:
+            print(
+                f"- {video_name}"
+            )
+
+    return 1 if failed > 0 else 0
+
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

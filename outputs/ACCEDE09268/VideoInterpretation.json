@@ -1,0 +1,77 @@
+{
+  "video_id": "ACCEDE09268",
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09268.mp4",
+  "features_raw": {
+    "shot_frequency": 0.09795918687213671,
+    "object_entropy": 2.058814,
+    "interaction_density": 0.881633,
+    "human_presence_ratio": 0.991837
+  },
+  "features_norm": {
+    "shot_frequency": 0.09795918687213671,
+    "object_entropy": 0.5147035,
+    "interaction_density": 0.1763266,
+    "human_presence_ratio": 0.991837
+  },
+  "scene_complexity_score": 0.34888096040524785,
+  "scene_complexity_breakdown": {
+    "shot_frequency": 0.03428571540524785,
+    "object_entropy": 0.180146225,
+    "interaction_density": 0.03526532,
+    "human_presence_ratio": 0.0991837
+  },
+  "narrative_phase": "Calm",
+  "phase_reasons": [
+    "Normalized values -> shot_frequency=0.0980, object_entropy=0.5147, interaction_density=0.1763",
+    "Dense rule not satisfied: object_entropy > 0.7 is False, interaction_density > 0.65 is False",
+    "Dynamic rule not satisfied: shot_frequency > 0.35 is False, interaction_density <= 0.75 is True",
+    "Static rule not satisfied: shot_frequency < 0.2 is True, interaction_density < 0.3 is True, object_entropy < 0.5 is False",
+    "Defaulted to Calm"
+  ],
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "**Setting:** Outdoor scene in a park or campus-like area with trees, grass, and a building visible in the background. Daytime lighting suggests it's late afternoon.\n\n**People:** Two men engaged in conversation:\n- **Man on left:** Wearing glasses and a brown jacket over a dark collared shirt; seen mostly in profile\n- **Man on right:** Wearing a dark baseball cap, dark jacket (with a patch on the left sleeve), and light blue button-down shirt\n\n**Actions:** The two men are standing face-to-face having a conversation. The man in the cap is speaking and reacting emotionally, while the other man listens attentively.\n\n**Emotional Tone:** The man in the cap displays a range of expressions—concerned, earnest, slightly frustrated, and thoughtful—suggesting a serious or emotionally charged discussion. His facial expressions shift from looking upward thoughtfully to making direct eye contact with the other man.\n\n**Interaction:** This appears to be an intense dialogue where the man in the cap is explaining something important or persuasive, possibly delivering difficult news or making a serious point, while the other man listens intently.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 231,
+      "total_tokens": 8755
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"outdoor, park or campus with trees and building in background\",\n  \"main_entities\": [\"man in brown jacket with glasses\", \"man in dark jacket and cap\"],\n  \"actions\": [\"talking\", \"listening\", \"conversing\"],\n  \"emotion_words\": [\"serious\", \"concerned\", \"attentive\", \"thoughtful\"],\n  \"interaction_level\": 2,\n  \"interaction_evidence\": \"The two men are facing each other in close proximity. The man on the right is actively speaking with changing facial expressions (mouth movements, eye contact), while the man on the left is oriented toward him in a listening posture, indicating a clear mutual conversation.\",\n  \"summary\": \"Two men are engaged in an outdoor conversation; the man wearing a cap and jacket appears to be speaking earnestly to the other man who is listening attentively.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 183,
+      "total_tokens": 9091
+    }
+  },
+  "lvlm_structured": {
+    "setting": "outdoor, park or campus with trees and building in background",
+    "main_entities": [
+      "man in brown jacket with glasses",
+      "man in dark jacket and cap"
+    ],
+    "actions": [
+      "talking",
+      "listening",
+      "conversing"
+    ],
+    "emotion_words": [
+      "serious",
+      "concerned",
+      "attentive",
+      "thoughtful"
+    ],
+    "interaction_level": 2,
+    "interaction_evidence": "The two men are facing each other in close proximity. The man on the right is actively speaking with changing facial expressions (mouth movements, eye contact), while the man on the left is oriented toward him in a listening posture, indicating a clear mutual conversation.",
+    "summary": "Two men are engaged in an outdoor conversation; the man wearing a cap and jacket appears to be speaking earnestly to the other man who is listening attentively."
+  },
+  "lvlm_error": null
+}

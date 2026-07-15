@@ -1,0 +1,76 @@
+{
+  "video_id": "ACCEDE09262",
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09262.mp4",
+  "features_raw": {
+    "shot_frequency": 0.3272727510743819,
+    "object_entropy": 2.833791,
+    "interaction_density": 2.290909,
+    "human_presence_ratio": 0.968182
+  },
+  "features_norm": {
+    "shot_frequency": 0.3272727510743819,
+    "object_entropy": 0.70844775,
+    "interaction_density": 0.45818180000000003,
+    "human_presence_ratio": 0.968182
+  },
+  "scene_complexity_score": 0.5509567353760337,
+  "scene_complexity_breakdown": {
+    "shot_frequency": 0.11454546287603366,
+    "object_entropy": 0.2479567125,
+    "interaction_density": 0.09163636000000001,
+    "human_presence_ratio": 0.09681820000000001
+  },
+  "narrative_phase": "Calm",
+  "phase_reasons": [
+    "Normalized values -> shot_frequency=0.3273, object_entropy=0.7084, interaction_density=0.4582",
+    "Dense rule not satisfied: object_entropy > 0.7 is True, interaction_density > 0.65 is False",
+    "Dynamic rule not satisfied: shot_frequency > 0.35 is False, interaction_density <= 0.75 is True",
+    "Static rule not satisfied: shot_frequency < 0.2 is False, interaction_density < 0.3 is False, object_entropy < 0.5 is False",
+    "Defaulted to Calm"
+  ],
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "**Setting:** Outdoor scene on a sunny autumn day, with trees displaying fall foliage, parked cars, and a brick building in the background (appears to be a campus or institutional area).\n\n**People:** Two men - one in a black leather jacket and dark clothing sitting on the tailgate of a white pickup truck; another man in a navy blue uniform jacket with a badge patch, light blue shirt, and baseball cap, standing nearby holding a notepad and pen.\n\n**Actions:** The uniformed officer is writing on a pink ticket/notepad while conversing with the man in the leather jacket, who is seated casually on the truck bed, gesturing slightly as he speaks. The camera alternates between close-ups of each speaker and wider shots showing both individuals.\n\n**Emotional Tone:** Casual but tense interaction; the seated man appears relaxed yet engaged in conversation, while the officer maintains a professional, focused demeanor while documenting information.\n\n**Interaction:** A traffic stop or citation scenario where the uniformed officer is issuing a ticket or taking notes while questioning or informing the man in the leather jacket, who responds verbally to the officer's inquiries.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 228,
+      "total_tokens": 8752
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"Outdoor street or parking area near a brick building with autumn trees\",\n  \"main_entities\": [\"Man in leather jacket\", \"Police officer\"],\n  \"actions\": [\"Sitting on truck tailgate\", \"Talking\", \"Writing on notepad\"],\n  \"emotion_words\": [\"Casual\", \"Conversational\", \"Attentive\"],\n  \"interaction_level\": 2,\n  \"interaction_evidence\": \"The man in the leather jacket is clearly speaking and gesturing toward the officer, who is facing him, listening, and taking notes, indicating a clear mutual exchange during what appears to be a traffic stop or questioning.\",\n  \"summary\": \"A man in a black leather jacket sits on the back of a pickup truck talking to a police officer who is writing on a notepad during an outdoor encounter.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 171,
+      "total_tokens": 9079
+    }
+  },
+  "lvlm_structured": {
+    "setting": "Outdoor street or parking area near a brick building with autumn trees",
+    "main_entities": [
+      "Man in leather jacket",
+      "Police officer"
+    ],
+    "actions": [
+      "Sitting on truck tailgate",
+      "Talking",
+      "Writing on notepad"
+    ],
+    "emotion_words": [
+      "Casual",
+      "Conversational",
+      "Attentive"
+    ],
+    "interaction_level": 2,
+    "interaction_evidence": "The man in the leather jacket is clearly speaking and gesturing toward the officer, who is facing him, listening, and taking notes, indicating a clear mutual exchange during what appears to be a traffic stop or questioning.",
+    "summary": "A man in a black leather jacket sits on the back of a pickup truck talking to a police officer who is writing on a notepad during an outdoor encounter."
+  },
+  "lvlm_error": null
+}

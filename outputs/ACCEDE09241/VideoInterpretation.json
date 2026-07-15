@@ -28,8 +28,49 @@
     "Static rule not satisfied: shot_frequency < 0.2 is False, interaction_density < 0.3 is True, object_entropy < 0.5 is False",
     "Defaulted to Calm"
   ],
-  "lvlm_summary": null,
-  "lvlm_structured_raw": null,
-  "lvlm_structured": null,
-  "lvlm_error": "LVLM not run in gcp_tuning mode"
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "**Setting:** A clinical or medical facility, likely a morgue or examination room, indicated by the stainless steel equipment, sink, and institutional appearance.\n\n**People:** Two men are featured:\n- A man in a white lab coat, dress shirt, red tie, and glasses (appears to be a doctor or medical examiner)\n- A man in a light blue uniform with shoulder patches (appears to be a corrections officer or security personnel)\n\n**Actions:** The video alternates between close-ups of both men. The man in the lab coat is shown in profile looking downward, then turns his head to look forward/upward with an expression of concern or surprise. The uniformed officer is shown looking down with a serious, troubled, or somber expression.\n\n**Emotional Tone:** Serious, tense, and somber. Both individuals display concerned, worried, or troubled expressions suggesting they are dealing with a difficult or disturbing situation.\n\n**Interaction:** While the two men are not shown in the same frame, the alternating shots suggest they are engaged in a conversation or reacting to the same event/situation. The editing implies a dialogue or exchange between the medical professional and the officer.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 237,
+      "total_tokens": 8761
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"Medical or laboratory facility\",\n  \"main_entities\": [\"Doctor in white lab coat\", \"Correctional officer in uniform\"],\n  \"actions\": [\"Doctor looking down and then up as if speaking\", \"Officer listening with a serious, concerned expression\"],\n  \"emotion_words\": [\"serious\", \"concerned\", \"focused\", \"somber\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The video alternates between the doctor and the officer. The doctor looks up and appears to be speaking, while the officer maintains a focused, attentive gaze downward, suggesting he is listening to the doctor in a shared professional context.\",\n  \"summary\": \"A doctor in a lab coat and an officer in a correctional uniform are shown in what appears to be a serious conversation within a medical or institutional setting.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 174,
+      "total_tokens": 9082
+    }
+  },
+  "lvlm_structured": {
+    "setting": "Medical or laboratory facility",
+    "main_entities": [
+      "Doctor in white lab coat",
+      "Correctional officer in uniform"
+    ],
+    "actions": [
+      "Doctor looking down and then up as if speaking",
+      "Officer listening with a serious, concerned expression"
+    ],
+    "emotion_words": [
+      "serious",
+      "concerned",
+      "focused",
+      "somber"
+    ],
+    "interaction_level": 1,
+    "interaction_evidence": "The video alternates between the doctor and the officer. The doctor looks up and appears to be speaking, while the officer maintains a focused, attentive gaze downward, suggesting he is listening to the doctor in a shared professional context.",
+    "summary": "A doctor in a lab coat and an officer in a correctional uniform are shown in what appears to be a serious conversation within a medical or institutional setting."
+  },
+  "lvlm_error": null
 }

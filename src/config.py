@@ -7,7 +7,7 @@ One place for:
 * model name
 * frame settings
 """
-
+# LVLM model settings
 from dataclasses import dataclass
 
 @dataclass(frozen=True)
@@ -60,13 +60,27 @@ class PhaseThresholds: # Used later in phase.py
 # later both video extraction and LVLM client can use it
 class FrameSettings:
     frame_rate: int = 1
-    max_frames: int = 10
+    max_frames: int = 8
 
 
 @dataclass(frozen=True)
 class ModelSettings:
-    lvlm_model_name: str = "glm-4.6v-flash"
-    lvlm_prompt_version: str = "v1"
+    # LVLM model used for both summary and structured inference.
+    # Previous model: "glm-4.6v-flash"
+    lvlm_model_name: str = "glm-5v-turbo"
+
+    # glm-5v-turbo is a thinking model: by default it spends completion tokens
+    # on internal reasoning before answering. On real 8-frame videos the
+    # reasoning alone can consume the whole max_tokens budget, so the API
+    # returns finish_reason="length" with EMPTY content and parsing fails with
+    # "No JSON object start ('{') found in response".
+    # Thinking is disabled by default; the structured/summary outputs do not
+    # need it and it costs extra tokens per video.
+    lvlm_enable_thinking: bool = False
+
+    # Prompt versions are separated because summary and structured prompts evolve independently.
+    lvlm_summary_prompt_version: str = "v1_summary" # v1
+    lvlm_structured_prompt_version: str = "v3_interaction" # v1->v3
 
 
 @dataclass(frozen=True)

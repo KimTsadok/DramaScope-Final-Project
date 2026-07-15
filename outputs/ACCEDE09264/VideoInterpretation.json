@@ -1,0 +1,76 @@
+{
+  "video_id": "ACCEDE09264",
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09264.mp4",
+  "features_raw": {
+    "shot_frequency": 0.11267605633802817,
+    "object_entropy": 2.481715,
+    "interaction_density": 1.239437,
+    "human_presence_ratio": 1.0
+  },
+  "features_norm": {
+    "shot_frequency": 0.11267605633802817,
+    "object_entropy": 0.62042875,
+    "interaction_density": 0.24788739999999998,
+    "human_presence_ratio": 1.0
+  },
+  "scene_complexity_score": 0.40616416221830987,
+  "scene_complexity_breakdown": {
+    "shot_frequency": 0.039436619718309855,
+    "object_entropy": 0.2171500625,
+    "interaction_density": 0.04957748,
+    "human_presence_ratio": 0.1
+  },
+  "narrative_phase": "Calm",
+  "phase_reasons": [
+    "Normalized values -> shot_frequency=0.1127, object_entropy=0.6204, interaction_density=0.2479",
+    "Dense rule not satisfied: object_entropy > 0.7 is False, interaction_density > 0.65 is False",
+    "Dynamic rule not satisfied: shot_frequency > 0.35 is False, interaction_density <= 0.75 is True",
+    "Static rule not satisfied: shot_frequency < 0.2 is True, interaction_density < 0.3 is True, object_entropy < 0.5 is False",
+    "Defaulted to Calm"
+  ],
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "**Setting:** A tree-lined sidewalk in a residential or campus area during autumn, with fallen leaves on the pavement, green hedges to the left, and parked cars visible on the right. The lighting suggests late afternoon with warm sunlight filtering through the trees.\n\n**People:** Two men walking toward the camera:\n- **Left man:** Wearing a brown blazer over a dark sweater, khaki pants, and brown shoes; holding papers/documents in his hands\n- **Right man:** Wearing a dark jacket, light blue shirt, dark trousers, black shoes, and a baseball cap\n\n**Actions:** The two men are walking side-by-side along the sidewalk at a steady pace. The man on the left is looking down at the papers he's holding, occasionally glancing up or adjusting them. The man on the right walks with a relaxed posture, occasionally looking around or glancing at his companion.\n\n**Emotional Tone:** Casual and conversational; appears to be a routine walk-and-talk scenario, possibly professional or semi-formal given the attire.\n\n**Interaction:** The men appear to be engaged in conversation while walking together, suggesting they are colleagues or acquaintances discussing matters related to the documents being carried. Their body language indicates a comfortable, familiar rapport as they proceed along the path.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 259,
+      "total_tokens": 8783
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"outdoor sidewalk in a park-like or campus area with autumn trees and hedges\",\n  \"main_entities\": [\"man in brown jacket\", \"man in dark jacket and cap\"],\n  \"actions\": [\"walking\", \"looking at papers\", \"talking\"],\n  \"emotion_words\": [\"serious\", \"focused\", \"conversational\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The two men are walking side by side, and the man on the right turns his head to look at the man on the left while he is speaking, indicating a conversation or shared attention.\",\n  \"summary\": \"Two men walk along a tree-lined sidewalk; one holds papers and appears to be explaining something to his companion, who listens attentively.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 161,
+      "total_tokens": 9069
+    }
+  },
+  "lvlm_structured": {
+    "setting": "outdoor sidewalk in a park-like or campus area with autumn trees and hedges",
+    "main_entities": [
+      "man in brown jacket",
+      "man in dark jacket and cap"
+    ],
+    "actions": [
+      "walking",
+      "looking at papers",
+      "talking"
+    ],
+    "emotion_words": [
+      "serious",
+      "focused",
+      "conversational"
+    ],
+    "interaction_level": 1,
+    "interaction_evidence": "The two men are walking side by side, and the man on the right turns his head to look at the man on the left while he is speaking, indicating a conversation or shared attention.",
+    "summary": "Two men walk along a tree-lined sidewalk; one holds papers and appears to be explaining something to his companion, who listens attentively."
+  },
+  "lvlm_error": null
+}

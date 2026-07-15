@@ -28,8 +28,48 @@
     "Static rule not satisfied: shot_frequency < 0.2 is False, interaction_density < 0.3 is True, object_entropy < 0.5 is False",
     "Defaulted to Calm"
   ],
-  "lvlm_summary": null,
-  "lvlm_structured_raw": null,
-  "lvlm_structured": null,
-  "lvlm_error": "LVLM not run in gcp_tuning mode"
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "The video opens with a close-up of a booklet titled \"Coping With Terminal Illness,\" featuring an illustration of two people embracing, set against a brown couch background. The scene then cuts to a middle-aged man with graying hair, a goatee, and glasses, wearing a white lab coat over a shirt and red tie. He appears to be in a medical office or clinical setting, with cabinets and medical equipment visible behind him.\n\nThroughout the sequence, the man's facial expressions shift subtly—he looks down, then up with a concerned or serious expression, suggesting he is delivering difficult news or having an emotionally heavy conversation. The juxtaposition of the terminal illness pamphlet and the doctor's somber demeanor indicates this is likely a scene involving a grave medical diagnosis or discussion about end-of-life care. The overall tone is somber, serious, and emotionally weighty, focusing on the gravity of terminal illness and its impact on patients and caregivers.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 190,
+      "total_tokens": 8714
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"Medical office or clinical room\",\n  \"main_entities\": [\"Doctor\", \"Booklet\"],\n  \"actions\": [\"Doctor speaking\", \"Displaying booklet\"],\n  \"emotion_words\": [\"Serious\", \"Solemn\", \"Concerned\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The doctor appears to be speaking and looking attentively, likely addressing a patient or family member, while the booklet about terminal illness is displayed as part of this serious conversation context.\",\n  \"summary\": \"A doctor in a white lab coat is shown speaking in what appears to be a medical office, followed by close-up shots of a booklet titled 'Coping With Terminal Illness' featuring an illustration of two people embracing, suggesting a difficult conversation about end-of-life care.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 166,
+      "total_tokens": 9074
+    }
+  },
+  "lvlm_structured": {
+    "setting": "Medical office or clinical room",
+    "main_entities": [
+      "Doctor",
+      "Booklet"
+    ],
+    "actions": [
+      "Doctor speaking",
+      "Displaying booklet"
+    ],
+    "emotion_words": [
+      "Serious",
+      "Solemn",
+      "Concerned"
+    ],
+    "interaction_level": 1,
+    "interaction_evidence": "The doctor appears to be speaking and looking attentively, likely addressing a patient or family member, while the booklet about terminal illness is displayed as part of this serious conversation context.",
+    "summary": "A doctor in a white lab coat is shown speaking in what appears to be a medical office, followed by close-up shots of a booklet titled 'Coping With Terminal Illness' featuring an illustration of two people embracing, suggesting a difficult conversation about end-of-life care."
+  },
+  "lvlm_error": null
 }

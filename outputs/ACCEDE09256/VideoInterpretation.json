@@ -1,0 +1,76 @@
+{
+  "video_id": "ACCEDE09256",
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09256.mp4",
+  "features_raw": {
+    "shot_frequency": 0.11267605633802817,
+    "object_entropy": 2.251629,
+    "interaction_density": 0.676056,
+    "human_presence_ratio": 1.0
+  },
+  "features_norm": {
+    "shot_frequency": 0.11267605633802817,
+    "object_entropy": 0.56290725,
+    "interaction_density": 0.1352112,
+    "human_presence_ratio": 1.0
+  },
+  "scene_complexity_score": 0.36349639721830984,
+  "scene_complexity_breakdown": {
+    "shot_frequency": 0.039436619718309855,
+    "object_entropy": 0.19701753749999998,
+    "interaction_density": 0.027042240000000002,
+    "human_presence_ratio": 0.1
+  },
+  "narrative_phase": "Calm",
+  "phase_reasons": [
+    "Normalized values -> shot_frequency=0.1127, object_entropy=0.5629, interaction_density=0.1352",
+    "Dense rule not satisfied: object_entropy > 0.7 is False, interaction_density > 0.65 is False",
+    "Dynamic rule not satisfied: shot_frequency > 0.35 is False, interaction_density <= 0.75 is True",
+    "Static rule not satisfied: shot_frequency < 0.2 is True, interaction_density < 0.3 is True, object_entropy < 0.5 is False",
+    "Defaulted to Calm"
+  ],
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "The video shows a close-up of a middle-aged, balding man with dark hair on the sides, wearing a black suit jacket, white shirt, and red patterned tie. He is seated in what appears to be an office environment, with a dark wall and a white calendar or chart visible behind him.\n\nThroughout the sequence, the man is looking downward and appears to be experiencing intense emotional distress. His facial expression conveys deep sadness or anguish—his eyes are downcast or closed, his brow is furrowed, and his mouth is contorted as if he is crying or on the verge of tears. As the frames progress, he raises his right hand (holding a pen) to his mouth, appearing to stifle sobs or suppress his emotion.\n\nThe emotional tone is somber and painful, suggesting the character is receiving or processing devastating news, or is overwhelmed by grief or regret. There are no other people visible in the frame; the focus remains entirely on this individual's solitary moment of suffering.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 204,
+      "total_tokens": 8728
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"office\",\n  \"main_entities\": [\"man in suit\"],\n  \"actions\": [\"looking down\", \"smiling\", \"laughing\", \"bringing pen to mouth\"],\n  \"emotion_words\": [\"amused\", \"pleased\", \"entertained\"],\n  \"interaction_level\": 0,\n  \"interaction_evidence\": \"Only one person is visible in the frame, and there are no other entities present to interact with. The man appears to be reacting to something off-camera or internal thought, but no social exchange or mutual engagement is observable.\",\n  \"summary\": \"A man in a dark suit and red tie sits in an office environment, looking down with an amused and pleased expression that evolves into a smile and laughter. He brings a pen to his mouth in a thoughtful or suppressed-laughter gesture.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 172,
+      "total_tokens": 9080
+    }
+  },
+  "lvlm_structured": {
+    "setting": "office",
+    "main_entities": [
+      "man in suit"
+    ],
+    "actions": [
+      "looking down",
+      "smiling",
+      "laughing",
+      "bringing pen to mouth"
+    ],
+    "emotion_words": [
+      "amused",
+      "pleased",
+      "entertained"
+    ],
+    "interaction_level": 0,
+    "interaction_evidence": "Only one person is visible in the frame, and there are no other entities present to interact with. The man appears to be reacting to something off-camera or internal thought, but no social exchange or mutual engagement is observable.",
+    "summary": "A man in a dark suit and red tie sits in an office environment, looking down with an amused and pleased expression that evolves into a smile and laughter. He brings a pen to his mouth in a thoughtful or suppressed-laughter gesture."
+  },
+  "lvlm_error": null
+}

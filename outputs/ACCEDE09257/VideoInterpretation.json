@@ -1,0 +1,76 @@
+{
+  "video_id": "ACCEDE09257",
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09257.mp4",
+  "features_raw": {
+    "shot_frequency": 0.3412322533635832,
+    "object_entropy": 2.557588,
+    "interaction_density": 2.388626,
+    "human_presence_ratio": 0.966825
+  },
+  "features_norm": {
+    "shot_frequency": 0.3412322533635832,
+    "object_entropy": 0.639397,
+    "interaction_density": 0.47772519999999996,
+    "human_presence_ratio": 0.966825
+  },
+  "scene_complexity_score": 0.5354477786772541,
+  "scene_complexity_breakdown": {
+    "shot_frequency": 0.11943128867725411,
+    "object_entropy": 0.22378895,
+    "interaction_density": 0.09554504,
+    "human_presence_ratio": 0.0966825
+  },
+  "narrative_phase": "Calm",
+  "phase_reasons": [
+    "Normalized values -> shot_frequency=0.3412, object_entropy=0.6394, interaction_density=0.4777",
+    "Dense rule not satisfied: object_entropy > 0.7 is False, interaction_density > 0.65 is False",
+    "Dynamic rule not satisfied: shot_frequency > 0.35 is False, interaction_density <= 0.75 is True",
+    "Static rule not satisfied: shot_frequency < 0.2 is False, interaction_density < 0.3 is False, object_entropy < 0.5 is False",
+    "Defaulted to Calm"
+  ],
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "The video depicts an interrogation or interview scene set in a dimly lit office. A man in a dark suit and orange patterned tie sits at a wooden desk, writing in a notebook with a pencil while speaking. Across from him, a uniformed officer (wearing a light blue shirt with patches) enters, sits down, and presents a document. The interaction appears formal and tense, with the suited man maintaining focus on his notes while the officer observes and engages with him. The atmosphere suggests a serious official proceeding or questioning.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 107,
+      "total_tokens": 8631
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"office or interrogation room\",\n  \"main_entities\": [\"man in suit\", \"police officer\"],\n  \"actions\": [\"writing in notebook\", \"sitting\", \"speaking\", \"handing over paper\"],\n  \"emotion_words\": [\"serious\", \"focused\"],\n  \"interaction_level\": 2,\n  \"interaction_evidence\": \"The police officer hands a document to the man in the suit, who is writing and looking at him. They are engaged in a face-to-face conversation with mutual attention and coordinated task-based behavior.\",\n  \"summary\": \"A man in a suit and tie sits at a desk writing in a notebook while speaking with a uniformed police officer across from him in an office setting.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 152,
+      "total_tokens": 9060
+    }
+  },
+  "lvlm_structured": {
+    "setting": "office or interrogation room",
+    "main_entities": [
+      "man in suit",
+      "police officer"
+    ],
+    "actions": [
+      "writing in notebook",
+      "sitting",
+      "speaking",
+      "handing over paper"
+    ],
+    "emotion_words": [
+      "serious",
+      "focused"
+    ],
+    "interaction_level": 2,
+    "interaction_evidence": "The police officer hands a document to the man in the suit, who is writing and looking at him. They are engaged in a face-to-face conversation with mutual attention and coordinated task-based behavior.",
+    "summary": "A man in a suit and tie sits at a desk writing in a notebook while speaking with a uniformed police officer across from him in an office setting."
+  },
+  "lvlm_error": null
+}

@@ -1,0 +1,43 @@
+{
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09254.mp4",
+  "duration_seconds": 8.791666,
+  "shots": {
+    "count": 1,
+    "avg_shot_length": 8.791666,
+    "shot_variance": 0.0,
+    "shot_lengths": [
+      8.791666
+    ]
+  },
+  "labels": {
+    "unique": [
+      "official",
+      "police",
+      "police officer",
+      "vehicle"
+    ],
+    "count_unique": 4
+  },
+  "objects": {
+    "total_tracks": 11,
+    "object_frequency_distribution": {
+      "car": 5,
+      "tie": 2,
+      "person": 1,
+      "hat": 1,
+      "outerwear": 1,
+      "pants": 1
+    },
+    "top_objects": [
+      "car",
+      "tie",
+      "person",
+      "hat",
+      "outerwear",
+      "pants"
+    ],
+    "object_entropy": 2.222192,
+    "human_presence_ratio": 0.995261,
+    "interaction_density_tracks_per_sec": 1.251185
+  }
+}

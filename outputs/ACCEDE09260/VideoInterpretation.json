@@ -1,0 +1,76 @@
+{
+  "video_id": "ACCEDE09260",
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09260.mp4",
+  "features_raw": {
+    "shot_frequency": 0.19354839334027077,
+    "object_entropy": 3.390805,
+    "interaction_density": 2.129032,
+    "human_presence_ratio": 0.774194
+  },
+  "features_norm": {
+    "shot_frequency": 0.19354839334027077,
+    "object_entropy": 0.84770125,
+    "interaction_density": 0.42580640000000003,
+    "human_presence_ratio": 0.774194
+  },
+  "scene_complexity_score": 0.5270180551690948,
+  "scene_complexity_breakdown": {
+    "shot_frequency": 0.06774193766909477,
+    "object_entropy": 0.2966954375,
+    "interaction_density": 0.08516128,
+    "human_presence_ratio": 0.07741940000000001
+  },
+  "narrative_phase": "Calm",
+  "phase_reasons": [
+    "Normalized values -> shot_frequency=0.1935, object_entropy=0.8477, interaction_density=0.4258",
+    "Dense rule not satisfied: object_entropy > 0.7 is True, interaction_density > 0.65 is False",
+    "Dynamic rule not satisfied: shot_frequency > 0.35 is False, interaction_density <= 0.75 is True",
+    "Static rule not satisfied: shot_frequency < 0.2 is True, interaction_density < 0.3 is False, object_entropy < 0.5 is False",
+    "Defaulted to Calm"
+  ],
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "**Setting:** An office with a cluttered desk, featuring a tissue box, wire basket, stapler, and papers. A calendar hangs on the dark wall behind the desk.\n\n**People:** Two men - one in a light blue uniform shirt (likely a security guard or officer) and another in a dark suit with a distinctive orange patterned tie seated at the desk.\n\n**Actions:** The man in the blue shirt approaches the desk, hands a piece of paper to the seated man, then exits. The suited man writes in a notebook, examines the paper, places it in a drawer labeled \"Personal Files,\" and closes the drawer.\n\n**Emotional Tone:** Routine, bureaucratic, and matter-of-fact. The interaction is brief and professional.\n\n**Interaction:** Minimal - the standing man delivers a document to the seated man, who receives it without conversation before filing it away.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 177,
+      "total_tokens": 8701
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"office\",\n  \"main_entities\": [\"man in blue uniform\", \"man in suit\"],\n  \"actions\": [\"walking past desk\", \"writing\", \"reading paper\", \"filing document\"],\n  \"emotion_words\": [\"focused\", \"serious\"],\n  \"interaction_level\": 0,\n  \"interaction_evidence\": \"The man in the blue uniform walks past the desk and exits without speaking or making eye contact. The man in suit remains focused on his paperwork throughout, showing no reaction or acknowledgment of the other person's presence.\",\n  \"summary\": \"A man in a blue uniform walks through an office while a man in a suit sits at a desk writing, then reads a piece of paper before filing it away in a drawer.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 156,
+      "total_tokens": 9064
+    }
+  },
+  "lvlm_structured": {
+    "setting": "office",
+    "main_entities": [
+      "man in blue uniform",
+      "man in suit"
+    ],
+    "actions": [
+      "walking past desk",
+      "writing",
+      "reading paper",
+      "filing document"
+    ],
+    "emotion_words": [
+      "focused",
+      "serious"
+    ],
+    "interaction_level": 0,
+    "interaction_evidence": "The man in the blue uniform walks past the desk and exits without speaking or making eye contact. The man in suit remains focused on his paperwork throughout, showing no reaction or acknowledgment of the other person's presence.",
+    "summary": "A man in a blue uniform walks through an office while a man in a suit sits at a desk writing, then reads a piece of paper before filing it away in a drawer."
+  },
+  "lvlm_error": null
+}

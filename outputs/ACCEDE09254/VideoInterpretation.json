@@ -1,0 +1,76 @@
+{
+  "video_id": "ACCEDE09254",
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09254.mp4",
+  "features_raw": {
+    "shot_frequency": 0.11374408445452774,
+    "object_entropy": 2.222192,
+    "interaction_density": 1.251185,
+    "human_presence_ratio": 0.995261
+  },
+  "features_norm": {
+    "shot_frequency": 0.11374408445452774,
+    "object_entropy": 0.555548,
+    "interaction_density": 0.250237,
+    "human_presence_ratio": 0.995261
+  },
+  "scene_complexity_score": 0.3838257295590847,
+  "scene_complexity_breakdown": {
+    "shot_frequency": 0.03981042955908471,
+    "object_entropy": 0.1944418,
+    "interaction_density": 0.0500474,
+    "human_presence_ratio": 0.0995261
+  },
+  "narrative_phase": "Calm",
+  "phase_reasons": [
+    "Normalized values -> shot_frequency=0.1137, object_entropy=0.5555, interaction_density=0.2502",
+    "Dense rule not satisfied: object_entropy > 0.7 is False, interaction_density > 0.65 is False",
+    "Dynamic rule not satisfied: shot_frequency > 0.35 is False, interaction_density <= 0.75 is True",
+    "Static rule not satisfied: shot_frequency < 0.2 is True, interaction_density < 0.3 is True, object_entropy < 0.5 is False",
+    "Defaulted to Calm"
+  ],
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "**Setting:** An outdoor urban sidewalk on a sunny day, with parked cars (including a dark gray SUV), brick buildings in the background, and trees with autumn foliage.\n\n**Main Entity:** A uniformed officer (wearing a dark jacket with a shoulder patch, light blue shirt, and baseball cap).\n\n**Visible Actions:** The officer walks along the sidewalk, stops near the parked vehicles, reaches into his jacket pocket, pulls out a small notepad or ticket book and a pen, and begins writing while looking down at the paper.\n\n**Emotional Tone:** Professional, routine, and matter-of-fact.\n\n**Interaction:** None—this is a solo activity with no other people directly involved.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 140,
+      "total_tokens": 8664
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"outdoor sidewalk next to parked cars with a brick building in the background\",\n  \"main_entities\": [\"police officer\"],\n  \"actions\": [\"walking\", \"reaching into pocket\", \"pulling out notepad and pen\", \"writing on notepad\"],\n  \"emotion_words\": [\"focused\", \"professional\", \"calm\"],\n  \"interaction_level\": 0,\n  \"interaction_evidence\": \"The officer is alone in the scene, performing independent tasks without any other people present to interact with. There is no visible communication or social engagement.\",\n  \"summary\": \"A police officer walks along a sidewalk, retrieves a notepad and pen from his jacket pocket, and begins writing while standing near parked vehicles.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 153,
+      "total_tokens": 9061
+    }
+  },
+  "lvlm_structured": {
+    "setting": "outdoor sidewalk next to parked cars with a brick building in the background",
+    "main_entities": [
+      "police officer"
+    ],
+    "actions": [
+      "walking",
+      "reaching into pocket",
+      "pulling out notepad and pen",
+      "writing on notepad"
+    ],
+    "emotion_words": [
+      "focused",
+      "professional",
+      "calm"
+    ],
+    "interaction_level": 0,
+    "interaction_evidence": "The officer is alone in the scene, performing independent tasks without any other people present to interact with. There is no visible communication or social engagement.",
+    "summary": "A police officer walks along a sidewalk, retrieves a notepad and pen from his jacket pocket, and begins writing while standing near parked vehicles."
+  },
+  "lvlm_error": null
+}

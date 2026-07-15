@@ -28,8 +28,52 @@
     "Static rule not satisfied: shot_frequency < 0.2 is True, interaction_density < 0.3 is True, object_entropy < 0.5 is False",
     "Defaulted to Calm"
   ],
-  "lvlm_summary": null,
-  "lvlm_structured_raw": null,
-  "lvlm_structured": null,
-  "lvlm_error": "LVLM not run in gcp_tuning mode"
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "The video depicts an emotionally charged domestic scene. The setting appears to be a home interior, with scenes taking place in a room with a decorative wall cross and a doorway area with bookshelves.\n\n**Main entities and actions:**\n- A middle-aged man in a dark suit and yellow shirt is shown in the first four frames. He initially looks off-camera, then becomes visibly distressed, closing his eyes and using a white tissue to wipe his face and nose, suggesting he is crying or upset.\n- The final four frames show a different person (or possibly the same man from behind, wearing a black shirt) holding up what appears to be a DVD case or photograph toward a door.\n- A woman with short blonde hair, glasses, and a red floral top appears in the doorway, looking at the person with the item. Her facial expression shifts from surprise to anger or frustration as she speaks to them.\n\n**Emotional tone and interaction:**\nThe tone is tense and emotional. The man's distress (crying) suggests he has received bad news or is in a difficult situation. The subsequent confrontation at the door between the person holding the item and the angry woman indicates a conflict or argument is occurring, likely related to whatever is being shown on the DVD/photograph. The woman appears to be confronting or scolding the other individual.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 269,
+      "total_tokens": 8793
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"Indoor home setting, including a room with a cross on the wall and a doorway\",\n  \"main_entities\": [\"Man in suit\", \"Man in black shirt\", \"Woman in red shirt\"],\n  \"actions\": [\"Sitting and looking away\", \"Wiping face with tissue\", \"Knocking on door with DVD case\", \"Opening door and speaking\"],\n  \"emotion_words\": [\"Distressed\", \"Upset\", \"Confrontational\", \"Surprised\"],\n  \"interaction_level\": 2,\n  \"interaction_evidence\": \"The woman in the red shirt opens the door to the man who is knocking, and they are shown facing each other. Her facial expression indicates she is speaking directly to him or reacting strongly to his presence.\",\n  \"summary\": \"A man in a suit appears emotionally distressed while sitting alone, wiping his face with a tissue. The scene then cuts to another man knocking on a door using a DVD case; when the door is opened by a woman in a red shirt, she confronts him with an angry or shocked expression.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 224,
+      "total_tokens": 9132
+    }
+  },
+  "lvlm_structured": {
+    "setting": "Indoor home setting, including a room with a cross on the wall and a doorway",
+    "main_entities": [
+      "Man in suit",
+      "Man in black shirt",
+      "Woman in red shirt"
+    ],
+    "actions": [
+      "Sitting and looking away",
+      "Wiping face with tissue",
+      "Knocking on door with DVD case",
+      "Opening door and speaking"
+    ],
+    "emotion_words": [
+      "Distressed",
+      "Upset",
+      "Confrontational",
+      "Surprised"
+    ],
+    "interaction_level": 2,
+    "interaction_evidence": "The woman in the red shirt opens the door to the man who is knocking, and they are shown facing each other. Her facial expression indicates she is speaking directly to him or reacting strongly to his presence.",
+    "summary": "A man in a suit appears emotionally distressed while sitting alone, wiping his face with a tissue. The scene then cuts to another man knocking on a door using a DVD case; when the door is opened by a woman in a red shirt, she confronts him with an angry or shocked expression."
+  },
+  "lvlm_error": null
 }

@@ -1,0 +1,77 @@
+{
+  "video_id": "ACCEDE09255",
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09255.mp4",
+  "features_raw": {
+    "shot_frequency": 0.10169491870152267,
+    "object_entropy": 2.503258,
+    "interaction_density": 0.915254,
+    "human_presence_ratio": 0.991525
+  },
+  "features_norm": {
+    "shot_frequency": 0.10169491870152267,
+    "object_entropy": 0.6258145,
+    "interaction_density": 0.1830508,
+    "human_presence_ratio": 0.991525
+  },
+  "scene_complexity_score": 0.3903909565455329,
+  "scene_complexity_breakdown": {
+    "shot_frequency": 0.03559322154553293,
+    "object_entropy": 0.219035075,
+    "interaction_density": 0.03661016,
+    "human_presence_ratio": 0.0991525
+  },
+  "narrative_phase": "Calm",
+  "phase_reasons": [
+    "Normalized values -> shot_frequency=0.1017, object_entropy=0.6258, interaction_density=0.1831",
+    "Dense rule not satisfied: object_entropy > 0.7 is False, interaction_density > 0.65 is False",
+    "Dynamic rule not satisfied: shot_frequency > 0.35 is False, interaction_density <= 0.75 is True",
+    "Static rule not satisfied: shot_frequency < 0.2 is True, interaction_density < 0.3 is True, object_entropy < 0.5 is False",
+    "Defaulted to Calm"
+  ],
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "**Setting:** A dimly lit living room with warm ambient lighting from two table lamps. The room contains a brown leather recliner, side tables with lamps and a green decorative statue, framed pictures on the wall, a potted plant, and a wastebasket.\n\n**Main Entity:** A man (actor Bob Odenkirk) dressed in dark clothing, seated in the leather recliner.\n\n**Visible Actions:** The man is initially holding and reading a green piece of paper or card with a focused expression. After reading it for several moments, he extends his arm and drops the paper into the wastebasket beside him. He then leans back into the chair, resting his hands on the armrests and closing his eyes.\n\n**Emotional Tone:** The scene conveys weariness, resignation, or contemplation. The dim lighting and the act of discarding the paper suggest finality or relief after processing difficult information.\n\n**Interaction:** No other people are present; this is a solitary scene focused on the individual's private moment of decision or reflection.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 213,
+      "total_tokens": 8737
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"dimly lit living room\",\n  \"main_entities\": [\"man\", \"leather recliner\", \"green envelope/paper\"],\n  \"actions\": [\"reading a letter or document\", \"dropping the paper into a wastebasket\", \"leaning back and closing eyes\"],\n  \"emotion_words\": [\"contemplative\", \"resigned\", \"weary\"],\n  \"interaction_level\": 0,\n  \"interaction_evidence\": \"The man is alone in the room, focused entirely on reading an object in his hands before discarding it. There are no other people present to interact with.\",\n  \"summary\": \"A man sits alone in a leather recliner in a dim living room. He reads a green piece of paper with a serious expression, then drops it into a nearby wastebasket, leans back, closes his eyes, and appears to rest.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 182,
+      "total_tokens": 9090
+    }
+  },
+  "lvlm_structured": {
+    "setting": "dimly lit living room",
+    "main_entities": [
+      "man",
+      "leather recliner",
+      "green envelope/paper"
+    ],
+    "actions": [
+      "reading a letter or document",
+      "dropping the paper into a wastebasket",
+      "leaning back and closing eyes"
+    ],
+    "emotion_words": [
+      "contemplative",
+      "resigned",
+      "weary"
+    ],
+    "interaction_level": 0,
+    "interaction_evidence": "The man is alone in the room, focused entirely on reading an object in his hands before discarding it. There are no other people present to interact with.",
+    "summary": "A man sits alone in a leather recliner in a dim living room. He reads a green piece of paper with a serious expression, then drops it into a nearby wastebasket, leans back, closes his eyes, and appears to rest."
+  },
+  "lvlm_error": null
+}

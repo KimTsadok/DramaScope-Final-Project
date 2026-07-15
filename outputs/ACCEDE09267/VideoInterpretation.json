@@ -1,0 +1,77 @@
+{
+  "video_id": "ACCEDE09267",
+  "video_uri": "gs://final-project-bucket1/uploads/ACCEDE09267.mp4",
+  "features_raw": {
+    "shot_frequency": 0.08888888888888889,
+    "object_entropy": 2.25,
+    "interaction_density": 0.711111,
+    "human_presence_ratio": 1.0
+  },
+  "features_norm": {
+    "shot_frequency": 0.08888888888888889,
+    "object_entropy": 0.5625,
+    "interaction_density": 0.14222220000000002,
+    "human_presence_ratio": 1.0
+  },
+  "scene_complexity_score": 0.3564305511111111,
+  "scene_complexity_breakdown": {
+    "shot_frequency": 0.03111111111111111,
+    "object_entropy": 0.196875,
+    "interaction_density": 0.028444440000000005,
+    "human_presence_ratio": 0.1
+  },
+  "narrative_phase": "Calm",
+  "phase_reasons": [
+    "Normalized values -> shot_frequency=0.0889, object_entropy=0.5625, interaction_density=0.1422",
+    "Dense rule not satisfied: object_entropy > 0.7 is False, interaction_density > 0.65 is False",
+    "Dynamic rule not satisfied: shot_frequency > 0.35 is False, interaction_density <= 0.75 is True",
+    "Static rule not satisfied: shot_frequency < 0.2 is True, interaction_density < 0.3 is True, object_entropy < 0.5 is False",
+    "Defaulted to Calm"
+  ],
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "**Setting:** Outdoor scene in what appears to be a park or campus area with trees, grass, and buildings visible in the background. The lighting suggests it is daytime with autumn foliage.\n\n**People:** Two men are present:\n- **Left:** A man with glasses wearing a brown blazer over a dark sweater\n- **Right:** A man wearing a dark baseball cap, light blue button-down shirt, and a dark jacket with a circular patch on the left sleeve (suggesting official or security capacity)\n\n**Actions & Interaction:** The two men are engaged in conversation. Initially both look forward/upward (frames 1-2), then the man on the left turns to face the man on the right and speaks (frames 3-5). The man on the right listens intently, then responds by looking up thoughtfully before turning back to face the speaker and replying (frames 6-8).\n\n**Emotional Tone:** Serious and focused. Both men display concerned or contemplative expressions. The body language suggests they are discussing something of importance or urgency. The interaction appears professional and somewhat tense.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 223,
+      "total_tokens": 8747
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"outdoor campus or park with trees and buildings in the background\",\n  \"main_entities\": [\"man in brown coat and glasses\", \"man in dark jacket and cap\"],\n  \"actions\": [\"standing\", \"talking\", \"looking at each other\", \"listening\"],\n  \"emotion_words\": [\"serious\", \"concerned\", \"attentive\"],\n  \"interaction_level\": 2,\n  \"interaction_evidence\": \"The two men are engaged in a clear mutual conversation. The man on the left turns his head to face the man on the right, who responds by looking at him and speaking. Their body orientation, eye contact, and facial expressions indicate they are actively communicating and responding to each other.\",\n  \"summary\": \"Two men are having a serious conversation outdoors. One man, wearing a brown coat and glasses, appears to be listening intently while the other, dressed in a dark jacket with an insignia and a cap, speaks to him. They maintain eye contact and their interaction suggests a discussion of some importance.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 217,
+      "total_tokens": 9125
+    }
+  },
+  "lvlm_structured": {
+    "setting": "outdoor campus or park with trees and buildings in the background",
+    "main_entities": [
+      "man in brown coat and glasses",
+      "man in dark jacket and cap"
+    ],
+    "actions": [
+      "standing",
+      "talking",
+      "looking at each other",
+      "listening"
+    ],
+    "emotion_words": [
+      "serious",
+      "concerned",
+      "attentive"
+    ],
+    "interaction_level": 2,
+    "interaction_evidence": "The two men are engaged in a clear mutual conversation. The man on the left turns his head to face the man on the right, who responds by looking at him and speaking. Their body orientation, eye contact, and facial expressions indicate they are actively communicating and responding to each other.",
+    "summary": "Two men are having a serious conversation outdoors. One man, wearing a brown coat and glasses, appears to be listening intently while the other, dressed in a dark jacket with an insignia and a cap, speaks to him. They maintain eye contact and their interaction suggests a discussion of some importance."
+  },
+  "lvlm_error": null
+}

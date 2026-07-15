@@ -28,8 +28,49 @@
     "Static rule not satisfied: shot_frequency < 0.2 is False, interaction_density < 0.3 is False, object_entropy < 0.5 is False",
     "Defaulted to Calm"
   ],
-  "lvlm_summary": null,
-  "lvlm_structured_raw": null,
-  "lvlm_structured": null,
-  "lvlm_error": "LVLM not run in gcp_tuning mode"
+  "lvlm_summary": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v1_summary",
+    "frame_count": 8,
+    "text": "The video depicts a scene set inside a moving car during daytime, traveling through a suburban residential neighborhood with houses, driveways, and lawns visible through the windows. The main subjects are a man in the passenger seat and a woman driving. The man, wearing a dark suit jacket over a light-colored collared shirt, is the primary focus, shown in various shots smiling, looking toward the camera or out the window, and appearing to speak. The woman, dressed in a pink short-sleeved blouse with a pearl necklace and bracelets, is seen holding the steering wheel and concentrating on driving. The emotional tone is casual and pleasant, characterized by the man's relaxed, cheerful demeanor. While both individuals are present in the vehicle, there is no direct visible interaction between them; the man seems engaged with someone off-camera (possibly filming) while the woman focuses on operating the car.",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8524,
+      "completion_tokens": 177,
+      "total_tokens": 8701
+    }
+  },
+  "lvlm_structured_raw": {
+    "model": "glm-5v-turbo",
+    "prompt_version": "v3_interaction",
+    "frame_count": 8,
+    "text": "{\n  \"setting\": \"inside a moving car in a residential neighborhood\",\n  \"main_entities\": [\"man\", \"woman\"],\n  \"actions\": [\"talking\", \"driving\", \"smiling\"],\n  \"emotion_words\": [\"happy\", \"content\", \"relaxed\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The man is looking toward the driver and speaking, while the woman is driving and appears to be listening or participating in the conversation. They are sharing the same space and context with communicative cues.\",\n  \"summary\": \"A man and a woman are riding together in a car through a suburban neighborhood. The man, sitting in the passenger seat, is smiling and talking, while the woman drives attentively, suggesting a casual, pleasant conversation during their drive.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 8908,
+      "completion_tokens": 165,
+      "total_tokens": 9073
+    }
+  },
+  "lvlm_structured": {
+    "setting": "inside a moving car in a residential neighborhood",
+    "main_entities": [
+      "man",
+      "woman"
+    ],
+    "actions": [
+      "talking",
+      "driving",
+      "smiling"
+    ],
+    "emotion_words": [
+      "happy",
+      "content",
+      "relaxed"
+    ],
+    "interaction_level": 1,
+    "interaction_evidence": "The man is looking toward the driver and speaking, while the woman is driving and appears to be listening or participating in the conversation. They are sharing the same space and context with communicative cues.",
+    "summary": "A man and a woman are riding together in a car through a suburban neighborhood. The man, sitting in the passenger seat, is smiling and talking, while the woman drives attentively, suggesting a casual, pleasant conversation during their drive."
+  },
+  "lvlm_error": null
 }
