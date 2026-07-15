@@ -32,31 +32,31 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "**Setting:** Outdoor scene in what appears to be a park or campus area with trees, grass, and buildings visible in the background. The lighting suggests it is daytime with autumn foliage.\n\n**People:** Two men are present:\n- **Left:** A man with glasses wearing a brown blazer over a dark sweater\n- **Right:** A man wearing a dark baseball cap, light blue button-down shirt, and a dark jacket with a circular patch on the left sleeve (suggesting official or security capacity)\n\n**Actions & Interaction:** The two men are engaged in conversation. Initially both look forward/upward (frames 1-2), then the man on the left turns to face the man on the right and speaks (frames 3-5). The man on the right listens intently, then responds by looking up thoughtfully before turning back to face the speaker and replying (frames 6-8).\n\n**Emotional Tone:** Serious and focused. Both men display concerned or contemplative expressions. The body language suggests they are discussing something of importance or urgency. The interaction appears professional and somewhat tense.",
+    "text": "**Setting:** Outdoor scene in a park or campus-like area with trees, grass, and a building visible in the background. Daytime lighting suggests it's autumn (yellow leaves).\n\n**People:** Two men standing side by side:\n- **Left:** Middle-aged man with glasses, wearing a brown blazer over a dark sweater and collared shirt\n- **Right:** Man wearing a navy blue uniform jacket with a badge/patch on the left sleeve, light blue button-down shirt, and a dark baseball cap\n\n**Actions & Interaction:** The two men are engaged in conversation. The man on the left turns his head toward the man on the right and appears to be speaking. The uniformed man listens attentively, then responds - his facial expressions shift from neutral to more animated as he speaks, including closing his eyes briefly mid-sentence.\n\n**Emotional Tone:** Serious but calm professional discussion. The body language suggests a formal or official exchange, possibly between a civilian and law enforcement/security personnel. The interaction appears cooperative and focused.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 223,
-      "total_tokens": 8747
+      "completion_tokens": 208,
+      "total_tokens": 8732
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"outdoor campus or park with trees and buildings in the background\",\n  \"main_entities\": [\"man in brown coat and glasses\", \"man in dark jacket and cap\"],\n  \"actions\": [\"standing\", \"talking\", \"looking at each other\", \"listening\"],\n  \"emotion_words\": [\"serious\", \"concerned\", \"attentive\"],\n  \"interaction_level\": 2,\n  \"interaction_evidence\": \"The two men are engaged in a clear mutual conversation. The man on the left turns his head to face the man on the right, who responds by looking at him and speaking. Their body orientation, eye contact, and facial expressions indicate they are actively communicating and responding to each other.\",\n  \"summary\": \"Two men are having a serious conversation outdoors. One man, wearing a brown coat and glasses, appears to be listening intently while the other, dressed in a dark jacket with an insignia and a cap, speaks to him. They maintain eye contact and their interaction suggests a discussion of some importance.\"\n}",
+    "text": "{\n  \"setting\": \"outdoor campus or park with trees and buildings in the background\",\n  \"main_entities\": [\"man in brown coat and glasses\", \"man in dark jacket and baseball cap\"],\n  \"actions\": [\"standing\", \"talking\", \"looking at each other\", \"listening\"],\n  \"emotion_words\": [\"serious\", \"concerned\", \"focused\"],\n  \"interaction_level\": 2,\n  \"interaction_evidence\": \"The two men are engaged in a clear mutual conversation. The man on the left turns to face the man on the right, speaking directly to him. The man on the right maintains eye contact, listens attentively, and responds verbally with changing facial expressions including closing his eyes briefly while speaking. They display coordinated back-and-forth communicative behavior.\",\n  \"summary\": \"Two men are having a serious outdoor conversation. One man wearing a brown coat and glasses speaks to another man dressed in a dark uniform-style jacket and cap, who listens intently before responding. Their body language indicates an engaged, mutual exchange of information.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 217,
-      "total_tokens": 9125
+      "completion_tokens": 218,
+      "total_tokens": 9126
     }
   },
   "lvlm_structured": {
     "setting": "outdoor campus or park with trees and buildings in the background",
     "main_entities": [
       "man in brown coat and glasses",
-      "man in dark jacket and cap"
+      "man in dark jacket and baseball cap"
     ],
     "actions": [
       "standing",
@@ -67,11 +67,11 @@
     "emotion_words": [
       "serious",
       "concerned",
-      "attentive"
+      "focused"
     ],
     "interaction_level": 2,
-    "interaction_evidence": "The two men are engaged in a clear mutual conversation. The man on the left turns his head to face the man on the right, who responds by looking at him and speaking. Their body orientation, eye contact, and facial expressions indicate they are actively communicating and responding to each other.",
-    "summary": "Two men are having a serious conversation outdoors. One man, wearing a brown coat and glasses, appears to be listening intently while the other, dressed in a dark jacket with an insignia and a cap, speaks to him. They maintain eye contact and their interaction suggests a discussion of some importance."
+    "interaction_evidence": "The two men are engaged in a clear mutual conversation. The man on the left turns to face the man on the right, speaking directly to him. The man on the right maintains eye contact, listens attentively, and responds verbally with changing facial expressions including closing his eyes briefly while speaking. They display coordinated back-and-forth communicative behavior.",
+    "summary": "Two men are having a serious outdoor conversation. One man wearing a brown coat and glasses speaks to another man dressed in a dark uniform-style jacket and cap, who listens intently before responding. Their body language indicates an engaged, mutual exchange of information."
   },
   "lvlm_error": null
 }

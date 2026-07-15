@@ -32,19 +32,19 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "The video depicts an emotionally charged domestic scene. The setting appears to be a home interior, with scenes taking place in a room with a decorative wall cross and a doorway area with bookshelves.\n\n**Main entities and actions:**\n- A middle-aged man in a dark suit and yellow shirt is shown in the first four frames. He initially looks off-camera, then becomes visibly distressed, closing his eyes and using a white tissue to wipe his face and nose, suggesting he is crying or upset.\n- The final four frames show a different person (or possibly the same man from behind, wearing a black shirt) holding up what appears to be a DVD case or photograph toward a door.\n- A woman with short blonde hair, glasses, and a red floral top appears in the doorway, looking at the person with the item. Her facial expression shifts from surprise to anger or frustration as she speaks to them.\n\n**Emotional tone and interaction:**\nThe tone is tense and emotional. The man's distress (crying) suggests he has received bad news or is in a difficult situation. The subsequent confrontation at the door between the person holding the item and the angry woman indicates a conflict or argument is occurring, likely related to whatever is being shown on the DVD/photograph. The woman appears to be confronting or scolding the other individual.",
+    "text": "**Setting:** Indoor domestic environment, likely a home, with visible interior details including a decorative wall cross, wooden shelf, and doorway.\n\n**People:** Two individuals - a middle-aged man in a dark suit jacket and yellow shirt (appearing to be Hank Hill), and a woman with short blonde hair wearing glasses and a red patterned top.\n\n**Actions:** The man is seated and visibly emotional, wiping his face/nose with a white tissue. Meanwhile, another person (seen from behind) knocks on or holds something against a door, prompting the woman to appear in the doorway reacting to the visitor.\n\n**Emotional Tone:** Melancholic and tense - the man displays signs of distress or sadness (eyes closed, pained expression, using tissue), while the woman's expression suggests concern, surprise, or confrontation upon encountering the person at the door.\n\n**Interaction:** The scene captures two simultaneous dynamics: the man's private moment of emotional vulnerability, and an unfolding interaction between the woman and the unidentified person at the door, suggesting an interruption or unexpected arrival during a sensitive time.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 269,
-      "total_tokens": 8793
+      "completion_tokens": 217,
+      "total_tokens": 8741
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"Indoor home setting, including a room with a cross on the wall and a doorway\",\n  \"main_entities\": [\"Man in suit\", \"Man in black shirt\", \"Woman in red shirt\"],\n  \"actions\": [\"Sitting and looking away\", \"Wiping face with tissue\", \"Knocking on door with DVD case\", \"Opening door and speaking\"],\n  \"emotion_words\": [\"Distressed\", \"Upset\", \"Confrontational\", \"Surprised\"],\n  \"interaction_level\": 2,\n  \"interaction_evidence\": \"The woman in the red shirt opens the door to the man who is knocking, and they are shown facing each other. Her facial expression indicates she is speaking directly to him or reacting strongly to his presence.\",\n  \"summary\": \"A man in a suit appears emotionally distressed while sitting alone, wiping his face with a tissue. The scene then cuts to another man knocking on a door using a DVD case; when the door is opened by a woman in a red shirt, she confronts him with an angry or shocked expression.\"\n}",
+    "text": "{\n  \"setting\": \"Indoor residential setting, likely a home with a living area and a doorway\",\n  \"main_entities\": [\"Man in suit\", \"Person in black shirt\", \"Woman in red dress\"],\n  \"actions\": [\n    \"Man sitting and looking to the side\",\n    \"Man wiping his face and nose with a tissue\",\n    \"Person in black shirt knocking on a door\",\n    \"Woman opening door and speaking to person\"\n  ],\n  \"emotion_words\": [\n    \"distressed\",\n    \"upset\",\n    \"concerned\",\n    \"surprised\"\n  ],\n  \"interaction_level\": 2,\n  \"interaction_evidence\": \"In the final frames, a woman opens a door and appears to be actively speaking or reacting to the person standing outside (the person in the black shirt), indicating clear mutual interaction between them.\",\n  \"summary\": \"The video shows a man in a suit appearing emotionally distressed while seated indoors, followed by a scene where another person knocks on a door and is greeted by a woman who seems to engage with them directly.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
@@ -53,27 +53,27 @@
     }
   },
   "lvlm_structured": {
-    "setting": "Indoor home setting, including a room with a cross on the wall and a doorway",
+    "setting": "Indoor residential setting, likely a home with a living area and a doorway",
     "main_entities": [
       "Man in suit",
-      "Man in black shirt",
-      "Woman in red shirt"
+      "Person in black shirt",
+      "Woman in red dress"
     ],
     "actions": [
-      "Sitting and looking away",
-      "Wiping face with tissue",
-      "Knocking on door with DVD case",
-      "Opening door and speaking"
+      "Man sitting and looking to the side",
+      "Man wiping his face and nose with a tissue",
+      "Person in black shirt knocking on a door",
+      "Woman opening door and speaking to person"
     ],
     "emotion_words": [
-      "Distressed",
-      "Upset",
-      "Confrontational",
-      "Surprised"
+      "distressed",
+      "upset",
+      "concerned",
+      "surprised"
     ],
     "interaction_level": 2,
-    "interaction_evidence": "The woman in the red shirt opens the door to the man who is knocking, and they are shown facing each other. Her facial expression indicates she is speaking directly to him or reacting strongly to his presence.",
-    "summary": "A man in a suit appears emotionally distressed while sitting alone, wiping his face with a tissue. The scene then cuts to another man knocking on a door using a DVD case; when the door is opened by a woman in a red shirt, she confronts him with an angry or shocked expression."
+    "interaction_evidence": "In the final frames, a woman opens a door and appears to be actively speaking or reacting to the person standing outside (the person in the black shirt), indicating clear mutual interaction between them.",
+    "summary": "The video shows a man in a suit appearing emotionally distressed while seated indoors, followed by a scene where another person knocks on a door and is greeted by a woman who seems to engage with them directly."
   },
   "lvlm_error": null
 }

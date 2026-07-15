@@ -10,9 +10,9 @@ Purpose:
 """
 
 import math
-from typing import Any, Dict, List
-from src.lvlm.parse import (ensure_string,
-                            ensure_string_list) #helpers
+from typing import Any, Dict
+
+from src.lvlm.parse import ensure_string, ensure_string_list
 
 # ---------------------------------------------------------------------
 # Helper Functions
@@ -59,25 +59,63 @@ def validate_video_features(video_features: Dict[str, Any]) -> Dict[str, Any]:
     - missing objects fields -> 0.0
     - human_presence_ratio clamped to [0, 1]
     """
+    if not isinstance(video_features, dict):
+        raise TypeError("Invalid video features: expected a dictionary.")
+
     duration_seconds = safe_float(video_features.get("duration_seconds"), default=0.0)
 
     if duration_seconds <= 0:
         raise ValueError("Invalid video features: duration_seconds must be greater than 0.")
 
-    shots = video_features.setdefault("shots", {})
-    objects = video_features.setdefault("objects", {})
+    shots_value = video_features.get("shots", {})
+    objects_value = video_features.get("objects", {})
 
-    shots["count"] = int(safe_float(shots.get("count"), default=0.0))
+    if not isinstance(shots_value, dict):
+        raise ValueError("Invalid video features: shots must be a dictionary.")
 
-    objects["object_entropy"] = safe_float(
-        objects.get("object_entropy"),
-        default=0.0,
+    if not isinstance(objects_value, dict):
+        raise ValueError("Invalid video features: objects must be a dictionary.")
+
+    cleaned = dict(video_features)
+    shots = dict(shots_value)
+    objects = dict(objects_value)
+
+    numeric_fields = (
+        (shots, "count"),
+        (objects, "object_entropy"),
+        (objects, "interaction_density_tracks_per_sec"),
+        (objects, "human_presence_ratio"),
     )
+    for container, field_name in numeric_fields:
+        if field_name in container and is_bad_number(container[field_name]):
+            raise ValueError(
+                f"Invalid video features: {field_name} must be a finite number."
+            )
 
-    objects["interaction_density_tracks_per_sec"] = safe_float(
+    shot_count = safe_float(shots.get("count"), default=0.0)
+    object_entropy = safe_float(objects.get("object_entropy"), default=0.0)
+    interaction_density = safe_float(
         objects.get("interaction_density_tracks_per_sec"),
         default=0.0,
     )
+
+    if shot_count < 0:
+        raise ValueError("Invalid video features: shots.count cannot be negative.")
+
+    if object_entropy < 0:
+        raise ValueError("Invalid video features: object_entropy cannot be negative.")
+
+    if interaction_density < 0:
+        raise ValueError(
+            "Invalid video features: interaction_density_tracks_per_sec "
+            "cannot be negative."
+        )
+
+    shots["count"] = int(shot_count)
+
+    objects["object_entropy"] = object_entropy
+
+    objects["interaction_density_tracks_per_sec"] = interaction_density
 
     objects["human_presence_ratio"] = clamp(
         safe_float(objects.get("human_presence_ratio"), default=0.0),
@@ -85,7 +123,9 @@ def validate_video_features(video_features: Dict[str, Any]) -> Dict[str, Any]:
         1.0,
     )
 
-    return video_features
+    cleaned["shots"] = shots
+    cleaned["objects"] = objects
+    return cleaned
 
 
 def validate_raw_features(raw_features: Dict[str, float]) -> Dict[str, float]:

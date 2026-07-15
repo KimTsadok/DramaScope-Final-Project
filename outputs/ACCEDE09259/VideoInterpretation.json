@@ -32,24 +32,24 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "This video clip depicts an interview or interrogation scene set in a modest, cluttered office. Two men are seated across from each other at a wooden desk: one is a bald man in a dark suit with a distinctive orange patterned tie (appearing to be an interviewer or detective), and the other is a man in a light blue uniform shirt with shoulder patches (likely a security guard or officer).\n\n**Actions and Interaction:** The suited man holds a pen and notebook, taking notes while engaging the uniformed man in conversation. He smiles and nods, at one point gesturing with his left hand to emphasize a point, then picks up an envelope or document from the desk to reference it. The camera angle shifts between showing the suited man's face and the uniformed man's back, then reverses to show the uniformed man speaking calmly while the suited man writes.\n\n**Tone:** The atmosphere appears professional but relaxed and conversational rather than adversarial. The suited man maintains a friendly, attentive demeanor throughout, suggesting this is a routine informational interview or statement-taking session rather than a hostile confrontation. The office background contains typical items like a tissue box, wire file organizer, thermos, calendar on the wall, and various office supplies.",
+    "text": "This video clip depicts an interview or interrogation scene set in a modest, cluttered office. Two men are seated across from each other at a wooden desk: one is a man in a dark suit with a distinctive orange patterned tie (appearing to be an interviewer or investigator), and the other is a uniformed officer in a light blue shirt with shoulder patches.\n\nThe interaction shows the suited man taking notes in a notebook while engaging in conversation with the officer. He smiles and nods, at one point picking up a piece of paper from the desk to reference or show to the officer. The camera alternates between over-the-shoulder shots showing the suited man's face and reverse angles showing the officer speaking.\n\nThe emotional tone appears professional yet relaxed and somewhat friendly, characterized by smiles and casual body language rather than tension or confrontation. The setting includes typical office items such as a tissue box, wire document trays, a water bottle, papers, and a calendar on the wall behind them.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 249,
-      "total_tokens": 8773
+      "completion_tokens": 198,
+      "total_tokens": 8722
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"office\",\n  \"main_entities\": [\"man in suit\", \"man in uniform\"],\n  \"actions\": [\"sitting\", \"writing\", \"talking\", \"gesturing with paper\"],\n  \"emotion_words\": [\"smiling\", \"engaged\", \"attentive\"],\n  \"interaction_level\": 2,\n  \"interaction_evidence\": \"The two men are facing each other across a desk, engaged in conversation. The man in the suit smiles, gestures with a piece of paper while speaking, and writes notes. The man in the uniform maintains eye contact and responds, indicating clear mutual communication.\",\n  \"summary\": \"A man in a dark suit and orange tie conducts an interview or meeting with a uniformed officer in an office setting. They are actively conversing, with the suited man taking notes and using a document to emphasize his points.\"\n}",
+    "text": "{\n  \"setting\": \"office\",\n  \"main_entities\": [\"man in suit\", \"man in uniform\"],\n  \"actions\": [\"talking\", \"writing\", \"gesturing\", \"listening\"],\n  \"emotion_words\": [\"smiling\", \"engaged\"],\n  \"interaction_level\": 2,\n  \"interaction_evidence\": \"The two men are engaged in a clear mutual conversation, with the man in the suit speaking and gesturing while looking at the uniformed man, who is listening attentively and responding. They maintain eye contact and coordinated body language throughout the exchange.\",\n  \"summary\": \"A man in a dark suit and orange tie sits at an office desk talking with a man in a light blue uniform. The man in the suit smiles and gestures as he speaks, occasionally writing in a notebook or picking up a piece of paper, while the uniformed man listens and responds from across the desk.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 180,
-      "total_tokens": 9088
+      "completion_tokens": 187,
+      "total_tokens": 9095
     }
   },
   "lvlm_structured": {
@@ -59,19 +59,18 @@
       "man in uniform"
     ],
     "actions": [
-      "sitting",
-      "writing",
       "talking",
-      "gesturing with paper"
+      "writing",
+      "gesturing",
+      "listening"
     ],
     "emotion_words": [
       "smiling",
-      "engaged",
-      "attentive"
+      "engaged"
     ],
     "interaction_level": 2,
-    "interaction_evidence": "The two men are facing each other across a desk, engaged in conversation. The man in the suit smiles, gestures with a piece of paper while speaking, and writes notes. The man in the uniform maintains eye contact and responds, indicating clear mutual communication.",
-    "summary": "A man in a dark suit and orange tie conducts an interview or meeting with a uniformed officer in an office setting. They are actively conversing, with the suited man taking notes and using a document to emphasize his points."
+    "interaction_evidence": "The two men are engaged in a clear mutual conversation, with the man in the suit speaking and gesturing while looking at the uniformed man, who is listening attentively and responding. They maintain eye contact and coordinated body language throughout the exchange.",
+    "summary": "A man in a dark suit and orange tie sits at an office desk talking with a man in a light blue uniform. The man in the suit smiles and gestures as he speaks, occasionally writing in a notebook or picking up a piece of paper, while the uniformed man listens and responds from across the desk."
   },
   "lvlm_error": null
 }

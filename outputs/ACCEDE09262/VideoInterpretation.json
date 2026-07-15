@@ -32,45 +32,47 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "**Setting:** Outdoor scene on a sunny autumn day, with trees displaying fall foliage, parked cars, and a brick building in the background (appears to be a campus or institutional area).\n\n**People:** Two men - one in a black leather jacket and dark clothing sitting on the tailgate of a white pickup truck; another man in a navy blue uniform jacket with a badge patch, light blue shirt, and baseball cap, standing nearby holding a notepad and pen.\n\n**Actions:** The uniformed officer is writing on a pink ticket/notepad while conversing with the man in the leather jacket, who is seated casually on the truck bed, gesturing slightly as he speaks. The camera alternates between close-ups of each speaker and wider shots showing both individuals.\n\n**Emotional Tone:** Casual but tense interaction; the seated man appears relaxed yet engaged in conversation, while the officer maintains a professional, focused demeanor while documenting information.\n\n**Interaction:** A traffic stop or citation scenario where the uniformed officer is issuing a ticket or taking notes while questioning or informing the man in the leather jacket, who responds verbally to the officer's inquiries.",
+    "text": "**Setting:** An outdoor scene on a sunny autumn day, with trees showing fall foliage and a red brick building (likely a campus or institutional setting) in the background. A white pickup truck is parked on the street.\n\n**People:** Two men are present:\n- **Man 1:** Wearing a black leather jacket, black shirt, and jeans, sitting on the tailgate of the pickup truck\n- **Man 2:** A uniformed officer/security guard wearing a dark blue jacket with a circular patch on the sleeve, light blue collared shirt, and a dark baseball cap\n\n**Actions & Interaction:**\nThe officer is writing on a pink notepad or ticket book while conversing with the man in the leather jacket. The man in the leather jacket is seated casually on the truck bed, gesturing slightly as he speaks to the officer. The interaction appears to be a traffic stop or parking violation discussion. The camera alternates between close-ups of each speaker's face and wider shots showing both individuals together.\n\n**Emotional Tone:** The conversation seems relatively calm and routine. The man in the leather jacket appears engaged but relaxed, while the officer maintains a professional demeanor focused on documentation.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 228,
-      "total_tokens": 8752
+      "completion_tokens": 240,
+      "total_tokens": 8764
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"Outdoor street or parking area near a brick building with autumn trees\",\n  \"main_entities\": [\"Man in leather jacket\", \"Police officer\"],\n  \"actions\": [\"Sitting on truck tailgate\", \"Talking\", \"Writing on notepad\"],\n  \"emotion_words\": [\"Casual\", \"Conversational\", \"Attentive\"],\n  \"interaction_level\": 2,\n  \"interaction_evidence\": \"The man in the leather jacket is clearly speaking and gesturing toward the officer, who is facing him, listening, and taking notes, indicating a clear mutual exchange during what appears to be a traffic stop or questioning.\",\n  \"summary\": \"A man in a black leather jacket sits on the back of a pickup truck talking to a police officer who is writing on a notepad during an outdoor encounter.\"\n}",
+    "text": "{\n  \"setting\": \"Outdoor street or parking area near a brick building with autumn trees\",\n  \"main_entities\": [\"Man in black leather jacket\", \"Police officer in uniform\"],\n  \"actions\": [\"Sitting on truck tailgate\", \"Talking\", \"Writing on notepad\", \"Looking at each other\"],\n  \"emotion_words\": [\"casual\", \"conversational\", \"attentive\", \"focused\"],\n  \"interaction_level\": 2,\n  \"interaction_evidence\": \"The man in the leather jacket is actively speaking and looking directly at the officer, while the officer looks up from his notepad to engage with him, indicating a clear mutual conversation or exchange.\",\n  \"summary\": \"A man wearing a black leather jacket sits on the back of a pickup truck talking to a police officer who is writing on a notepad. They are engaged in an outdoor conversation on a street lined with parked cars and autumn-colored trees.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 171,
-      "total_tokens": 9079
+      "completion_tokens": 193,
+      "total_tokens": 9101
     }
   },
   "lvlm_structured": {
     "setting": "Outdoor street or parking area near a brick building with autumn trees",
     "main_entities": [
-      "Man in leather jacket",
-      "Police officer"
+      "Man in black leather jacket",
+      "Police officer in uniform"
     ],
     "actions": [
       "Sitting on truck tailgate",
       "Talking",
-      "Writing on notepad"
+      "Writing on notepad",
+      "Looking at each other"
     ],
     "emotion_words": [
-      "Casual",
-      "Conversational",
-      "Attentive"
+      "casual",
+      "conversational",
+      "attentive",
+      "focused"
     ],
     "interaction_level": 2,
-    "interaction_evidence": "The man in the leather jacket is clearly speaking and gesturing toward the officer, who is facing him, listening, and taking notes, indicating a clear mutual exchange during what appears to be a traffic stop or questioning.",
-    "summary": "A man in a black leather jacket sits on the back of a pickup truck talking to a police officer who is writing on a notepad during an outdoor encounter."
+    "interaction_evidence": "The man in the leather jacket is actively speaking and looking directly at the officer, while the officer looks up from his notepad to engage with him, indicating a clear mutual conversation or exchange.",
+    "summary": "A man wearing a black leather jacket sits on the back of a pickup truck talking to a police officer who is writing on a notepad. They are engaged in an outdoor conversation on a street lined with parked cars and autumn-colored trees."
   },
   "lvlm_error": null
 }

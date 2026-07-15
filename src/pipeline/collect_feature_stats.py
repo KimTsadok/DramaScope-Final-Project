@@ -17,6 +17,7 @@ Purpose:
 
 import argparse
 import json
+import math
 import statistics
 from pathlib import Path
 from collections import Counter
@@ -54,7 +55,14 @@ def load_json(path: Path) -> Dict[str, Any]:
     Load JSON from disk.
     """
     with path.open("r", encoding="utf-8") as file:
-        return json.load(file)
+        data = json.load(file)
+
+    if not isinstance(data, dict):
+        raise ValueError(
+            f"Expected a JSON object in {path}, received {type(data).__name__}."
+        )
+
+    return data
 
 
 def safe_float(value: Any) -> float | None:
@@ -64,7 +72,8 @@ def safe_float(value: Any) -> float | None:
     try:
         if value is None:
             return None
-        return float(value)
+        number = float(value)
+        return number if math.isfinite(number) else None
     except (TypeError, ValueError):
         return None
 
@@ -133,6 +142,11 @@ def collect_raw_feature_values(files: List[Path]) -> Dict[str, List[float]]:
     for file_path in files:
         data = load_json(file_path)
         raw_features = data.get("features_raw", {})
+
+        if not isinstance(raw_features, dict):
+            raise ValueError(
+                f"Expected features_raw to be a JSON object in {file_path}."
+            )
 
         for feature in FEATURE_NAMES:
             value = safe_float(raw_features.get(feature))

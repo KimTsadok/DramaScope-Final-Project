@@ -32,24 +32,24 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "**Setting:**  \nThe video takes place outdoors on a university or college campus, featuring a large stone building with manicured hedges, a paved walkway, a street with parking spaces (including a handicap spot), and a grassy area with a circular concrete bench structure.\n\n**People and Main Entities:**  \n- A uniformed security officer or campus police officer (dark uniform, cap)  \n- A group of four young adults (students) sitting on/around the concrete bench holding handmade protest signs with messages like \"SAVE THE [EARTH],\" \"MAKE LOVE NOT WAR,\" and \"FIND [PEACE]\"  \n- A dark-colored SUV parked on the street\n\n**Visible Actions:**  \n- The officer walks along the sidewalk from right to left, initially standing near the vehicle then proceeding toward the group of students  \n- At one point, the officer raises his right arm in a waving or gesturing motion while walking  \n- The students are seated in a relaxed, casual formation; one waves at the officer as he approaches  \n- Text overlays appear crediting \"EDITING BY ETHAN HOLZMAN\" and \"CINEMATOGRAPHY BY JASON MUSCO\"\n\n**Emotional Tone:**  \nThe atmosphere is calm, peaceful, and slightly humorous. The students appear friendly and relaxed, smiling and waving. The interaction seems non-confrontational and lighthearted.\n\n**Interaction:**  \nThe officer walks past the group of protesters without stopping to confront them. The students acknowledge him with smiles and waves, suggesting a familiar or amicable relationship rather than a tense encounter. The officer appears to be patrolling or monitoring the area rather than responding to an emergency.",
+    "text": "The video opens on a university campus, showing a stone building with manicured hedges and a sidewalk. A police officer in a dark uniform emerges from behind a parked car, raises his hand in a gesture, and walks along the path. The scene then cuts to a grassy area where the officer approaches a group of four students sitting on a concrete circle. The students are holding handmade protest signs with messages like \"SAVE THE\" and \"MAKE LOVE NOT WAR.\" They smile and wave at the officer as he walks past them. The overall tone is lighthearted and casual, depicting a peaceful, non-confrontational interaction between campus security and students during what appears to be a small demonstration or gathering. Text overlays credit the editing and cinematography.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 339,
-      "total_tokens": 8863
+      "completion_tokens": 153,
+      "total_tokens": 8677
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"Outdoor campus area with a building, sidewalk, and grassy lawn\",\n  \"main_entities\": [\"Police officer\", \"Group of protesters\"],\n  \"actions\": [\"Walking\", \"Waving\", \"Holding signs\", \"Sitting\"],\n  \"emotion_words\": [\"Friendly\", \"Casual\", \"Welcoming\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The protesters wave at the officer as he approaches and walks past them, indicating a one-sided social greeting or acknowledgment.\",\n  \"summary\": \"A police officer walks along a campus sidewalk past a group of friendly protesters sitting on a concrete structure who wave at him as he passes by.\"\n}",
+    "text": "{\n  \"setting\": \"Outdoor campus area with a building, sidewalk, and grassy lawn\",\n  \"main_entities\": [\"Police officer\", \"Group of protesters\"],\n  \"actions\": [\"Officer walking and gesturing\", \"Protesters sitting on a concrete structure holding signs\", \"Protesters waving at the officer\"],\n  \"emotion_words\": [\"Cheerful\", \"Friendly\", \"Relaxed\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The protesters are smiling and waving toward the officer as he approaches, indicating a shared social attention and a one-sided communicative gesture in a shared public space.\",\n  \"summary\": \"A police officer walks through a campus area past a group of friendly protesters who are sitting on a structure with signs and waving at him.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 143,
-      "total_tokens": 9051
+      "completion_tokens": 164,
+      "total_tokens": 9072
     }
   },
   "lvlm_structured": {
@@ -59,19 +59,18 @@
       "Group of protesters"
     ],
     "actions": [
-      "Walking",
-      "Waving",
-      "Holding signs",
-      "Sitting"
+      "Officer walking and gesturing",
+      "Protesters sitting on a concrete structure holding signs",
+      "Protesters waving at the officer"
     ],
     "emotion_words": [
+      "Cheerful",
       "Friendly",
-      "Casual",
-      "Welcoming"
+      "Relaxed"
     ],
     "interaction_level": 1,
-    "interaction_evidence": "The protesters wave at the officer as he approaches and walks past them, indicating a one-sided social greeting or acknowledgment.",
-    "summary": "A police officer walks along a campus sidewalk past a group of friendly protesters sitting on a concrete structure who wave at him as he passes by."
+    "interaction_evidence": "The protesters are smiling and waving toward the officer as he approaches, indicating a shared social attention and a one-sided communicative gesture in a shared public space.",
+    "summary": "A police officer walks through a campus area past a group of friendly protesters who are sitting on a structure with signs and waving at him."
   },
   "lvlm_error": null
 }

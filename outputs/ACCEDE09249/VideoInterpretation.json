@@ -32,34 +32,34 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "**Setting:** A domestic kitchen with beige walls, wooden cabinets, a sink, and a hanging pendant light fixture. A rooster-themed picture hangs on the wall.\n\n**People:** A middle-aged man with graying hair wearing a dark jacket over a light blue collared shirt, and a woman in a yellow shirt with her hair in a bun.\n\n**Actions:** The video begins with an establishing shot of the room's light fixture, then cuts to the man entering or standing in the kitchen doorway. The camera then shows the woman at the counter preparing food (stirring something in a dish). The man watches her from behind/aside, his expression shifting from neutral to a slight smile as he observes her.\n\n**Emotional Tone:** Quiet, intimate, and observational—suggesting a moment of domestic familiarity or gentle surveillance.\n\n**Interaction:** The interaction is primarily visual/non-verbal; the man observes the woman cooking while she appears unaware of or focused away from his presence initially. There is no direct dialogue shown, but his subtle smile suggests warmth or affection toward her activity.",
+    "text": "**Setting:** A domestic kitchen with beige walls, wooden cabinets, a sink, and a hanging pendant light fixture. A rooster picture hangs on the wall.\n\n**People:** \n- A middle-aged man with graying hair wearing a dark jacket over a light blue collared shirt\n- A woman with her hair in a bun, wearing a pale yellow shirt\n\n**Actions & Sequence:**\nThe video opens on the empty kitchen, then the man enters and stands observing. The camera cuts to the woman at the counter preparing food (stirring something in a dish). The man watches her from behind with an expression that shifts from neutral to a slight, knowing smile.\n\n**Emotional Tone:** Quiet, intimate, and observational—suggesting familiarity or contemplation.\n\n**Interaction:** The man is watching the woman as she works; she appears unaware of his presence initially. His subtle smile suggests warmth, affection, or quiet amusement at seeing her engaged in a routine domestic activity.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 217,
-      "total_tokens": 8741
+      "completion_tokens": 197,
+      "total_tokens": 8721
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"kitchen\",\n  \"main_entities\": [\"man\", \"woman\"],\n  \"actions\": [\"entering\", \"cooking\", \"observing\", \"smiling\"],\n  \"emotion_words\": [\"warm\", \"content\", \"attentive\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The man enters the kitchen and observes the woman cooking, with his facial expression shifting to a smile as he watches her, indicating attentive observation and a subtle social connection.\",\n  \"summary\": \"A man in a dark jacket enters a home kitchen where a woman in a yellow shirt is preparing food. He stands and watches her with an attentive, warm expression, suggesting a quiet, familiar moment between them.\"\n}",
+    "text": "{\n  \"setting\": \"kitchen\",\n  \"main_entities\": [\"man in dark jacket\", \"woman in yellow shirt\"],\n  \"actions\": [\"entering room\", \"cooking\", \"observing\", \"smiling\"],\n  \"emotion_words\": [\"warm\", \"content\", \"attentive\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The man enters the kitchen and observes the woman cooking, smiling warmly at her. While she is focused on her task and does not look back, his attentive gaze and pleased expression indicate a one-sided social connection and shared attention to the domestic scene.\",\n  \"summary\": \"A man enters a home kitchen where a woman is preparing food. He stands watching her with a gentle, content smile, creating a warm, observational moment of quiet companionship.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 153,
-      "total_tokens": 9061
+      "completion_tokens": 169,
+      "total_tokens": 9077
     }
   },
   "lvlm_structured": {
     "setting": "kitchen",
     "main_entities": [
-      "man",
-      "woman"
+      "man in dark jacket",
+      "woman in yellow shirt"
     ],
     "actions": [
-      "entering",
+      "entering room",
       "cooking",
       "observing",
       "smiling"
@@ -70,8 +70,8 @@
       "attentive"
     ],
     "interaction_level": 1,
-    "interaction_evidence": "The man enters the kitchen and observes the woman cooking, with his facial expression shifting to a smile as he watches her, indicating attentive observation and a subtle social connection.",
-    "summary": "A man in a dark jacket enters a home kitchen where a woman in a yellow shirt is preparing food. He stands and watches her with an attentive, warm expression, suggesting a quiet, familiar moment between them."
+    "interaction_evidence": "The man enters the kitchen and observes the woman cooking, smiling warmly at her. While she is focused on her task and does not look back, his attentive gaze and pleased expression indicate a one-sided social connection and shared attention to the domestic scene.",
+    "summary": "A man enters a home kitchen where a woman is preparing food. He stands watching her with a gentle, content smile, creating a warm, observational moment of quiet companionship."
   },
   "lvlm_error": null
 }

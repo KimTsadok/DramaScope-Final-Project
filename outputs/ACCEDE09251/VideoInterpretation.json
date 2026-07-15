@@ -32,24 +32,24 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "**Setting:** A dimly lit, cozy living room or home office at night. The primary light source is a desk lamp illuminating a wooden desk with a vintage teal typewriter. A woman rests on a couch in the foreground, while a man works at the desk.\n\n**People:** A woman (blonde, sleeping or resting under a blanket on a light-colored couch) and a man (dark-haired, wearing a dark t-shirt, seated at the desk).\n\n**Visible Actions:** The man is actively typing on a \"Smith Corona\" electric typewriter, his fingers moving across the keys as text appears on paper fed into the machine. The woman remains still, appearing to be asleep or deeply resting.\n\n**Emotional Tone:** Quiet, intimate, and contemplative. The darkness and solitary activity suggest late-night work or creative writing, creating an atmosphere of peaceful solitude or domestic routine.\n\n**Interaction:** There is no direct interaction between the two individuals; they occupy separate spaces within the room—the man focused on his writing task while the woman rests nearby, suggesting a comfortable coexistence or shared household space without active engagement.",
+    "text": "The video depicts a quiet, dimly lit domestic interior, likely a living room or home office at night. A man sits at a wooden desk typing on a light blue vintage \"Brother Correctronic\" typewriter, illuminated by a desk lamp. In the foreground, a woman with blonde hair sleeps on a couch under a blanket. The scene is still and intimate, conveying a sense of solitude and focused work, with no direct interaction between the two individuals.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 225,
-      "total_tokens": 8749
+      "completion_tokens": 93,
+      "total_tokens": 8617
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"A dimly lit living room or home office at night\",\n  \"main_entities\": [\"Man\", \"Woman\", \"Typewriter\"],\n  \"actions\": [\"Typing on a typewriter\", \"Sleeping or resting on a couch\"],\n  \"emotion_words\": [\"Quiet\", \"Focused\", \"Peaceful\", \"Solitary\"],\n  \"interaction_level\": 0,\n  \"interaction_evidence\": \"The man is completely absorbed in typing at his desk, and the woman is asleep on the couch. There is no eye contact, physical proximity, or any communicative gesture between them; they are engaged in entirely separate, independent activities.\",\n  \"summary\": \"In a dark, quiet room, a man types on a vintage blue typewriter while a woman sleeps under a blanket on a nearby couch.\"\n}",
+    "text": "{\n  \"setting\": \"A dimly lit living room or home office at night\",\n  \"main_entities\": [\"Man\", \"Woman\", \"Typewriter\"],\n  \"actions\": [\"Typing on a typewriter\", \"Sleeping or resting on a couch\"],\n  \"emotion_words\": [\"focused\", \"quiet\", \"solitary\", \"peaceful\"],\n  \"interaction_level\": 0,\n  \"interaction_evidence\": \"The man is completely absorbed in typing on the typewriter, and the woman is asleep on the couch. There are no visible social cues such as eye contact, gestures, or communication between them; they are engaged in entirely separate and independent activities.\",\n  \"summary\": \"In a dark room, a man sits at a desk typing intently on a light blue vintage typewriter while a woman sleeps quietly under a blanket on a nearby couch.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 170,
-      "total_tokens": 9078
+      "completion_tokens": 178,
+      "total_tokens": 9086
     }
   },
   "lvlm_structured": {
@@ -64,14 +64,14 @@
       "Sleeping or resting on a couch"
     ],
     "emotion_words": [
-      "Quiet",
-      "Focused",
-      "Peaceful",
-      "Solitary"
+      "focused",
+      "quiet",
+      "solitary",
+      "peaceful"
     ],
     "interaction_level": 0,
-    "interaction_evidence": "The man is completely absorbed in typing at his desk, and the woman is asleep on the couch. There is no eye contact, physical proximity, or any communicative gesture between them; they are engaged in entirely separate, independent activities.",
-    "summary": "In a dark, quiet room, a man types on a vintage blue typewriter while a woman sleeps under a blanket on a nearby couch."
+    "interaction_evidence": "The man is completely absorbed in typing on the typewriter, and the woman is asleep on the couch. There are no visible social cues such as eye contact, gestures, or communication between them; they are engaged in entirely separate and independent activities.",
+    "summary": "In a dark room, a man sits at a desk typing intently on a light blue vintage typewriter while a woman sleeps quietly under a blanket on a nearby couch."
   },
   "lvlm_error": null
 }

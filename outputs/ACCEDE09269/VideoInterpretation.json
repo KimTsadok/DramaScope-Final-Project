@@ -32,31 +32,31 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "**Setting:** Outdoor scene in front of a brick building with green doors, likely a campus or institutional setting, during daytime with natural lighting.\n\n**People:** Two men engaged in conversation. The primary subject is a middle-aged man with glasses wearing a brown blazer over a dark V-neck sweater and collared shirt, holding papers. The second man wears a dark baseball cap, dark jacket, and light blue shirt.\n\n**Actions:** The two men are having an animated conversation. The man in the blazer is speaking and reacting with various facial expressions—smiling, laughing, and looking upward thoughtfully—while gesturing slightly with papers in hand. The man in the cap listens attentively, facing the speaker.\n\n**Emotional Tone:** Warm, friendly, and lighthearted. The man in the blacer displays amusement and engagement through smiles and laughter.\n\n**Interaction:** A casual but focused dialogue where the man in the blazer appears to be explaining or recounting something amusing to the other man, who is listening intently. Their body language suggests a comfortable rapport between them.",
+    "text": "**Setting:** Outdoor scene in front of a brick building with green doors, likely a campus or institutional setting, with trees and grass visible in the background.\n\n**People:** Two men engaged in conversation. The primary subject is a middle-aged man with glasses wearing a brown blazer over a dark V-neck sweater and collared shirt, holding papers. The second man wears a dark baseball cap, dark jacket with a patch on the sleeve, and light blue shirt.\n\n**Actions:** The two men are having an animated conversation. The man in the blazer is speaking and reacting with various facial expressions—smiling, laughing, and looking upward thoughtfully—while gesturing slightly with the papers in his hand. The man in the cap listens attentively, turning his head toward the speaker.\n\n**Emotional Tone:** Warm, friendly, and lighthearted. The man in the blazer displays genuine amusement and engagement through frequent smiling and laughter.\n\n**Interaction:** A casual but engaged dialogue where the man in the blazer appears to be explaining or recounting something amusing or meaningful to the other man, who is actively listening and participating in the exchange.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 220,
-      "total_tokens": 8744
+      "completion_tokens": 232,
+      "total_tokens": 8756
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"outdoors, near a brick building\",\n  \"main_entities\": [\"man in brown suit\", \"man in dark jacket and cap\"],\n  \"actions\": [\"talking\", \"listening\", \"holding papers\"],\n  \"emotion_words\": [\"smiling\", \"engaged\", \"attentive\"],\n  \"interaction_level\": 2,\n  \"interaction_evidence\": \"The two men are facing each other and engaged in a conversation. The man in the suit is speaking and smiling, while the man in the cap is looking at him and listening attentively, indicating a clear mutual exchange.\",\n  \"summary\": \"A man wearing glasses and a brown suit is having an outdoor conversation with another man who is wearing a cap and a dark jacket, appearing to be in a friendly and professional discussion.\"\n}",
+    "text": "{\n  \"setting\": \"outdoor, in front of a brick building\",\n  \"main_entities\": [\"man with glasses\", \"man with cap\"],\n  \"actions\": [\"talking\", \"listening\", \"holding papers\"],\n  \"emotion_words\": [\"amused\", \"engaged\", \"attentive\"],\n  \"interaction_level\": 2,\n  \"interaction_evidence\": \"The two men are engaged in a clear mutual conversation. The man with glasses is actively speaking and smiling while looking at the other man, who is attentively listening and facing him. Their body language and facial expressions indicate a direct back-and-forth exchange.\",\n  \"summary\": \"Two men are having a conversation outdoors; one man wearing glasses and holding papers appears to be explaining something with an amused expression, while the other man, wearing a baseball cap and jacket, listens intently.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 168,
-      "total_tokens": 9076
+      "completion_tokens": 178,
+      "total_tokens": 9086
     }
   },
   "lvlm_structured": {
-    "setting": "outdoors, near a brick building",
+    "setting": "outdoor, in front of a brick building",
     "main_entities": [
-      "man in brown suit",
-      "man in dark jacket and cap"
+      "man with glasses",
+      "man with cap"
     ],
     "actions": [
       "talking",
@@ -64,13 +64,13 @@
       "holding papers"
     ],
     "emotion_words": [
-      "smiling",
+      "amused",
       "engaged",
       "attentive"
     ],
     "interaction_level": 2,
-    "interaction_evidence": "The two men are facing each other and engaged in a conversation. The man in the suit is speaking and smiling, while the man in the cap is looking at him and listening attentively, indicating a clear mutual exchange.",
-    "summary": "A man wearing glasses and a brown suit is having an outdoor conversation with another man who is wearing a cap and a dark jacket, appearing to be in a friendly and professional discussion."
+    "interaction_evidence": "The two men are engaged in a clear mutual conversation. The man with glasses is actively speaking and smiling while looking at the other man, who is attentively listening and facing him. Their body language and facial expressions indicate a direct back-and-forth exchange.",
+    "summary": "Two men are having a conversation outdoors; one man wearing glasses and holding papers appears to be explaining something with an amused expression, while the other man, wearing a baseball cap and jacket, listens intently."
   },
   "lvlm_error": null
 }

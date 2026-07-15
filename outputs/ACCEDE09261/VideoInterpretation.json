@@ -30,45 +30,46 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "The video depicts a tense, clandestine meeting in an outdoor urban setting, likely near a brick institutional building or school. A man in a dark uniform and cap emerges from behind a corner of the building, walks down a concrete path toward the camera, and pulls out a stack of cash to count or display. Simultaneously, another man in a black leather jacket is shown sitting on the tailgate of a white pickup truck parked on the street, waiting and observing. The interaction suggests a payoff or illicit transaction is taking place between the two individuals, with the uniformed man approaching the leather-jacketed man with money in hand. The atmosphere is suspenseful and secretive, underscored by the autumn setting with golden trees and the cautious body language of both men.",
+    "text": "The video depicts a tense, clandestine encounter in an outdoor setting featuring a red brick building and a sidewalk lined with autumn foliage and parked cars. A man in a dark uniform, cap, and jacket emerges from behind the building, walks down the path, and pulls out a stack of cash to count it. The scene cuts to another man in a black leather jacket sitting on the back of a pickup truck, waiting with an expectant or anxious demeanor. The interaction suggests a payoff or illicit transaction, creating a suspenseful and secretive atmosphere between the two individuals.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 154,
-      "total_tokens": 8678
+      "completion_tokens": 113,
+      "total_tokens": 8637
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"Outdoor sidewalk next to a brick building with autumn trees and parked cars\",\n  \"main_entities\": [\"Man in uniform\", \"Man in leather jacket\"],\n  \"actions\": [\"Walking out of a doorway\", \"Sitting on the back of a pickup truck\", \"Looking at money\"],\n  \"emotion_words\": [\"neutral\", \"contemplative\", \"focused\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The man in the uniform walks toward the camera while looking at money, and the man in the leather jacket is visible in the foreground (out of focus) watching him, suggesting observation or anticipation of an interaction.\",\n  \"summary\": \"A uniformed man exits a brick building and walks down a sidewalk counting money, while another man in a leather jacket sits on a nearby truck and watches him approach.\"\n}",
+    "text": "{\n  \"setting\": \"Outdoor sidewalk next to a brick building with autumn trees and parked cars\",\n  \"main_entities\": [\"Man in dark jacket and cap\", \"Young man in leather jacket\"],\n  \"actions\": [\"Walking out from behind a wall\", \"Walking toward the camera\", \"Taking out money\", \"Counting money\", \"Sitting on the back of a pickup truck\"],\n  \"emotion_words\": [\"neutral\", \"focused\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The man in the cap walks toward the camera while the young man in the leather jacket is visible in the foreground (out of focus), suggesting the young man is observing or waiting for the approaching man. The man in the cap is holding/counting money as he approaches, indicating a potential transaction or meeting between them.\",\n  \"summary\": \"A man in a dark uniform-style jacket and baseball cap emerges from behind a brick wall, walks down a concrete path while taking money from his pocket, and counts it as he approaches. In the foreground, a young man in a black leather jacket sits on the tailgate of a white pickup truck watching him approach.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 176,
-      "total_tokens": 9084
+      "completion_tokens": 238,
+      "total_tokens": 9146
     }
   },
   "lvlm_structured": {
     "setting": "Outdoor sidewalk next to a brick building with autumn trees and parked cars",
     "main_entities": [
-      "Man in uniform",
-      "Man in leather jacket"
+      "Man in dark jacket and cap",
+      "Young man in leather jacket"
     ],
     "actions": [
-      "Walking out of a doorway",
-      "Sitting on the back of a pickup truck",
-      "Looking at money"
+      "Walking out from behind a wall",
+      "Walking toward the camera",
+      "Taking out money",
+      "Counting money",
+      "Sitting on the back of a pickup truck"
     ],
     "emotion_words": [
       "neutral",
-      "contemplative",
       "focused"
     ],
     "interaction_level": 1,
-    "interaction_evidence": "The man in the uniform walks toward the camera while looking at money, and the man in the leather jacket is visible in the foreground (out of focus) watching him, suggesting observation or anticipation of an interaction.",
-    "summary": "A uniformed man exits a brick building and walks down a sidewalk counting money, while another man in a leather jacket sits on a nearby truck and watches him approach."
+    "interaction_evidence": "The man in the cap walks toward the camera while the young man in the leather jacket is visible in the foreground (out of focus), suggesting the young man is observing or waiting for the approaching man. The man in the cap is holding/counting money as he approaches, indicating a potential transaction or meeting between them.",
+    "summary": "A man in a dark uniform-style jacket and baseball cap emerges from behind a brick wall, walks down a concrete path while taking money from his pocket, and counts it as he approaches. In the foreground, a young man in a black leather jacket sits on the tailgate of a white pickup truck watching him approach."
   },
   "lvlm_error": null
 }

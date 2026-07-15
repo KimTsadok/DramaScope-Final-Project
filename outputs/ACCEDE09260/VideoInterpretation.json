@@ -32,45 +32,44 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "**Setting:** An office with a cluttered desk, featuring a tissue box, wire basket, stapler, and papers. A calendar hangs on the dark wall behind the desk.\n\n**People:** Two men - one in a light blue uniform shirt (likely a security guard or officer) and another in a dark suit with a distinctive orange patterned tie seated at the desk.\n\n**Actions:** The man in the blue shirt approaches the desk, hands a piece of paper to the seated man, then exits. The suited man writes in a notebook, examines the paper, places it in a drawer labeled \"Personal Files,\" and closes the drawer.\n\n**Emotional Tone:** Routine, bureaucratic, and matter-of-fact. The interaction is brief and professional.\n\n**Interaction:** Minimal - the standing man delivers a document to the seated man, who receives it without conversation before filing it away.",
+    "text": "**Setting:** A cluttered office with a wooden desk, papers, a tissue box, calendar on the wall, and a red chair.\n\n**People:** Two men - one in a light blue uniform shirt (foreground, initially blocking view) and one in a dark suit with a bright orange patterned tie (seated at desk).\n\n**Actions:** The uniformed man approaches the desk, hands a piece of paper to the seated man, then exits. The seated man writes in a notebook, examines the paper, places it in a drawer labeled \"Personal Files,\" and closes the drawer.\n\n**Emotional Tone:** Routine, bureaucratic, matter-of-fact.\n\n**Interaction:** Brief transaction - the uniformed man delivers a document to the suited man, who processes and files it without conversation.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 177,
-      "total_tokens": 8701
+      "completion_tokens": 159,
+      "total_tokens": 8683
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"office\",\n  \"main_entities\": [\"man in blue uniform\", \"man in suit\"],\n  \"actions\": [\"walking past desk\", \"writing\", \"reading paper\", \"filing document\"],\n  \"emotion_words\": [\"focused\", \"serious\"],\n  \"interaction_level\": 0,\n  \"interaction_evidence\": \"The man in the blue uniform walks past the desk and exits without speaking or making eye contact. The man in suit remains focused on his paperwork throughout, showing no reaction or acknowledgment of the other person's presence.\",\n  \"summary\": \"A man in a blue uniform walks through an office while a man in a suit sits at a desk writing, then reads a piece of paper before filing it away in a drawer.\"\n}",
+    "text": "{\n  \"setting\": \"office\",\n  \"main_entities\": [\"man in blue shirt\", \"man in suit\"],\n  \"actions\": [\"writing\", \"reading papers\", \"filing documents in drawer\"],\n  \"emotion_words\": [\"focused\", \"serious\"],\n  \"interaction_level\": 0,\n  \"interaction_evidence\": \"The man in the blue shirt walks past the desk and leaves without any visible communication or acknowledgment from the man in the suit, who remains focused on his paperwork throughout.\",\n  \"summary\": \"A man in a blue uniform walks through an office while a man in a suit sits at a desk writing, reading papers, and eventually filing them away in a drawer.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 156,
-      "total_tokens": 9064
+      "completion_tokens": 142,
+      "total_tokens": 9050
     }
   },
   "lvlm_structured": {
     "setting": "office",
     "main_entities": [
-      "man in blue uniform",
+      "man in blue shirt",
       "man in suit"
     ],
     "actions": [
-      "walking past desk",
       "writing",
-      "reading paper",
-      "filing document"
+      "reading papers",
+      "filing documents in drawer"
     ],
     "emotion_words": [
       "focused",
       "serious"
     ],
     "interaction_level": 0,
-    "interaction_evidence": "The man in the blue uniform walks past the desk and exits without speaking or making eye contact. The man in suit remains focused on his paperwork throughout, showing no reaction or acknowledgment of the other person's presence.",
-    "summary": "A man in a blue uniform walks through an office while a man in a suit sits at a desk writing, then reads a piece of paper before filing it away in a drawer."
+    "interaction_evidence": "The man in the blue shirt walks past the desk and leaves without any visible communication or acknowledgment from the man in the suit, who remains focused on his paperwork throughout.",
+    "summary": "A man in a blue uniform walks through an office while a man in a suit sits at a desk writing, reading papers, and eventually filing them away in a drawer."
   },
   "lvlm_error": null
 }

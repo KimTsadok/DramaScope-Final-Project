@@ -30,6 +30,7 @@ full:
 
 import argparse
 import json
+import math
 import subprocess
 import sys
 from pathlib import Path
@@ -40,6 +41,7 @@ from src.gcp.upload import (
     DEFAULT_BUCKET_NAME,
     DEFAULT_GCS_PREFIX,
 )
+from src.io_utils.json_utils import load_json_object
 
 
 VIDEO_EXTENSIONS = {
@@ -88,32 +90,6 @@ def build_interpretation_path(video_path: Path) -> Path:
         / video_path.stem
         / OUTPUT_FILES.interpretation_filename
     )
-
-
-def load_json_object(path: Path) -> Dict[str, Any]:
-    """
-    Load a JSON file and verify that its root value is an object.
-    """
-    if not path.exists():
-        raise FileNotFoundError(
-            f"JSON file not found: {path}"
-        )
-
-    if not path.is_file():
-        raise ValueError(
-            f"Expected a JSON file, received: {path}"
-        )
-
-    with path.open("r", encoding="utf-8") as file:
-        data = json.load(file)
-
-    if not isinstance(data, dict):
-        raise ValueError(
-            f"Expected a JSON object in {path}, "
-            f"received {type(data).__name__}."
-        )
-
-    return data
 
 
 # ---------------------------------------------------------------------------
@@ -204,25 +180,54 @@ def select_videos(
 
 def has_valid_algorithm_output(
     interpretation: Dict[str, Any],
+    expected_video_id: str | None = None,
 ) -> bool:
     """
     Check whether VideoInterpretation.json contains the required
     algorithmic output fields.
     """
-    required_fields = (
-        "video_id",
-        "features_raw",
-        "features_norm",
-        "scene_complexity_score",
-        "scene_complexity_breakdown",
-        "narrative_phase",
-        "phase_reasons",
-    )
+    if not isinstance(interpretation, dict):
+        return False
+
+    video_id = interpretation.get("video_id")
+    if not isinstance(video_id, str) or not video_id.strip():
+        return False
+
+    if expected_video_id is not None and video_id != expected_video_id:
+        return False
+
+    raw_features = interpretation.get("features_raw")
+    normalized_features = interpretation.get("features_norm")
+    breakdown = interpretation.get("scene_complexity_breakdown")
+    score = interpretation.get("scene_complexity_score")
+    narrative_phase = interpretation.get("narrative_phase")
+    phase_reasons = interpretation.get("phase_reasons")
+
+    if not all(
+        isinstance(value, dict)
+        for value in (raw_features, normalized_features, breakdown)
+    ):
+        return False
+
+    if (
+        isinstance(score, bool)
+        or not isinstance(score, (int, float))
+        or not math.isfinite(float(score))
+    ):
+        return False
+
+    if not isinstance(narrative_phase, str) or not narrative_phase.strip():
+        return False
+
+    if not isinstance(phase_reasons, list):
+        return False
 
     return all(
-        field in interpretation
-        and interpretation[field] is not None
-        for field in required_fields
+        isinstance(value, (int, float))
+        and not isinstance(value, bool)
+        and math.isfinite(float(value))
+        for values in (raw_features, normalized_features, breakdown)
+        for value in values.values()
     )
 
 
@@ -248,10 +253,17 @@ def has_valid_lvlm_output(
         "lvlm_error"
     )
 
+    interaction_level = lvlm_structured.get("interaction_level") if isinstance(
+        lvlm_structured, dict
+    ) else None
+
     return (
         isinstance(lvlm_summary, dict)
         and isinstance(lvlm_structured_raw, dict)
         and isinstance(lvlm_structured, dict)
+        and isinstance(interaction_level, int)
+        and not isinstance(interaction_level, bool)
+        and 0 <= interaction_level <= 3
         and lvlm_error is None
     )
 
@@ -315,7 +327,8 @@ def should_skip_video(
             return False
 
         return has_valid_algorithm_output(
-            interpretation
+            interpretation,
+            expected_video_id=video_path.stem,
         )
 
     if mode == "lvlm":
@@ -337,8 +350,14 @@ def should_skip_video(
         ):
             return False
 
-        return has_valid_lvlm_output(
-            interpretation
+        return (
+            has_valid_algorithm_output(
+                interpretation,
+                expected_video_id=video_path.stem,
+            )
+            and has_valid_lvlm_output(
+                interpretation
+            )
         )
 
     if mode == "full":
@@ -361,7 +380,8 @@ def should_skip_video(
 
         return (
             has_valid_algorithm_output(
-                interpretation
+                interpretation,
+                expected_video_id=video_path.stem,
             )
             and has_valid_lvlm_output(
                 interpretation

@@ -34,36 +34,37 @@ def extract_json_block(text: str) -> str:
     This is a lightweight fallback for cases where the model returns
     extra text before or after the JSON.
     """
-    start_index = text.find("{")
-    if start_index == -1:
+    candidate_indexes = [
+        index
+        for index, character in enumerate(text)
+        if character == "{"
+    ]
+
+    if not candidate_indexes:
         preview = text[:500].replace("\n", "\\n")
         raise ValueError(
             "No JSON object start ('{') found in response. "
             f"Response preview: {preview!r}"
         )
 
-    depth = 0
-    end_index = None
+    decoder = json.JSONDecoder()
 
-    for index in range(start_index, len(text)):
-        char = text[index]
+    for start_index in candidate_indexes:
+        try:
+            parsed, relative_end_index = decoder.raw_decode(
+                text[start_index:]
+            )
+        except json.JSONDecodeError:
+            continue
 
-        if char == "{":
-            depth += 1
-        elif char == "}":
-            depth -= 1
-            if depth == 0:
-                end_index = index
-                break
+        if isinstance(parsed, dict):
+            return text[start_index:start_index + relative_end_index]
 
-    if end_index is None:
-        preview = text[:500].replace("\n", "\\n")
-        raise ValueError(
-            "Could not find the end of the JSON object in response. "
-            f"Response preview: {preview!r}"
-        )
-
-    return text[start_index:end_index + 1]
+    preview = text[:500].replace("\n", "\\n")
+    raise ValueError(
+        "Could not find a valid JSON object in response. "
+        f"Response preview: {preview!r}"
+    )
 
 
 def ensure_string(value: Any) -> str:

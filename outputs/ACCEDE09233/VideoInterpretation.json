@@ -32,24 +32,24 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "The video depicts a scene set inside a moving car during daytime, traveling through a suburban residential neighborhood with houses, driveways, and lawns visible through the windows. The main subjects are a man in the passenger seat and a woman driving. The man, wearing a dark suit jacket over a light-colored collared shirt, is the primary focus, shown in various shots smiling, looking toward the camera or out the window, and appearing to speak. The woman, dressed in a pink short-sleeved blouse with a pearl necklace and bracelets, is seen holding the steering wheel and concentrating on driving. The emotional tone is casual and pleasant, characterized by the man's relaxed, cheerful demeanor. While both individuals are present in the vehicle, there is no direct visible interaction between them; the man seems engaged with someone off-camera (possibly filming) while the woman focuses on operating the car.",
+    "text": "This video captures a scene inside a moving car during what appears to be late afternoon or early evening, with warm sunlight visible through the windows. The setting is a suburban residential neighborhood, with houses, driveways, and lawns passing by outside.\n\nThe video features two people: a man in the passenger seat and a woman driving. The man, wearing a dark suit jacket over a light-colored collared shirt, is the primary focus for most of the clip. He is smiling broadly and appears to be engaged in an animated conversation, looking toward the camera or the driver at various points. His expression is cheerful and relaxed throughout.\n\nThe driver is a woman with shoulder-length brown hair, wearing a pink short-sleeved button-up shirt, a pearl necklace, bracelets, and rings. She has both hands on the steering wheel and is focused on driving while occasionally glancing toward her passenger.\n\nThe emotional tone of the video is light, pleasant, and conversational. The interaction between the two suggests a comfortable, friendly rapport—likely a casual chat during a car ride through the neighborhood. The man's consistent smile and engaged demeanor indicate he is enjoying the conversation and the ride.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 177,
-      "total_tokens": 8701
+      "completion_tokens": 235,
+      "total_tokens": 8759
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"inside a moving car in a residential neighborhood\",\n  \"main_entities\": [\"man\", \"woman\"],\n  \"actions\": [\"talking\", \"driving\", \"smiling\"],\n  \"emotion_words\": [\"happy\", \"content\", \"relaxed\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The man is looking toward the driver and speaking, while the woman is driving and appears to be listening or participating in the conversation. They are sharing the same space and context with communicative cues.\",\n  \"summary\": \"A man and a woman are riding together in a car through a suburban neighborhood. The man, sitting in the passenger seat, is smiling and talking, while the woman drives attentively, suggesting a casual, pleasant conversation during their drive.\"\n}",
+    "text": "{\n  \"setting\": \"inside a moving car in a residential neighborhood\",\n  \"main_entities\": [\"man\", \"woman\"],\n  \"actions\": [\"sitting\", \"driving\", \"talking\", \"smiling\"],\n  \"emotion_words\": [\"happy\", \"content\", \"engaged\", \"pleasant\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The man is speaking and smiling while looking toward the woman who is driving, and she appears to be listening attentively while operating the vehicle, indicating a shared conversation during the car ride.\",\n  \"summary\": \"A man and a woman are riding together in a car through a suburban neighborhood. The man, seated in the passenger seat, is engaged in conversation, smiling and talking to the woman who is driving. The atmosphere appears pleasant and relaxed as they travel together.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 165,
-      "total_tokens": 9073
+      "completion_tokens": 174,
+      "total_tokens": 9082
     }
   },
   "lvlm_structured": {
@@ -59,18 +59,20 @@
       "woman"
     ],
     "actions": [
-      "talking",
+      "sitting",
       "driving",
+      "talking",
       "smiling"
     ],
     "emotion_words": [
       "happy",
       "content",
-      "relaxed"
+      "engaged",
+      "pleasant"
     ],
     "interaction_level": 1,
-    "interaction_evidence": "The man is looking toward the driver and speaking, while the woman is driving and appears to be listening or participating in the conversation. They are sharing the same space and context with communicative cues.",
-    "summary": "A man and a woman are riding together in a car through a suburban neighborhood. The man, sitting in the passenger seat, is smiling and talking, while the woman drives attentively, suggesting a casual, pleasant conversation during their drive."
+    "interaction_evidence": "The man is speaking and smiling while looking toward the woman who is driving, and she appears to be listening attentively while operating the vehicle, indicating a shared conversation during the car ride.",
+    "summary": "A man and a woman are riding together in a car through a suburban neighborhood. The man, seated in the passenger seat, is engaged in conversation, smiling and talking to the woman who is driving. The atmosphere appears pleasant and relaxed as they travel together."
   },
   "lvlm_error": null
 }

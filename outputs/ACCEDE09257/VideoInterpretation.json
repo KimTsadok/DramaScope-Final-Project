@@ -32,45 +32,45 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "The video depicts an interrogation or interview scene set in a dimly lit office. A man in a dark suit and orange patterned tie sits at a wooden desk, writing in a notebook with a pencil while speaking. Across from him, a uniformed officer (wearing a light blue shirt with patches) enters, sits down, and presents a document. The interaction appears formal and tense, with the suited man maintaining focus on his notes while the officer observes and engages with him. The atmosphere suggests a serious official proceeding or questioning.",
+    "text": "The video depicts an interrogation or interview scene set in a dimly lit, institutional office. A man in a dark suit and orange patterned tie sits at a wooden desk, writing in a notebook with a pencil. A uniformed officer enters the room carrying papers and sits across from him. The two engage in conversation, with the suited man looking up to speak while the officer listens attentively, holding documents. The atmosphere is serious and formal, suggesting an official proceeding or questioning is taking place.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 107,
-      "total_tokens": 8631
+      "completion_tokens": 100,
+      "total_tokens": 8624
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"office or interrogation room\",\n  \"main_entities\": [\"man in suit\", \"police officer\"],\n  \"actions\": [\"writing in notebook\", \"sitting\", \"speaking\", \"handing over paper\"],\n  \"emotion_words\": [\"serious\", \"focused\"],\n  \"interaction_level\": 2,\n  \"interaction_evidence\": \"The police officer hands a document to the man in the suit, who is writing and looking at him. They are engaged in a face-to-face conversation with mutual attention and coordinated task-based behavior.\",\n  \"summary\": \"A man in a suit and tie sits at a desk writing in a notebook while speaking with a uniformed police officer across from him in an office setting.\"\n}",
+    "text": "{\n  \"setting\": \"office\",\n  \"main_entities\": [\"man in suit\", \"police officer\"],\n  \"actions\": [\"writing\", \"sitting\", \"speaking\", \"handing paper\"],\n  \"emotion_words\": [\"focused\", \"serious\"],\n  \"interaction_level\": 2,\n  \"interaction_evidence\": \"The police officer hands a document to the man in the suit, and they are seated facing each other in what appears to be an interview or discussion. The officer leans forward and speaks while the other listens and writes.\",\n  \"summary\": \"A man in a suit is writing in a notebook at a desk while a police officer approaches and sits down to speak with him, handing him a document as part of their conversation.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 152,
-      "total_tokens": 9060
+      "completion_tokens": 155,
+      "total_tokens": 9063
     }
   },
   "lvlm_structured": {
-    "setting": "office or interrogation room",
+    "setting": "office",
     "main_entities": [
       "man in suit",
       "police officer"
     ],
     "actions": [
-      "writing in notebook",
+      "writing",
       "sitting",
       "speaking",
-      "handing over paper"
+      "handing paper"
     ],
     "emotion_words": [
-      "serious",
-      "focused"
+      "focused",
+      "serious"
     ],
     "interaction_level": 2,
-    "interaction_evidence": "The police officer hands a document to the man in the suit, who is writing and looking at him. They are engaged in a face-to-face conversation with mutual attention and coordinated task-based behavior.",
-    "summary": "A man in a suit and tie sits at a desk writing in a notebook while speaking with a uniformed police officer across from him in an office setting."
+    "interaction_evidence": "The police officer hands a document to the man in the suit, and they are seated facing each other in what appears to be an interview or discussion. The officer leans forward and speaks while the other listens and writes.",
+    "summary": "A man in a suit is writing in a notebook at a desk while a police officer approaches and sits down to speak with him, handing him a document as part of their conversation."
   },
   "lvlm_error": null
 }

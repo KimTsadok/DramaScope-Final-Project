@@ -32,47 +32,45 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "The video depicts a car ride through a residential neighborhood during late afternoon or early evening, with golden sunlight streaming into the vehicle. The main subjects are a woman driving and a male passenger seated beside her. \n\n**Setting:** Interior of a moving car, with houses, trees, and lawns visible through the windows. The lighting suggests sunset or sunrise.\n\n**People & Actions:** \n- A woman with shoulder-length brown hair, wearing a pink/red shirt, is driving with both hands on the steering wheel. She occasionally glances around or toward the passenger.\n- A man in a suit jacket and light-colored collared shirt sits in the passenger seat. He is shown in profile and frontal views, looking forward or slightly toward the camera/driver.\n\n**Emotional Tone:** Calm, contemplative, and somewhat tense or serious. The lighting creates a warm but somber atmosphere.\n\n**Interaction:** The two appear to be engaged in a quiet conversation or silent companionship during the drive. The camera alternates between the driver and passenger, suggesting a dialogue or shared journey with emotional weight.",
+    "text": "**Setting:** Interior of a moving car during late afternoon/early evening (golden hour), driving through a residential suburban neighborhood with houses and trees visible through the windows.\n\n**People:** Two individuals - a woman with shoulder-length brown hair wearing a pink/red shirt (driver), and a man in a dark suit jacket over a light-colored collared shirt (passenger).\n\n**Actions:** The woman is actively driving, holding the steering wheel with both hands while looking ahead at the road. The camera alternates between shots of her driving and shots of the male passenger looking out his window or toward the camera. The background scenery moves past, indicating forward motion.\n\n**Emotional Tone:** Calm, routine, and contemplative. The warm lighting creates a peaceful atmosphere. The woman appears focused on driving, while the man seems relaxed or pensive.\n\n**Interaction:** Minimal direct interaction - they appear to be sharing a car ride without significant conversation visible in these frames, suggesting a quiet commute or casual travel together.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 218,
-      "total_tokens": 8742
+      "completion_tokens": 201,
+      "total_tokens": 8725
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"inside a moving car during daytime\",\n  \"main_entities\": [\"woman\", \"man\"],\n  \"actions\": [\"driving\", \"sitting in passenger seat\", \"looking around\", \"talking\"],\n  \"emotion_words\": [\"calm\", \"focused\", \"attentive\", \"relaxed\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The woman appears to be speaking or singing while driving, and the man is present as a passenger looking at her and the surroundings, suggesting they are sharing a ride and possibly conversing, though direct mutual engagement is not strongly visible.\",\n  \"summary\": \"A woman drives a car while a man sits beside her as a passenger. They appear to be traveling together through a residential area, with the driver occasionally glancing at the passenger and appearing to speak.\"\n}",
+    "text": "{\n  \"setting\": \"inside a moving car during daytime\",\n  \"main_entities\": [\"woman in red shirt\", \"man in suit\"],\n  \"actions\": [\"driving\", \"looking around\", \"talking\"],\n  \"emotion_words\": [\"focused\", \"engaged\", \"calm\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The woman appears to be speaking or singing while driving, and the man is shown looking toward her or the camera with an attentive expression, suggesting they are sharing a conversation during the car ride.\",\n  \"summary\": \"A woman drives a car while a male passenger sits beside her; they appear to be engaged in conversation as they travel through a residential area.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 176,
-      "total_tokens": 9084
+      "completion_tokens": 149,
+      "total_tokens": 9057
     }
   },
   "lvlm_structured": {
     "setting": "inside a moving car during daytime",
     "main_entities": [
-      "woman",
-      "man"
+      "woman in red shirt",
+      "man in suit"
     ],
     "actions": [
       "driving",
-      "sitting in passenger seat",
       "looking around",
       "talking"
     ],
     "emotion_words": [
-      "calm",
       "focused",
-      "attentive",
-      "relaxed"
+      "engaged",
+      "calm"
     ],
     "interaction_level": 1,
-    "interaction_evidence": "The woman appears to be speaking or singing while driving, and the man is present as a passenger looking at her and the surroundings, suggesting they are sharing a ride and possibly conversing, though direct mutual engagement is not strongly visible.",
-    "summary": "A woman drives a car while a man sits beside her as a passenger. They appear to be traveling together through a residential area, with the driver occasionally glancing at the passenger and appearing to speak."
+    "interaction_evidence": "The woman appears to be speaking or singing while driving, and the man is shown looking toward her or the camera with an attentive expression, suggesting they are sharing a conversation during the car ride.",
+    "summary": "A woman drives a car while a male passenger sits beside her; they appear to be engaged in conversation as they travel through a residential area."
   },
   "lvlm_error": null
 }

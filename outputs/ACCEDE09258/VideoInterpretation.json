@@ -32,37 +32,36 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "This video clip depicts an interview or interrogation scene set in a modest office. Two men are seated across from each other at a cluttered desk: one is a uniformed officer (light blue shirt with patches), and the other is a man in a dark suit with a distinctive orange patterned tie, who appears to be an interviewer or investigator.\n\n**Key actions and interaction:**\n- The man in the suit holds a pen and notepad, taking notes throughout the conversation\n- The officer speaks and gestures with his hands while talking\n- At one point, the officer reaches out to touch or point at a piece of paper on the desk\n- The camera alternates between over-the-shoulder shots of both individuals\n\n**Emotional tone:** The atmosphere is professional but relaxed and conversational. Both men display friendly, engaged body language—smiling, nodding, and maintaining eye contact—suggesting this is a cooperative discussion rather than an adversarial interrogation. The setting includes typical office items like a tissue box, wire document tray, water bottles, and calendars on the wall.",
+    "text": "This video depicts an interview or interrogation scene set in a modest office. Two men are seated across from each other at a cluttered desk: one is a man in a dark suit with a distinctive orange patterned tie, who appears to be an interviewer or investigator, and the other is a uniformed officer (wearing a light blue short-sleeved shirt with patches) being questioned.\n\nThe interaction shows the suited man actively taking notes in a notebook while speaking and gesturing with his hands. The uniformed officer listens attentively, responding with varying hand gestures—sometimes clasping his hands on the desk, at other times gesturing as he speaks or reaching toward the paper on the desk.\n\nThe emotional tone appears professional and relatively calm, with the suited man displaying engaged body language (leaning forward, smiling at times) suggesting a conversational rather than adversarial exchange. The camera alternates between over-the-shoulder shots of both individuals, capturing their facial expressions and gestures during their dialogue. The office setting includes typical items like a tissue box, wire document trays, water bottles, and calendars on the wall.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 219,
-      "total_tokens": 8743
+      "completion_tokens": 224,
+      "total_tokens": 8748
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"office\",\n  \"main_entities\": [\"man in suit\", \"man in uniform\"],\n  \"actions\": [\"talking\", \"writing\", \"gesturing\", \"listening\"],\n  \"emotion_words\": [\"smiling\", \"engaged\", \"attentive\"],\n  \"interaction_level\": 2,\n  \"interaction_evidence\": \"The two men are engaged in a clear mutual conversation, with the man in the suit speaking and gesturing while the man in uniform listens attentively, nods, and responds with his own gestures. They maintain eye contact and share attention on the documents between them.\",\n  \"summary\": \"A man in a business suit interviews or speaks with a uniformed officer across an office desk. The conversation is animated, with both participants actively engaged through speaking, listening, gesturing, and note-taking.\"\n}",
+    "text": "{\n  \"setting\": \"office\",\n  \"main_entities\": [\"man in suit\", \"police officer\"],\n  \"actions\": [\"talking\", \"writing notes\", \"gesturing\"],\n  \"emotion_words\": [\"smiling\", \"engaged\", \"attentive\"],\n  \"interaction_level\": 2,\n  \"interaction_evidence\": \"The two men are engaged in a clear mutual conversation, with the man in the suit speaking and gesturing while the officer listens, responds with hand gestures, and maintains eye contact. They are actively exchanging information across a desk.\",\n  \"summary\": \"A man in a dark suit and orange tie interviews or speaks with a police officer in an office setting. The man takes notes and gestures as he talks, while the officer responds and participates in the discussion.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 174,
-      "total_tokens": 9082
+      "completion_tokens": 165,
+      "total_tokens": 9073
     }
   },
   "lvlm_structured": {
     "setting": "office",
     "main_entities": [
       "man in suit",
-      "man in uniform"
+      "police officer"
     ],
     "actions": [
       "talking",
-      "writing",
-      "gesturing",
-      "listening"
+      "writing notes",
+      "gesturing"
     ],
     "emotion_words": [
       "smiling",
@@ -70,8 +69,8 @@
       "attentive"
     ],
     "interaction_level": 2,
-    "interaction_evidence": "The two men are engaged in a clear mutual conversation, with the man in the suit speaking and gesturing while the man in uniform listens attentively, nods, and responds with his own gestures. They maintain eye contact and share attention on the documents between them.",
-    "summary": "A man in a business suit interviews or speaks with a uniformed officer across an office desk. The conversation is animated, with both participants actively engaged through speaking, listening, gesturing, and note-taking."
+    "interaction_evidence": "The two men are engaged in a clear mutual conversation, with the man in the suit speaking and gesturing while the officer listens, responds with hand gestures, and maintains eye contact. They are actively exchanging information across a desk.",
+    "summary": "A man in a dark suit and orange tie interviews or speaks with a police officer in an office setting. The man takes notes and gestures as he talks, while the officer responds and participates in the discussion."
   },
   "lvlm_error": null
 }

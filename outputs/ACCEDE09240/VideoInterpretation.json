@@ -31,46 +31,45 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "**Setting:** A clinical or medical office environment, indicated by the white lab coat, stainless steel sink, and medical equipment (likely a sterilizer) in the background.\n\n**Main Entity:** A middle-aged man with graying hair, a goatee, and dark-rimmed glasses, wearing a white lab coat over a striped shirt and red tie—appearing to be a doctor or scientist.\n\n**Visible Actions:** The man is engaged in conversation, speaking with varying facial expressions. His mouth moves as if talking, his eyebrows raise and furrow, and he occasionally looks down or to the side before returning eye contact. The sequence shows him mid-sentence, pausing, and continuing to speak.\n\n**Emotional Tone:** Serious, concerned, and earnest. His expressions shift between focused concentration, slight worry, and thoughtful explanation, suggesting he is delivering important or difficult information.\n\n**Interaction:** No other people are visible in these frames; the man appears to be addressing someone off-camera (likely a patient or colleague), maintaining direct engagement through his gaze and expressive delivery.",
+    "text": "The video shows a man, likely a doctor or scientist, wearing a white lab coat over a striped shirt and red tie, with glasses and a goatee. He is in what appears to be a medical or laboratory setting, indicated by the background elements including a sink, cabinets, and what looks like a microwave or lab equipment. The man is engaged in conversation or delivering a monologue, as his mouth moves and his facial expressions shift throughout the frames. His expressions range from serious to slightly concerned or emphatic, suggesting he is discussing something of importance. The camera remains focused on him in a medium close-up shot, capturing his upper body and facial expressions as he speaks. The overall tone is professional and serious, consistent with a dramatic scene from a film or television show.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 215,
-      "total_tokens": 8739
+      "completion_tokens": 156,
+      "total_tokens": 8680
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"medical office or laboratory\",\n  \"main_entities\": [\"man in white lab coat\"],\n  \"actions\": [\"speaking\", \"looking around\", \"listening\", \"talking\"],\n  \"emotion_words\": [\"concerned\", \"serious\", \"focused\", \"earnest\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The man is engaged in conversation, displaying speaking posture, attentive gaze directed off-camera, and facial expressions indicating he is addressing someone not visible in the frame.\",\n  \"summary\": \"A middle-aged man with glasses and a goatee, wearing a white lab coat over a shirt and red tie, is shown in what appears to be a medical office or lab setting. He is actively engaged in conversation with someone off-camera, displaying various expressions of concern and seriousness as he speaks and listens.\"\n}",
+    "text": "{\n  \"setting\": \"Medical office or laboratory\",\n  \"main_entities\": [\"Middle-aged man with glasses in white lab coat\"],\n  \"actions\": [\"Speaking\", \"Looking around\", \"Gesturing slightly\"],\n  \"emotion_words\": [\"Serious\", \"Concerned\", \"Thoughtful\", \"Engaged\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The man appears to be speaking and addressing someone off-camera, with attentive facial expressions and mouth movements suggesting communication with an unseen person.\",\n  \"summary\": \"A middle-aged man wearing a white lab coat, dress shirt, and red tie is shown in what appears to be a medical or laboratory setting. He is engaged in conversation, displaying serious and concerned expressions as he speaks, occasionally looking down or to the side as if explaining something important.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 176,
-      "total_tokens": 9084
+      "completion_tokens": 170,
+      "total_tokens": 9078
     }
   },
   "lvlm_structured": {
-    "setting": "medical office or laboratory",
+    "setting": "Medical office or laboratory",
     "main_entities": [
-      "man in white lab coat"
+      "Middle-aged man with glasses in white lab coat"
     ],
     "actions": [
-      "speaking",
-      "looking around",
-      "listening",
-      "talking"
+      "Speaking",
+      "Looking around",
+      "Gesturing slightly"
     ],
     "emotion_words": [
-      "concerned",
-      "serious",
-      "focused",
-      "earnest"
+      "Serious",
+      "Concerned",
+      "Thoughtful",
+      "Engaged"
     ],
     "interaction_level": 1,
-    "interaction_evidence": "The man is engaged in conversation, displaying speaking posture, attentive gaze directed off-camera, and facial expressions indicating he is addressing someone not visible in the frame.",
-    "summary": "A middle-aged man with glasses and a goatee, wearing a white lab coat over a shirt and red tie, is shown in what appears to be a medical office or lab setting. He is actively engaged in conversation with someone off-camera, displaying various expressions of concern and seriousness as he speaks and listens."
+    "interaction_evidence": "The man appears to be speaking and addressing someone off-camera, with attentive facial expressions and mouth movements suggesting communication with an unseen person.",
+    "summary": "A middle-aged man wearing a white lab coat, dress shirt, and red tie is shown in what appears to be a medical or laboratory setting. He is engaged in conversation, displaying serious and concerned expressions as he speaks, occasionally looking down or to the side as if explaining something important."
   },
   "lvlm_error": null
 }

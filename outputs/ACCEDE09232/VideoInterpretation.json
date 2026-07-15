@@ -32,24 +32,24 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "The video shows a man walking along a sidewalk in what appears to be a campus or park setting during autumn. He is dressed in a dark jacket, dark pants, and a baseball cap, walking steadily toward the camera with a calm, purposeful stride. The background features trees with fall foliage, a building, benches, a green utility box, and a red fire hydrant. As he approaches, text appears on screen reading \"CASTING BY CHRIS FREIHOFFER.\" Near the end, the man raises his left hand in a casual wave or gesture. The overall tone is serene and observational, with no other significant interactions or people present.",
+    "text": "The video shows a man walking toward the camera along a sidewalk in what appears to be a campus or park setting on an autumn day. He is dressed in a dark jacket, dark pants, and a baseball cap, walking at a steady pace with a calm, purposeful demeanor. The background features trees with fall foliage, a building, benches, a fire hydrant, and a parked car. As he approaches, text appears on screen reading \"CASTING BY CHRIS FREIHOFFER,\" and near the end of the clip, he raises his left hand in a casual wave or gesture. The overall tone is serene and observational.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 132,
-      "total_tokens": 8656
+      "completion_tokens": 129,
+      "total_tokens": 8653
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"outdoor campus sidewalk with trees, buildings, and street fixtures\",\n  \"main_entities\": [\"man in dark jacket and cap\"],\n  \"actions\": [\"walking toward camera\", \"waving hand\"],\n  \"emotion_words\": [\"calm\", \"casual\", \"friendly\"],\n  \"interaction_level\": 0,\n  \"interaction_evidence\": \"The man is walking alone on the sidewalk. While he waves his hand in one of the later frames, there is no other person visible to receive or respond to this gesture, indicating no mutual social interaction occurs.\",\n  \"summary\": \"A man wearing a dark jacket and a baseball cap walks along a paved sidewalk on what appears to be a college campus. He walks steadily toward the camera, and as he gets closer, he raises his left hand in a wave before continuing to walk forward.\"\n}",
+    "text": "{\n  \"setting\": \"outdoor campus sidewalk with trees, buildings, and street fixtures\",\n  \"main_entities\": [\"man in dark jacket and cap\"],\n  \"actions\": [\"walking toward camera\", \"waving hand\"],\n  \"emotion_words\": [\"calm\", \"casual\", \"friendly\"],\n  \"interaction_level\": 0,\n  \"interaction_evidence\": \"The man is walking alone on the sidewalk. Although he raises his hand to wave near the end of the sequence, there is no other person visible in the immediate vicinity who is responding or interacting with him; the gesture appears to be directed at the camera or an unseen entity without mutual exchange.\",\n  \"summary\": \"A man wearing a dark jacket and a baseball cap walks along a sunny sidewalk on what appears to be a college or university campus. He walks steadily toward the camera, passing a green utility box and a red fire hydrant, before raising his left hand in a wave as he approaches.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 177,
-      "total_tokens": 9085
+      "completion_tokens": 199,
+      "total_tokens": 9107
     }
   },
   "lvlm_structured": {
@@ -67,8 +67,8 @@
       "friendly"
     ],
     "interaction_level": 0,
-    "interaction_evidence": "The man is walking alone on the sidewalk. While he waves his hand in one of the later frames, there is no other person visible to receive or respond to this gesture, indicating no mutual social interaction occurs.",
-    "summary": "A man wearing a dark jacket and a baseball cap walks along a paved sidewalk on what appears to be a college campus. He walks steadily toward the camera, and as he gets closer, he raises his left hand in a wave before continuing to walk forward."
+    "interaction_evidence": "The man is walking alone on the sidewalk. Although he raises his hand to wave near the end of the sequence, there is no other person visible in the immediate vicinity who is responding or interacting with him; the gesture appears to be directed at the camera or an unseen entity without mutual exchange.",
+    "summary": "A man wearing a dark jacket and a baseball cap walks along a sunny sidewalk on what appears to be a college or university campus. He walks steadily toward the camera, passing a green utility box and a red fire hydrant, before raising his left hand in a wave as he approaches."
   },
   "lvlm_error": null
 }

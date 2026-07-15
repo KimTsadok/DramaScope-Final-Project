@@ -29,47 +29,47 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "**Setting:** A cozy, traditionally furnished living room with brown walls, framed artwork, a brown leather recliner, a floral-patterned sofa, and a glass coffee table.\n\n**People:**\n- A man in a light blue uniform shirt (resembling a park ranger or security officer) seated in the recliner\n- A woman in a pink blouse and pearl necklace seated on the sofa\n\n**Actions:**\n- The man is reading a magazine or book, occasionally looking up and speaking\n- The woman is holding and reading a letter or note, smiling as she reads it\n- In wider shots, both are shown in the same room engaged in their respective reading activities\n\n**Emotional Tone:** Relaxed, domestic, and pleasant. The woman appears happy and amused by what she's reading; the man seems calm and conversational.\n\n**Interaction:** The two appear to be sharing quiet time together in the same space, each absorbed in their own reading material but clearly in each's company, suggesting a comfortable, familiar relationship (likely spouses or family members). The man appears to be talking while the woman reads her letter.",
+    "text": "The video takes place in a cozy, warmly lit living room with brown walls, framed artwork, and home furnishings including a leather recliner and a floral-patterned sofa. The main entities are a man in a light blue uniform shirt sitting in the recliner reading a magazine, and a woman in a pink blouse seated on the sofa holding a letter. \n\nThe man appears relaxed but occasionally looks up from his magazine as if listening or reacting. The woman reads the letter with an expression that shifts from a broad smile to a more thoughtful, emotional look, suggesting she is processing meaningful or touching content. While they share the same space, there is minimal direct interaction between them—the scene captures a quiet domestic moment where each person is engaged with their own reading material, creating a calm, intimate atmosphere suggestive of a comfortable shared life.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 227,
-      "total_tokens": 8751
+      "completion_tokens": 165,
+      "total_tokens": 8689
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"living room\",\n  \"main_entities\": [\"man in blue uniform\", \"woman in pink shirt\"],\n  \"actions\": [\"reading magazine\", \"reading letter\", \"smiling\", \"looking up from reading\"],\n  \"emotion_words\": [\"relaxed\", \"happy\", \"content\", \"surprised\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The woman looks up from her letter and smiles, appearing to react to something or someone (likely the man) in the shared space; they are co-present and engaged in parallel activities with potential social awareness.\",\n  \"summary\": \"A man in a police-style uniform relaxes in a leather recliner reading a magazine while a woman sits on a nearby floral couch reading a letter. The woman appears happy and at one point looks up smiling as if reacting to the man or their shared environment. They are in the same living room but focused on their own materials.\"\n}",
+    "text": "{\n  \"setting\": \"living room\",\n  \"main_entities\": [\"man in uniform\", \"woman in pink\"],\n  \"actions\": [\"reading magazine\", \"reading letter\", \"sitting on couch\", \"sitting in recliner\"],\n  \"emotion_words\": [\"relaxed\", \"happy\", \"smiling\", \"content\"],\n  \"interaction_level\": 0,\n  \"interaction_evidence\": \"The man is focused on his magazine and the woman on her letter; they are seated separately with no visible eye contact, gestures, or communicative cues between them.\",\n  \"summary\": \"A man in a police uniform relaxes in a leather recliner reading a magazine while a woman in a pink blouse sits on a floral couch smiling as she reads a letter. They share the living room space but are engaged in separate, independent activities.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 197,
-      "total_tokens": 9105
+      "completion_tokens": 173,
+      "total_tokens": 9081
     }
   },
   "lvlm_structured": {
     "setting": "living room",
     "main_entities": [
-      "man in blue uniform",
-      "woman in pink shirt"
+      "man in uniform",
+      "woman in pink"
     ],
     "actions": [
       "reading magazine",
       "reading letter",
-      "smiling",
-      "looking up from reading"
+      "sitting on couch",
+      "sitting in recliner"
     ],
     "emotion_words": [
       "relaxed",
       "happy",
-      "content",
-      "surprised"
+      "smiling",
+      "content"
     ],
-    "interaction_level": 1,
-    "interaction_evidence": "The woman looks up from her letter and smiles, appearing to react to something or someone (likely the man) in the shared space; they are co-present and engaged in parallel activities with potential social awareness.",
-    "summary": "A man in a police-style uniform relaxes in a leather recliner reading a magazine while a woman sits on a nearby floral couch reading a letter. The woman appears happy and at one point looks up smiling as if reacting to the man or their shared environment. They are in the same living room but focused on their own materials."
+    "interaction_level": 0,
+    "interaction_evidence": "The man is focused on his magazine and the woman on her letter; they are seated separately with no visible eye contact, gestures, or communicative cues between them.",
+    "summary": "A man in a police uniform relaxes in a leather recliner reading a magazine while a woman in a pink blouse sits on a floral couch smiling as she reads a letter. They share the living room space but are engaged in separate, independent activities."
   },
   "lvlm_error": null
 }

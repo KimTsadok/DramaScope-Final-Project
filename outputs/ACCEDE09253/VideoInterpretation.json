@@ -32,24 +32,24 @@
     "model": "glm-5v-turbo",
     "prompt_version": "v1_summary",
     "frame_count": 8,
-    "text": "In a dimly lit living room, a man wearing a dark t-shirt approaches a woman who is asleep on a couch. He gently pulls a green blanket over her to ensure she is covered, then kneels beside her to watch her with a look of tenderness and concern. The scene conveys a quiet, caring atmosphere as he looks after the sleeping woman.",
+    "text": "In a dimly lit, cozy room—likely a living room or home office with a desk, lamp, and ship painting on the wall—a man in a dark t-shirt approaches a woman sleeping on a couch. He gently pulls a green blanket over her to ensure she is covered and warm. The scene conveys a tender, caring atmosphere as he quietly tends to her comfort without waking her.",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8524,
-      "completion_tokens": 74,
-      "total_tokens": 8598
+      "completion_tokens": 80,
+      "total_tokens": 8604
     }
   },
   "lvlm_structured_raw": {
     "model": "glm-5v-turbo",
     "prompt_version": "v3_interaction",
     "frame_count": 8,
-    "text": "{\n  \"setting\": \"dimly lit living room at night\",\n  \"main_entities\": [\"man\", \"woman\"],\n  \"actions\": [\"standing\", \"approaching\", \"kneeling\", \"tucking blanket\", \"looking down\"],\n  \"emotion_words\": [\"tender\", \"caring\", \"gentle\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The man approaches the sleeping woman and carefully tucks a blanket around her, showing attentive care and physical proximity, though she remains asleep and does not reciprocate.\",\n  \"summary\": \"In a darkened room, a man approaches a woman sleeping on a couch and gently tucks a blanket around her, watching over her with a caring expression.\"\n}",
+    "text": "{\n  \"setting\": \"dimly lit living room at night\",\n  \"main_entities\": [\"man\", \"woman\"],\n  \"actions\": [\"standing\", \"approaching\", \"kneeling\", \"tucking blanket\", \"looking down\"],\n  \"emotion_words\": [\"tender\", \"caring\", \"gentle\"],\n  \"interaction_level\": 1,\n  \"interaction_evidence\": \"The man approaches the sleeping woman, kneels beside her, and carefully tucks a blanket around her while looking down at her with an attentive and caring expression. This shows one-sided attentive care and physical proximity, though the woman remains asleep and does not respond.\",\n  \"summary\": \"In a darkened room, a man approaches a woman sleeping on a couch, kneels beside her, and gently tucks a blanket around her in a caring gesture.\"\n}",
     "finish_reason": "stop",
     "usage": {
       "prompt_tokens": 8908,
-      "completion_tokens": 154,
-      "total_tokens": 9062
+      "completion_tokens": 175,
+      "total_tokens": 9083
     }
   },
   "lvlm_structured": {
@@ -71,8 +71,8 @@
       "gentle"
     ],
     "interaction_level": 1,
-    "interaction_evidence": "The man approaches the sleeping woman and carefully tucks a blanket around her, showing attentive care and physical proximity, though she remains asleep and does not reciprocate.",
-    "summary": "In a darkened room, a man approaches a woman sleeping on a couch and gently tucks a blanket around her, watching over her with a caring expression."
+    "interaction_evidence": "The man approaches the sleeping woman, kneels beside her, and carefully tucks a blanket around her while looking down at her with an attentive and caring expression. This shows one-sided attentive care and physical proximity, though the woman remains asleep and does not respond.",
+    "summary": "In a darkened room, a man approaches a woman sleeping on a couch, kneels beside her, and gently tucks a blanket around her in a caring gesture."
   },
   "lvlm_error": null
 }
