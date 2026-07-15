@@ -1,0 +1,6 @@
+openai==2.25.0
+ffmpeg-python==0.2.0
+google-cloud-storage==3.8.0
+google-cloud-videointelligence==2.18.0
+google-api-core==2.29.0
+requests==2.32.4
