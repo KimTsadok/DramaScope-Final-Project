@@ -1,4 +1,4 @@
-# SceneSense: Intelligent Video Scene and Narrative Analysis - Final Project
+# DramaScope: Intelligent Video Scene and Narrative Analysis - Final Project
 
 This project extracts GCP video features, computes rule-based scene interpretation, adds LVLM semantic interpretation, and supports single-video and batch execution through `gcp`, `lvlm`, and `full` modes.
 
